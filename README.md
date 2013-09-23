@@ -1,4 +1,4 @@
-skincare
+스킨 케어
 ========
 
-Hello World + Test 2 + Test 3 + Test 4
+날씨에 기준한 피부관리 어플리케이션

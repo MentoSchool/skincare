@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/act_splash_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/scene_splash"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ProgressBar
+        android:id="@+id/act_splash_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/act_splash_title"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/splash_progress_margin"
+        android:indeterminateOnly="true" />
+
+    <LinearLayout
+        android:id="@+id/act_splash_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/type_question" />
+
+        <LinearLayout
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/type_buttonbar_margin"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/act_splash_btn_choice"
+                style="?android:attr/buttonStyleInset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="gotoTypeChoice"
+                android:text="@string/type_btn_choice" />
+
+            <Button
+                android:id="@+id/act_splash_btn_test"
+                style="?android:attr/buttonStyleInset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="gotoTypeTest"
+                android:text="@string/type_btn_test" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

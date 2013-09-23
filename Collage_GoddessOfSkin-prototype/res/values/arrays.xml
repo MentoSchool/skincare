@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="drawer_menus">
+        <item>@string/menu_home</item>
+        <item>@string/menu_schedule_settings</item>
+        <item>@string/menu_schedule_board</item>
+        <item>@string/menu_weather_today</item>
+        <item>@string/menu_weather_fun</item>
+        <item>@string/menu_share</item>
+        <item>@string/menu_settings_profile</item>
+        <item>@string/menu_settings_alarm</item>
+        <item>@string/menu_settings_popup</item>
+        <item>@string/menu_settings_type</item>
+        <item>@string/menu_settings_help</item>
+    </string-array>
+</resources>

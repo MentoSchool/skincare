@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Skin Care Prototype</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+    
+    <!-- menu -->
+    <string name="menu_home">Home</string>
+    <string name="menu_schedule">Schedule</string>
+    <string name="menu_schedule_settings">Schedule settings</string>
+    <string name="menu_schedule_board">Schedule board</string>
+    <string name="menu_weather">Weather</string>
+    <string name="menu_weather_today">Today\'s Weather</string>
+    <string name="menu_weather_fun">Interesting Weather</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_settings_profile">Profile Settings</string>
+    <string name="menu_settings_alarm">Alarm Settings</string>
+    <string name="menu_settings_popup">Popup Settings</string>
+    <string name="menu_settings_type">Skin Type Settings</string>
+    <string name="menu_settings_help">Help</string>
+    
+    <!-- scene -->
+    <string name="scene_splash">SPLASH</string>
+    <string name="scene_type_choice">SKIN TYPE CHOICE</string>
+    <string name="scene_type_test">SKIN TYPE TEST</string>
+    <string name="scene_main">MAIN</string>
+    <string name="scene_schedule_settings">SCHEDULE SETTINGS</string>
+    <string name="scene_schedule_board">SCHEDULE</string>
+    <string name="scene_weather_today">WEATHER TODAY</string>
+    <string name="scene_weather_interesting">WEATHER FUNNY</string>
+    <string name="scene_share">SHARE</string>
+    <string name="scene_settings">SETTINGS</string>
+    <string name="scene_settings_profile">PROFILE</string>
+    <string name="scene_settings_alarm">ALRAM</string>
+    <string name="scene_settings_popup">POPUP</string>
+    <string name="scene_settings_type">TYPE</string>
+    <string name="scene_settings_help">HELP</string>
+    
+    <!-- skin type -->
+    <string name="type_question">What\'s your skin type ?</string>
+    <string name="type_btn_choice">Choice</string>
+    <string name="type_btn_test">Test</string>
+    <string name="type_choice_oily">Oily</string>
+    <string name="type_choice_dry">Dry</string>
+    <string name="type_choice_combination">Combination</string>
+    
+</resources>

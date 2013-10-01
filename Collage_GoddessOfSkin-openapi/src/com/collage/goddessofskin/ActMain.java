@@ -59,7 +59,7 @@ public class ActMain extends Activity
 	// Server settings
 	private static final String SERVER_SCHEME = HttpHost.DEFAULT_SCHEME_NAME;
     private static final Integer SERVER_PORT = 80;
-    private static final Integer SERVER_POR = 80;
+ 
     
     private static final String SERVER_ENCODING = HTTP.UTF_8;
 	private static final int HTTP_CONNECTION_TIMEOUT = 1000 * 30;

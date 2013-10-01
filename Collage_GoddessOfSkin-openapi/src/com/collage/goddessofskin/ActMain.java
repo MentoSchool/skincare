@@ -52,13 +52,14 @@ import com.collage.goddessofskin.model.response.life.UltraViolet;
  * Sample demo
  * 
  * @author jungho.song@kodeglam.com (threeword)
- * @since 2013. 9. 7. 오후 12:51:19
+ * @since 2013. 9. 7. �ㅽ썑 12:51:19
  */
 public class ActMain extends Activity
 {
 	// Server settings
 	private static final String SERVER_SCHEME = HttpHost.DEFAULT_SCHEME_NAME;
     private static final Integer SERVER_PORT = 80;
+    private static final Integer SERVER_POR = 80;
     
     private static final String SERVER_ENCODING = HTTP.UTF_8;
 	private static final int HTTP_CONNECTION_TIMEOUT = 1000 * 30;
@@ -145,7 +146,7 @@ public class ActMain extends Activity
 	 * 
 	 * 
 	 * @author jungho.song@kodeglam.com (threeword)
-	 * @since 2013. 9. 7. 오후 12:51:14
+	 * @since 2013. 9. 7. �ㅽ썑 12:51:14
 	 */
 	private class SampleAsyncTask extends AsyncTask<HttpGet, Integer, WrapperResult>
 	{
@@ -191,13 +192,13 @@ public class ActMain extends Activity
 					// response entity to string
 					String responseToString = EntityUtils.toString(response.getEntity(), SERVER_ENCODING);
 					
-					// TODO :: XML 파싱 후 헤더 노드에 있는 에러코드에 대한 예외 처리 (공공데이터 포털에 정의 되어있는 에러 코드)
+					// TODO :: XML �뚯떛 ���ㅻ뜑 �몃뱶���덈뒗 �먮윭肄붾뱶����븳 �덉쇅 泥섎━ (怨듦났�곗씠���ы꽭���뺤쓽 �섏뼱�덈뒗 �먮윭 肄붾뱶)
 					return new WrapperResult()
 					.setObj(AbsResponse.fromXML(responseToString, UltraViolet.class))
 					.setXml(responseToString);
 				}
 				
-				// TODO :: 기본 http 상태 에러 처리
+				// TODO :: 湲곕낯 http �곹깭 �먮윭 泥섎━
 			}
 			catch (ClientProtocolException e)
 			{
@@ -240,7 +241,7 @@ public class ActMain extends Activity
 	 * Result wrapper
 	 * 
 	 * @author jungho.song@kodeglam.com (threeword)
-	 * @since 2013. 9. 7. 오후 2:08:58
+	 * @since 2013. 9. 7. �ㅽ썑 2:08:58
 	 */
 	private class WrapperResult
 	{

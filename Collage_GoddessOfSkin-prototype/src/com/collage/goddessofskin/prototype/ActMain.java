@@ -28,6 +28,7 @@ import com.collage.goddessofskin.prototype.fragment.settings.FragSettingsProfile
 import com.collage.goddessofskin.prototype.fragment.weather.FragWeatherFun;
 import com.collage.goddessofskin.prototype.fragment.weather.FragWeatherToday;
 //응아아온이ㅏ럼ㄴ이ㅏㅣ러ㅣㅏ;ㄴㅇ머리남ㅋㅋㅋ.ㅍㅠㅠㅠ
+//폰트를 바꿈
 /**
  * Main activity
  * 

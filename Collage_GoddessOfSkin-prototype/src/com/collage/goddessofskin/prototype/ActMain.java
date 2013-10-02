@@ -27,12 +27,12 @@ import com.collage.goddessofskin.prototype.fragment.settings.FragSettingsHelp;
 import com.collage.goddessofskin.prototype.fragment.settings.FragSettingsProfile;
 import com.collage.goddessofskin.prototype.fragment.weather.FragWeatherFun;
 import com.collage.goddessofskin.prototype.fragment.weather.FragWeatherToday;
-
+//응아아온이ㅏ럼ㄴ이ㅏㅣ러ㅣㅏ;ㄴㅇ머리남ㅋㅋㅋ.ㅍㅠㅠㅠ
 /**
  * Main activity
  * 
  * @author jungho.song@kodeglam.com (threeword)
- * @since 2013. 9. 23. 오후 1:58:47
+ * @since 2013. 9. 23. �ㅽ썑 1:58:47
  */
 public class ActMain extends Activity 
 {

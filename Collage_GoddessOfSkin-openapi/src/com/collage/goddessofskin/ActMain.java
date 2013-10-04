@@ -52,7 +52,7 @@ import com.collage.goddessofskin.model.response.life.UltraViolet;
  * Sample demo
  * 
  * @author jungho.song@kodeglam.com (threeword)
- * @since 2013. 9. 7. �ㅽ썑 12:51:19
+ * @since 2013. 9. 7. 占썬끋��12:51:19
  */
 public class ActMain extends Activity
 {
@@ -146,7 +146,7 @@ public class ActMain extends Activity
 	 * 
 	 * 
 	 * @author jungho.song@kodeglam.com (threeword)
-	 * @since 2013. 9. 7. �ㅽ썑 12:51:14
+	 * @since 2013. 9. 7. 占썬끋��12:51:14
 	 */
 	private class SampleAsyncTask extends AsyncTask<HttpGet, Integer, WrapperResult>
 	{
@@ -192,14 +192,13 @@ public class ActMain extends Activity
 					// response entity to string
 					String responseToString = EntityUtils.toString(response.getEntity(), SERVER_ENCODING);
 					
-					// TODO :: XML �뚯떛 ���ㅻ뜑 �몃뱶���덈뒗 �먮윭肄붾뱶����븳 �덉쇅 泥섎━ (怨듦났�곗씠���ы꽭���뺤쓽 �섏뼱�덈뒗 �먮윭 肄붾뱶)
+					// TODO :: XML 占쎈슣��占쏙옙占썬끇��占쎈챶諭띰옙占쏙옙�덈뮉 占쎈Ŧ��굜遺얜굡占쏙옙占쏙옙釉�占쎈뜆��筌ｌ꼶��(�⑤벀�э옙怨쀬뵠占쏙옙占싼뗪쉭占쏙옙占쎈벡��占쎌꼷堉깍옙�덈뮉 占쎈Ŧ���꾨뗀諭�
 					return new WrapperResult()
 					.setObj(AbsResponse.fromXML(responseToString, UltraViolet.class))
 					.setXml(responseToString);
 				}
-				
-				// TODO :: 湲곕낯 http �곹깭 �먮윭 泥섎━
 			}
+				// TODO :: 疫꿸퀡��http 占쎄낱源�占쎈Ŧ��筌ｌ꼶��			}
 			catch (ClientProtocolException e)
 			{
 				e.printStackTrace();
@@ -241,7 +240,7 @@ public class ActMain extends Activity
 	 * Result wrapper
 	 * 
 	 * @author jungho.song@kodeglam.com (threeword)
-	 * @since 2013. 9. 7. �ㅽ썑 2:08:58
+	 * @since 2013. 9. 7. 占썬끋��2:08:58
 	 */
 	private class WrapperResult
 	{

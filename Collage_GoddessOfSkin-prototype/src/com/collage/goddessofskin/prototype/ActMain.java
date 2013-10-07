@@ -1,6 +1,7 @@
 package com.collage.goddessofskin.prototype;
 
 import android.app.Activity;
+import android.app.ExpandableListActivity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.SearchManager;
@@ -27,13 +28,13 @@ import com.collage.goddessofskin.prototype.fragment.settings.FragSettingsHelp;
 import com.collage.goddessofskin.prototype.fragment.settings.FragSettingsProfile;
 import com.collage.goddessofskin.prototype.fragment.weather.FragWeatherFun;
 import com.collage.goddessofskin.prototype.fragment.weather.FragWeatherToday;
-//응아아온이ㅏ럼ㄴ이ㅏㅣ러ㅣㅏ;ㄴㅇ머리남ㅋㅋㅋ.ㅍㅠㅠㅠ
-//폰트를 바꿈
+//�묒븘�꾩삩�담뀖�쇈꽩�담뀖�ｋ윭�ｃ뀖;�담뀋癒몃━�ⓦ뀑�뗣뀑.�띲뀪�졼뀪
+//�고듃瑜�諛붽퓞
 /**
  * Main activity
  * 
  * @author jungho.song@kodeglam.com (threeword)
- * @since 2013. 9. 23. �ㅽ썑 1:58:47
+ * @since 2013. 9. 23. 占썬끋��1:58:47
  */
 public class ActMain extends Activity 
 {
@@ -197,6 +198,8 @@ public class ActMain extends Activity
 		// update the main content by replacing fragments
 		Fragment fragment = null;
 		
+		
+		
 		DrawerMenu dm = DrawerMenu.values()[position];
 		switch (dm)
 		{
@@ -226,7 +229,13 @@ public class ActMain extends Activity
 			{
 			}
 			break;
-			case SettingsHelp : fragment = new FragSettingsHelp(); break;
+			case SettingsHelp : {
+				
+				
+			Intent intent = new Intent(ActMain.this,FragSettingsHelp.class);
+		startActivity(intent);	
+			}
+			break;
 		}
 		if(fragment != null)
 		{

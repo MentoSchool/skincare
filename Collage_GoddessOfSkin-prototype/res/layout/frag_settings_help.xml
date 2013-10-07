@@ -4,11 +4,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/scene_settings_help"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
+<ListView 
+    android:id="@+id/ListView01"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    
+    
+    
+    
+    
+</ListView>
+    
 </LinearLayout>

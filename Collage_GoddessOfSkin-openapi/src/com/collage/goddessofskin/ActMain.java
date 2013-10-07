@@ -52,7 +52,7 @@ import com.collage.goddessofskin.model.response.life.UltraViolet;
  * Sample demo
  * 
  * @author jungho.song@kodeglam.com (threeword)
- * @since 2013. 9. 7. 占썬끋��12:51:19
+ * @since 2013. 9. 7. �좎뜫�뗰옙占�2:51:19
  */
 public class ActMain extends Activity
 {
@@ -146,7 +146,7 @@ public class ActMain extends Activity
 	 * 
 	 * 
 	 * @author jungho.song@kodeglam.com (threeword)
-	 * @since 2013. 9. 7. 占썬끋��12:51:14
+	 * @since 2013. 9. 7. �좎뜫�뗰옙占�2:51:14
 	 */
 	private class SampleAsyncTask extends AsyncTask<HttpGet, Integer, WrapperResult>
 	{
@@ -192,13 +192,13 @@ public class ActMain extends Activity
 					// response entity to string
 					String responseToString = EntityUtils.toString(response.getEntity(), SERVER_ENCODING);
 					
-					// TODO :: XML 占쎈슣��占쏙옙占썬끇��占쎈챶諭띰옙占쏙옙�덈뮉 占쎈Ŧ��굜遺얜굡占쏙옙占쏙옙釉�占쎈뜆��筌ｌ꼶��(�⑤벀�э옙怨쀬뵠占쏙옙占싼뗪쉭占쏙옙占쎈벡��占쎌꼷堉깍옙�덈뮉 占쎈Ŧ���꾨뗀諭�
+					// TODO :: XML �좎럥�ｏ옙占썲뜝�숈삕�좎뜫�뉛옙占썲뜝�덉굡獄�씛�쇿뜝�숈삕占쎈뜄裕��좎럥큔占쏙옙援쒒겫�쒓덧�좎룞�쇿뜝�숈삕�됵옙�좎럥�놅옙占썹춯節뚭섬占쏙옙(占썩뫀踰�옙��숁��щ턄�좎룞�쇿뜝�쇰뿪��뜝�숈삕�좎럥踰∽옙占썲뜝�뚭섭�됯퉵�숋옙�덈츎 �좎럥큔占쏙옙占쎄쑬��キ占�	
 					return new WrapperResult()
 					.setObj(AbsResponse.fromXML(responseToString, UltraViolet.class))
 					.setXml(responseToString);
 				}
 			}
-				// TODO :: 疫꿸퀡��http 占쎄낱源�占쎈Ŧ��筌ｌ꼶��			}
+				// TODO :: �リ옇�∽옙占퐃ttp �좎럡�길틦占썲뜝�댢�옙占썹춯節뚭섬占쏙옙			}
 			catch (ClientProtocolException e)
 			{
 				e.printStackTrace();
@@ -240,7 +240,7 @@ public class ActMain extends Activity
 	 * Result wrapper
 	 * 
 	 * @author jungho.song@kodeglam.com (threeword)
-	 * @since 2013. 9. 7. 占썬끋��2:08:58
+	 * @since 2013. 9. 7. �좎뜫�뗰옙占�:08:58
 	 */
 	private class WrapperResult
 	{

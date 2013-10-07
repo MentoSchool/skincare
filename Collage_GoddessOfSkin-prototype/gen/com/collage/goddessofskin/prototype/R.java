@@ -32,11 +32,21 @@ public final class R {
     }
     public static final class drawable {
         public static final int action_search=0x7f020000;
-        public static final int drawer_shadow=0x7f020001;
-        public static final int ic_drawer=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
+        public static final int background_1=0x7f020001;
+        public static final int button=0x7f020002;
+        public static final int drawer_shadow=0x7f020003;
+        public static final int ic_drawer=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int ic_weather=0x7f020006;
+        public static final int schedule_butten_after=0x7f020007;
+        public static final int schedule_butten_start=0x7f020008;
+        public static final int weather_1=0x7f020009;
+        public static final int weather_2=0x7f02000a;
+        public static final int weather_3=0x7f02000b;
     }
     public static final class id {
+        public static final int GalleryText=0x7f090011;
+        public static final int Schedule_butten=0x7f09000f;
         public static final int act_main_content_frame=0x7f090001;
         public static final int act_main_drawer_layout=0x7f090000;
         public static final int act_main_left_drawer=0x7f090002;
@@ -49,12 +59,26 @@ public final class R {
         public static final int act_type_choice_btn_dry=0x7f09000a;
         public static final int act_type_choice_btn_oily=0x7f090009;
         public static final int act_type_choice_title=0x7f090008;
-        public static final int action_websearch=0x7f090011;
-        public static final int drawer_menus=0x7f09000d;
-        public static final int drawer_profile_avatar=0x7f09000e;
-        public static final int drawer_profile_name=0x7f09000f;
-        public static final int drawer_profile_skin=0x7f09000c;
-        public static final int drawer_profile_type=0x7f090010;
+        public static final int action_websearch=0x7f090021;
+        public static final int btn_015=0x7f09000c;
+        public static final int drawer_menus=0x7f09001d;
+        public static final int drawer_profile_avatar=0x7f09001e;
+        public static final int drawer_profile_name=0x7f09001f;
+        public static final int drawer_profile_skin=0x7f09001c;
+        public static final int drawer_profile_type=0x7f090020;
+        public static final int gallery=0x7f09000d;
+        public static final int image=0x7f090010;
+        public static final int imageView1=0x7f090017;
+        public static final int imageView2=0x7f09001a;
+        public static final int today_weather_item=0x7f09000e;
+        public static final int tv_humidity=0x7f090016;
+        public static final int tv_name_Of_Space=0x7f090013;
+        public static final int tv_temperature=0x7f090014;
+        public static final int tv_weather_Type_Name=0x7f090012;
+        public static final int tv_wind=0x7f090015;
+        public static final int ult_15=0x7f090018;
+        public static final int ult_20=0x7f090019;
+        public static final int ult_30=0x7f09001b;
     }
     public static final class layout {
         public static final int act_main=0x7f030000;
@@ -67,9 +91,13 @@ public final class R {
         public static final int frag_settings_help=0x7f030007;
         public static final int frag_settings_profile=0x7f030008;
         public static final int frag_weather_fun=0x7f030009;
-        public static final int frag_weather_today=0x7f03000a;
-        public static final int view_drawer=0x7f03000b;
-        public static final int view_drawer_list_item=0x7f03000c;
+        public static final int frag_weather_fun_sub=0x7f03000a;
+        public static final int frag_weather_today=0x7f03000b;
+        public static final int frag_weather_today_gallery=0x7f03000c;
+        public static final int frag_weather_today_item_row=0x7f03000d;
+        public static final int frag_weather_today_scheduledialog=0x7f03000e;
+        public static final int view_drawer=0x7f03000f;
+        public static final int view_drawer_list_item=0x7f030010;
     }
     public static final class menu {
         public static final int main=0x7f080000;

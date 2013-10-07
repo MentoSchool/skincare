@@ -4,11 +4,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <com.collage.goddessofskin.prototype.fragment.weather.FragWeatherToday_CustemGallery
+        android:id="@+id/gallery"
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="4" >
+    </com.collage.goddessofskin.prototype.fragment.weather.FragWeatherToday_CustemGallery>
+
+    <ListView
+        android:id="@+id/today_weather_item"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="3" >
+    </ListView>
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/scene_weather_today"
+        android:layout_height="0px"
+        android:layout_weight="2"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Weather of Today 자외선:"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/Schedule_butten"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/button"
+        android:padding="10dp" />
 
 </LinearLayout>

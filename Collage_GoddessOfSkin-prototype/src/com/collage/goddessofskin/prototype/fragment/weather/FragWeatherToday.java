@@ -96,7 +96,7 @@ public class FragWeatherToday extends Fragment {
 		
 	}
 	OnClickListener listener = new OnClickListener() {
-		
+		//다이얼로그
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub

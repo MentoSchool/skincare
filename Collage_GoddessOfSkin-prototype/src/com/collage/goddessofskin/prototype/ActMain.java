@@ -198,7 +198,7 @@ public class ActMain extends Activity
 		// update the main content by replacing fragments
 		Fragment fragment = null;
 		
-		
+		Activity activity = null;
 		
 		DrawerMenu dm = DrawerMenu.values()[position];
 		switch (dm)
@@ -242,7 +242,8 @@ public class ActMain extends Activity
 			FragmentManager fragmentManager = getFragmentManager();
 			fragmentManager.beginTransaction().replace(R.id.act_main_content_frame, fragment).commit();
 		}
-
+       
+	      	
 		// update selected item and title, then close the drawer
 		mDrawerList.setItemChecked(position, true);
 		setTitle(mDrawerMenus[position]);

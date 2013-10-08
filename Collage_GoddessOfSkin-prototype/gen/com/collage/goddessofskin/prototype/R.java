@@ -97,7 +97,7 @@ public final class R {
         public static final int frag_weather_today=0x7f03000b;
         public static final int frag_weather_today_gallery=0x7f03000c;
         public static final int frag_weather_today_item_row=0x7f03000d;
-        public static final int frag_weather_today_scheduledialog=0x7f03000e;
+        public static final int frag_weather_today_schedule=0x7f03000e;
         public static final int view_drawer=0x7f03000f;
         public static final int view_drawer_list_item=0x7f030010;
     }

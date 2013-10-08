@@ -18,7 +18,7 @@ public class FragmentWeatherToday_Schedule extends Fragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View view = inflater.inflate(R.layout.frag_weather_today_scheduledialog, container, false);
+		View view = inflater.inflate(R.layout.frag_weather_today_schedule, container, false);
 		
 		return view;
 		
@@ -32,7 +32,7 @@ public class FragmentWeatherToday_Schedule extends Fragment{
 		view = (TextView)getActivity().findViewById(R.id.ult_text);
 		
 		ActMain.getInstance().onClick1();
-		
+		//우선 적용은 해놨는데  지수가 늦게 뜸
 		view.setText("자외선 지수:" + ActMain.vo.getToday_UltraViolet());
 		
 		

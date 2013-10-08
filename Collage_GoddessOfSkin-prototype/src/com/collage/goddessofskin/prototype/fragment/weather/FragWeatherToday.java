@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.collage.goddessofskin.prototype.R;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,19 +16,20 @@ import android.widget.ListView;
 
 public class FragWeatherToday extends Fragment {
 
-	ScheduleDialog ScheduleDialog;
-	
+	private Fragment fragment;
+
 	private FragWeatherToday_CustemGallery mCustemGallery;
-	
+
 	private final String TAG = "FragWeatherToday";
 
 	private Button Schedule_App;
-	
+
 	private ListView Item_main;
-	
+
 	private ArrayList<FragWeatherToday_items_VO> items_VOs;
-	
+
 	private FragmentWeatherToday_ItemListAdaper itemListAdaper;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -35,8 +37,6 @@ public class FragWeatherToday extends Fragment {
 		View view = inflater.inflate(R.layout.frag_weather_today, container,
 				false);
 
-		
-		
 		return view;
 
 	}
@@ -46,13 +46,13 @@ public class FragWeatherToday extends Fragment {
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
 
-		Schedule_App = (Button)getActivity().findViewById(R.id.Schedule_butten);
+		Schedule_App = (Button) getActivity()
+				.findViewById(R.id.Schedule_butten);
 		Schedule_App.setOnClickListener(listener);
 		mCustemGallery = (FragWeatherToday_CustemGallery) getActivity()
 				.findViewById(R.id.gallery);
-		
-		
-        mCustemGallery.setAdapter(new FragWeatherToday_CustemCalleryAdapter(
+
+		mCustemGallery.setAdapter(new FragWeatherToday_CustemCalleryAdapter(
 				getActivity()));
 
 		viewInit();
@@ -63,61 +63,61 @@ public class FragWeatherToday extends Fragment {
 
 	private void viewInit() {
 		// TODO Auto-generated method stub
-		
-		Item_main = (ListView)getView().findViewById(R.id.today_weather_item);
+
+		Item_main = (ListView) getView().findViewById(R.id.today_weather_item);
 		items_VOs = new ArrayList<FragWeatherToday_items_VO>();
-		itemListAdaper = new FragmentWeatherToday_ItemListAdaper(getActivity().getBaseContext(), items_VOs, R.layout.frag_weather_today_item_row);
+		itemListAdaper = new FragmentWeatherToday_ItemListAdaper(getActivity()
+				.getBaseContext(), items_VOs,
+				R.layout.frag_weather_today_item_row);
 
 		Item_main.setAdapter(itemListAdaper);
 	}
-	
 
 	private void setContent() {
 		// TODO Auto-generated method stub
-	    String weather_Type_Name ="흐림";
-		
+		String weather_Type_Name = "흐림";
+
 		String name_Of_Space = "서울";
-		
+
 		String temperature = "23C";
-		
-		String wind="15";
-		
-		String humidity="30";
-		
+
+		String wind = "15";
+
+		String humidity = "30";
+
 		FragWeatherToday_items_VO items_VO = new FragWeatherToday_items_VO();
-		
-	   items_VO.setWeather_Type_Name("날씨:"+ weather_Type_Name);
-	   items_VO.setName_Of_Space("위치:"+ name_Of_Space);
-	   items_VO.setTemperature("온도:"+ temperature);
-	   items_VO.setHumidity("습도" + humidity);
-	   items_VO.setWind("풍속:"+ wind);
-		
+
+		items_VO.setWeather_Type_Name("날씨:" + weather_Type_Name);
+		items_VO.setName_Of_Space("위치:" + name_Of_Space);
+		items_VO.setTemperature("온도:" + temperature);
+		items_VO.setHumidity("습도" + humidity);
+		items_VO.setWind("풍속:" + wind);
+
 		items_VOs.add(items_VO);
-		
+
 	}
+
 	OnClickListener listener = new OnClickListener() {
-		//다이얼로그
+		// 다이얼로그
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
+
 			switch (v.getId()) {
 			case R.id.Schedule_butten:
-				ScheduleDialog = new ScheduleDialog();
-				
-				ScheduleDialog.show(getFragmentManager(), "MYTAG");
-				
+
+				fragment = new FragmentWeatherToday_Schedule();
+
 				break;
 
 			}
-		
-			
-			
+			if (fragment != null) {
+				FragmentManager fragmentManager = getFragmentManager();
+				fragmentManager.beginTransaction().replace(R.id.act_main_content_frame, fragment)
+				.commit();
+			}
+
 		}
 	};
-	
-
-	
 
 }
-
-

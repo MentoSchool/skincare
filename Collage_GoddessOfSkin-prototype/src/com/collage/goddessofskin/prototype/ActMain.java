@@ -249,4 +249,5 @@ public class ActMain extends Activity
 		setTitle(mDrawerMenus[position]);
 		mDrawerLayout.closeDrawer(mDrawer);
 	}
+	
 }

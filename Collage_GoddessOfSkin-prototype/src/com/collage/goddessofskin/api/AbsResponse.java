@@ -1,4 +1,4 @@
-package com.collage.goddessofskin.model.response;
+package com.collage.goddessofskin.api;
 
 import java.io.Serializable;
 

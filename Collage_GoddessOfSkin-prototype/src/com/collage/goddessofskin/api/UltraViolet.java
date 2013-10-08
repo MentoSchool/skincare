@@ -1,8 +1,7 @@
-package com.collage.goddessofskin.model.response.life;
+package com.collage.goddessofskin.api;
 
 import java.io.Serializable;
 
-import com.collage.goddessofskin.model.response.common.ResponseHeader;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 /**

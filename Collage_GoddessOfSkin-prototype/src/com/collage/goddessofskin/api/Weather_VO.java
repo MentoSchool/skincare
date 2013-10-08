@@ -1,4 +1,4 @@
-package com.collage.goddessofskin;
+package com.collage.goddessofskin.api;
 
 public class Weather_VO {
 

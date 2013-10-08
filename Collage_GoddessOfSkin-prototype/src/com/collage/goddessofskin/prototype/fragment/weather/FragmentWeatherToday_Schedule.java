@@ -1,6 +1,6 @@
 package com.collage.goddessofskin.prototype.fragment.weather;
 
-import com.collage.goddessofskin.ActMain;
+import com.collage.goddessofskin.api.ActMain;
 import com.collage.goddessofskin.prototype.R;
 
 import android.app.Fragment;

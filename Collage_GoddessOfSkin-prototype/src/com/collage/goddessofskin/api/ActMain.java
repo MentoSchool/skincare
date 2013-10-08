@@ -1,4 +1,4 @@
-package com.collage.goddessofskin;
+package com.collage.goddessofskin.api;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -45,9 +45,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.collage.goddessofskin.model.response.AbsResponse;
-import com.collage.goddessofskin.model.response.life.IndexModel;
-import com.collage.goddessofskin.model.response.life.UltraViolet;
 
 /**
  * Sample demo

@@ -18,6 +18,7 @@ public class FragwWeatherFunSub extends Fragment{
 		View view = inflater.inflate(R.layout.frag_weather_fun_sub, container, false);
 		
 		return view;
+		//Àû¿ë
 		
 	}
 	

@@ -1,10 +1,10 @@
 package com.collage.goddessofskin.prototype;
-
 import android.app.Activity;
-import android.app.ExpandableListActivity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.SearchManager;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -18,7 +18,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.collage.goddessofskin.prototype.defined.Const.DrawerMenu;
 import com.collage.goddessofskin.prototype.fragment.FragMain;
@@ -249,5 +248,22 @@ public class ActMain extends Activity
 		setTitle(mDrawerMenus[position]);
 		mDrawerLayout.closeDrawer(mDrawer);
 	}
-	
+	public void onBackPressed() {
+		
+		Builder d = new AlertDialog.Builder(this);
+		d.setMessage("정말 종료하시겠습니까?");
+		d.setPositiveButton("예", new DialogInterface.OnClickListener() {
+
+			public void onClick(DialogInterface dialog, int which) {
+				// process전체 종료
+				finish();
+			}
+		});
+		d.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.cancel();
+			}
+		});
+		d.show();
+	} 
 }

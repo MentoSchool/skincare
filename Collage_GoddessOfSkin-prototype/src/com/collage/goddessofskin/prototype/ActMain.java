@@ -7,6 +7,7 @@ import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
@@ -45,7 +46,7 @@ public class ActMain extends Activity
     private CharSequence mTitle;
     private String[] mDrawerMenus;
 	private View mDrawer;
-	
+	private MediaPlayer mp;
 	/**
 	 * Drawer menu list item click event listener
 	 */
@@ -217,11 +218,59 @@ public class ActMain extends Activity
 			
 			case SettingsProfile : fragment = new FragSettingsProfile(); break;
 			case SettingsAlarm : 
-			{
+			{Builder d = new AlertDialog.Builder(this);
+			d.setTitle("소리설정");
+			d.setSingleChoiceItems(R.array.select_sound, 0,
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int whichButton) {
+							
+							mp = MediaPlayer.create(ActMain.this, R.raw.asdd);
+							
+					           mp.start();
+					           
+						}
+				
+					});
+
+					
+			d.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int whichButton) {
+					// 이구간은  확인버튼을 선택했을때 노래가 설정되어야하는 구간이니까 멘토님한테 물어본다.
+				}
+			});
+			d.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.cancel();
+				}
+			});
+			d.show();
+
+			
 			}
 			break;
 			case SettingsPopup : 
 			{
+				Builder d = new AlertDialog.Builder(this);
+				d.setTitle("팝업설정");
+				d.setSingleChoiceItems(R.array.select_popup, 0,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int whichButton) {
+
+							}
+
+						});
+				d.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						// 이구간은  확인버튼을 선택했을때 설정되어야하는 구간이니까 멘토님한테 물어본다.
+					}
+				});
+				d.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.cancel();
+					}
+				});
+				d.show();
+
 			}
 			break;
 			case SettingsSkinType : 

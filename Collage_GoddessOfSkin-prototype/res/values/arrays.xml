@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string-array name="drawer_menus">
         <item>@string/menu_home</item>
         <item>@string/menu_schedule_settings</item>
@@ -12,5 +13,22 @@
         <item>@string/menu_settings_popup</item>
         <item>@string/menu_settings_type</item>
         <item>@string/menu_settings_help</item>
+		
+    
+    </string-array>
+     <string-array name="select_popup">
+        <item>간략하게</item>
+        <item>자세하게</item>
+        <item>알람끄기</item>
+    </string-array>
+    
+     
+      
+     <string-array name="select_sound">
+        <item>소리1</item>
+        <item>소리2</item>
+        <item>소리3</item>
+        <item>소리4</item>
+        
     </string-array>
 </resources>

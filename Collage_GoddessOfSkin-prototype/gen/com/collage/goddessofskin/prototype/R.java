@@ -47,9 +47,9 @@ public final class R {
         public static final int weather_3=0x7f02000b;
     }
     public static final class id {
-        public static final int GalleryText=0x7f0a0012;
-        public static final int ListView01=0x7f0a000c;
-        public static final int Schedule_butten=0x7f0a0010;
+        public static final int GalleryText=0x7f0a0013;
+        public static final int ListView01=0x7f0a000d;
+        public static final int Schedule_butten=0x7f0a0011;
         public static final int act_main_content_frame=0x7f0a0001;
         public static final int act_main_drawer_layout=0x7f0a0000;
         public static final int act_main_left_drawer=0x7f0a0002;
@@ -62,27 +62,28 @@ public final class R {
         public static final int act_type_choice_btn_dry=0x7f0a000a;
         public static final int act_type_choice_btn_oily=0x7f0a0009;
         public static final int act_type_choice_title=0x7f0a0008;
-        public static final int action_websearch=0x7f0a0023;
-        public static final int btn_015=0x7f0a000d;
-        public static final int drawer_menus=0x7f0a001f;
-        public static final int drawer_profile_avatar=0x7f0a0020;
-        public static final int drawer_profile_name=0x7f0a0021;
-        public static final int drawer_profile_skin=0x7f0a001e;
-        public static final int drawer_profile_type=0x7f0a0022;
-        public static final int gallery=0x7f0a000e;
-        public static final int image=0x7f0a0011;
-        public static final int imageView1=0x7f0a0019;
-        public static final int imageView2=0x7f0a001c;
-        public static final int today_weather_item=0x7f0a000f;
-        public static final int tv_humidity=0x7f0a0017;
-        public static final int tv_name_Of_Space=0x7f0a0014;
-        public static final int tv_temperature=0x7f0a0015;
-        public static final int tv_weather_Type_Name=0x7f0a0013;
-        public static final int tv_wind=0x7f0a0016;
-        public static final int ult_15=0x7f0a001a;
-        public static final int ult_20=0x7f0a001b;
-        public static final int ult_30=0x7f0a001d;
-        public static final int ult_text=0x7f0a0018;
+        public static final int action_websearch=0x7f0a0024;
+        public static final int btn_015=0x7f0a000e;
+        public static final int btn_graph=0x7f0a000c;
+        public static final int drawer_menus=0x7f0a0020;
+        public static final int drawer_profile_avatar=0x7f0a0021;
+        public static final int drawer_profile_name=0x7f0a0022;
+        public static final int drawer_profile_skin=0x7f0a001f;
+        public static final int drawer_profile_type=0x7f0a0023;
+        public static final int gallery=0x7f0a000f;
+        public static final int image=0x7f0a0012;
+        public static final int imageView1=0x7f0a001a;
+        public static final int imageView2=0x7f0a001d;
+        public static final int today_weather_item=0x7f0a0010;
+        public static final int tv_humidity=0x7f0a0018;
+        public static final int tv_name_Of_Space=0x7f0a0015;
+        public static final int tv_temperature=0x7f0a0016;
+        public static final int tv_weather_Type_Name=0x7f0a0014;
+        public static final int tv_wind=0x7f0a0017;
+        public static final int ult_15=0x7f0a001b;
+        public static final int ult_20=0x7f0a001c;
+        public static final int ult_30=0x7f0a001e;
+        public static final int ult_text=0x7f0a0019;
     }
     public static final class layout {
         public static final int act_main=0x7f030000;

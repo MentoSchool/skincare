@@ -42,6 +42,7 @@
         <activity android:name="com.collage.goddessofskin.prototype.ActTypeChoice"/>
         <activity android:name="com.collage.goddessofskin.prototype.ActTypeTest" />
         <activity android:name=".fragment.settings.FragSettingsHelp"></activity>
+        <activity android:name=".fragment.settings.FragSettingsProfile"></activity>
     </application>
 
 </manifest>

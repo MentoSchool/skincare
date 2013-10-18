@@ -47,4 +47,5 @@ public class SharedPreferenceManager
 		}
 		else return SkinType.Normal;
 	}
+	
 }

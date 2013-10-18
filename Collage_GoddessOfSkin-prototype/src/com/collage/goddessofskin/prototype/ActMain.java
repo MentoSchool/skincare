@@ -219,8 +219,7 @@ public class ActMain extends Activity
 			}
 			break;
 			
-			case SettingsProfile : 	Intent intent1 = new Intent(ActMain.this, FragSettingsProfile.class);
-			startActivity(intent1);
+			case SettingsProfile :  fragment = new FragSettingsProfile(); 
 			
 			break;
 			case SettingsAlarm : 

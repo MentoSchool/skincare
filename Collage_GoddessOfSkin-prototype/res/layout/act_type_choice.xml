@@ -1,50 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <TextView
-        android:id="@+id/act_type_choice_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:text="@string/scene_type_choice"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <LinearLayout
-        style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/act_type_choice_btn_oily"
-            style="?android:attr/buttonStyleInset"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="doChoice"
-            android:text="@string/type_choice_oily" />
-
-        <Button
-            android:id="@+id/act_type_choice_btn_dry"
-            style="?android:attr/buttonStyleInset"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="doChoice"
-            android:text="@string/type_choice_dry" />
-
-        <Button
-            android:id="@+id/act_type_choice_btn_combination"
-            style="?android:attr/buttonStyleInset"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="doChoice"
-            android:text="@string/type_choice_combination" />
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:id="@android:id/tabhost">
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TabWidget android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <FrameLayout android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+            <!-- 건성 -->
+            <LinearLayout 
+                android:id="@+id/dry"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                 <TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:text="건성 피부 내용"/>
+                 <Button android:text="건성 선택"
+                	android:id="@+id/act_type_choice_btn_dry"
+                	android:layout_width="wrap_content"
+                	android:layout_height="wrap_content"
+                	android:onClick="doChoice"
+                	/>
+            </LinearLayout>
+            
+             <!-- 지성 -->
+            <LinearLayout 
+                android:orientation="vertical"
+                android:id="@+id/oily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+               <TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:text="지성 피부 내용"/>
+               <Button android:text="지성 선택"
+                	android:id="@+id/act_type_choice_btn_oily"
+                	android:layout_width="wrap_content"
+                	android:layout_height="wrap_content"
+                	android:onClick="doChoice"/>
+            </LinearLayout>
+             
+             
+             <!-- 복합성 -->
+            <LinearLayout 
+                android:orientation="vertical"
+                android:id="@+id/complexity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+               <TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:text="복합성 피부 내용"/>
+               <Button android:text="복합성 선택"
+                	android:id="@+id/act_type_choice_btn_combination"
+                	android:layout_width="wrap_content"
+                	android:layout_height="wrap_content"
+                	android:onClick="doChoice"/>
+            </LinearLayout>
+            
+            
+        </FrameLayout>    
+    
     </LinearLayout>
+</TabHost>
 
-</RelativeLayout>

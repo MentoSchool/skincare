@@ -2,13 +2,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/scene_type_test"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    android:orientation="vertical" 
+    android:gravity="center">
+	<TextView
+        android:id="@+id/txttest1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       	android:text="1.세안 후 피부가 전혀 당기지 않는다."
+       	android:textSize="20sp"/>
+    <RadioGroup android:id="@+id/RadioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton android:text="Yes"
+            android:id="@+id/yes_radiobtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+         <RadioButton android:text="No"
+            android:id="@+id/no_radiobtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RadioGroup>
+    <Button android:id="@+id/testbackbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이전"/>
+ 
 
 </LinearLayout>

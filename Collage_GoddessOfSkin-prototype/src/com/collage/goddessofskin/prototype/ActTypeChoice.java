@@ -1,19 +1,40 @@
 package com.collage.goddessofskin.prototype;
 
-import android.app.Activity;
+
+import android.app.TabActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TabHost;
+import android.widget.TabHost.TabSpec;
 
 import com.collage.goddessofskin.prototype.defined.Const.SkinType;
 import com.collage.goddessofskin.prototype.manager.SharedPreferenceManager;
 
-public class ActTypeChoice extends Activity
+public class ActTypeChoice extends TabActivity
 {
 	@Override
-	protected void onCreate(Bundle savedInstanceState)
-	{
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.act_type_choice);
+		TabHost mTabHost=getTabHost();
+		
+		TabSpec spec;
+		spec=mTabHost.newTabSpec("tag");
+		spec.setIndicator("�Ǽ�");
+		spec.setContent(R.id.dry);
+		mTabHost.addTab(spec);
+		
+		spec=mTabHost.newTabSpec("tag");
+		spec.setIndicator("����");
+		spec.setContent(R.id.oily);
+		mTabHost.addTab(spec);
+		
+		spec=mTabHost.newTabSpec("tag");
+		spec.setIndicator("���ռ�");
+		spec.setContent(R.id.complexity);
+		mTabHost.addTab(spec);
+		
+	
 	}
 	
 	public void doChoice(View v)
@@ -34,3 +55,4 @@ public class ActTypeChoice extends Activity
 		finish();
 	}
 }
+

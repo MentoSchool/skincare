@@ -43,6 +43,15 @@
         <activity android:name="com.collage.goddessofskin.prototype.ActTypeTest" />
         <activity android:name=".fragment.settings.FragSettingsHelp"></activity>
         <activity android:name=".fragment.settings.FragSettingsProfile"></activity>
+        <activity android:name="ActTypeTest2"></activity>
+        <activity android:name="ActTypeTest3"></activity>
+        <activity android:name="ActTypeTest4"></activity>
+        <activity android:name="ActTypeTest5"></activity>
+        <activity android:name="ActTypeTest6"></activity>
+        <activity android:name="ActTypeTest7"></activity>
+        <activity android:name="ActTypeTest8"></activity>
+        <activity android:name="ActTypeTest9"></activity>
+        <activity android:name="ActTypeTest10"></activity>
     </application>
 
 </manifest>

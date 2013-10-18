@@ -108,7 +108,7 @@ public class FragWeatherToday extends Fragment {
 	public Handler handler = new Handler() {// 핸들러 처리부분
 
 		public void handleMessage(android.os.Message msg) {
-
+//핸들러
 			switch (msg.what) {
 			case 0:
 

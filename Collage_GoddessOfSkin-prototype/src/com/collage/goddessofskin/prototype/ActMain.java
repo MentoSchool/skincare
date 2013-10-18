@@ -221,6 +221,8 @@ public class ActMain extends Activity
 			
 			case SettingsProfile : 	Intent intent1 = new Intent(ActMain.this, FragSettingsProfile.class);
 			startActivity(intent1);
+			
+			break;
 			case SettingsAlarm : 
 			{Builder d = new AlertDialog.Builder(this);
 			d.setTitle("소리설정");

@@ -47,7 +47,7 @@ public class FragSettingsProfile extends Activity implements OnClickListener
 	}
 
 	/**
-	 * Ä«¸Ş¶ó¿¡¼­ ÀÌ¹ÌÁö °¡Á®¿À±â
+	 * ì¹´ë©”ë¼ì—ì„œ ì´ë¯¸ì§€ ê°€ì ¸ì˜¤ê¸°
 	 */
 	private void doTakePhotoAction()
 	{
@@ -55,7 +55,7 @@ public class FragSettingsProfile extends Activity implements OnClickListener
 
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		
-		// ÀÓ½Ã·Î »ç¿ëÇÒ ÆÄÀÏÀÇ °æ·Î¸¦ »ı¼º
+		// ì„ì‹œë¡œ ì‚¬ìš©í•  íŒŒì¼ì˜ ê²½ë¡œë¥¼ ìƒì„±
 		String url = "tmp_" + String.valueOf(System.currentTimeMillis()) + ".jpg";
 		mImageCaptureUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), url));
 		Log.d("test", mImageCaptureUri.toString());
@@ -65,11 +65,11 @@ public class FragSettingsProfile extends Activity implements OnClickListener
 	}
 	
 	/**
-	 * ¾Ù¹ü¿¡¼­ ÀÌ¹ÌÁö °¡Á®¿À±â
+	 * ì•¨ë²”ì—ì„œ ì´ë¯¸ì§€ ê°€ì ¸ì˜¤ê¸°
 	 */
 	private void doTakeAlbumAction()
 	{
-		// ¾Ù¹ü È£Ãâ
+		// ì•¨ë²” í˜¸ì¶œ
 		Intent intent = new Intent(Intent.ACTION_PICK);
 		intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
 		startActivityForResult(intent, PICK_FROM_ALBUM);
@@ -87,8 +87,8 @@ public class FragSettingsProfile extends Activity implements OnClickListener
 		{
 			case CROP_FROM_CAMERA:
 			{
-				// Å©·ÓÀÌ µÈ ÀÌÈÄÀÇ ÀÌ¹ÌÁö¸¦ ³Ñ°Ü ¹Ş½À´Ï´Ù. ÀÌ¹ÌÁöºä¿¡ ÀÌ¹ÌÁö¸¦ º¸¿©ÁØ´Ù°Å³ª ºÎ°¡ÀûÀÎ ÀÛ¾÷ ÀÌÈÄ¿¡
-				// ÀÓ½Ã ÆÄÀÏÀ» »èÁ¦ÇÕ´Ï´Ù.
+				// í¬ë¡­ì´ ëœ ì´í›„ì˜ ì´ë¯¸ì§€ë¥¼ ë„˜ê²¨ ë°›ìŠµë‹ˆë‹¤. ì´ë¯¸ì§€ë·°ì— ì´ë¯¸ì§€ë¥¼ ë³´ì—¬ì¤€ë‹¤ê±°ë‚˜ ë¶€ê°€ì ì¸ ì‘ì—… ì´í›„ì—
+				// ì„ì‹œ íŒŒì¼ì„ ì‚­ì œí•©ë‹ˆë‹¤.
 				final Bundle extras = data.getExtras();
 	
 				if(extras != null)
@@ -97,7 +97,7 @@ public class FragSettingsProfile extends Activity implements OnClickListener
 					mPhotoImageView.setImageBitmap(photo);
 				}
 	
-				// ÀÓ½Ã ÆÄÀÏ »èÁ¦
+				// ì„ì‹œ íŒŒì¼ ì‚­ì œ
 				File f = new File(mImageCaptureUri.getPath());
 				if(f.exists())
 				{
@@ -109,16 +109,16 @@ public class FragSettingsProfile extends Activity implements OnClickListener
 	
 			case PICK_FROM_ALBUM:
 			{
-				// ÀÌÈÄÀÇ Ã³¸®°¡ Ä«¸Ş¶ó¿Í °°À¸¹Ç·Î ÀÏ´Ü  break¾øÀÌ ÁøÇàÇÕ´Ï´Ù.
-				// ½ÇÁ¦ ÄÚµå¿¡¼­´Â Á»´õ ÇÕ¸®ÀûÀÎ ¹æ¹ıÀ» ¼±ÅÃÇÏ½Ã±â ¹Ù¶ø´Ï´Ù.
+				// ì´í›„ì˜ ì²˜ë¦¬ê°€ ì¹´ë©”ë¼ì™€ ê°™ìœ¼ë¯€ë¡œ ì¼ë‹¨  breakì—†ì´ ì§„í–‰í•©ë‹ˆë‹¤.
+				// ì‹¤ì œ ì½”ë“œì—ì„œëŠ” ì¢€ë” í•©ë¦¬ì ì¸ ë°©ë²•ì„ ì„ íƒí•˜ì‹œê¸° ë°”ëë‹ˆë‹¤.
 				
 				mImageCaptureUri = data.getData();
 			}
 			
 			case PICK_FROM_CAMERA:
 			{
-				// ÀÌ¹ÌÁö¸¦ °¡Á®¿Â ÀÌÈÄÀÇ ¸®»çÀÌÁîÇÒ ÀÌ¹ÌÁö Å©±â¸¦ °áÁ¤ÇÕ´Ï´Ù.
-				// ÀÌÈÄ¿¡ ÀÌ¹ÌÁö Å©·Ó ¾îÇÃ¸®ÄÉÀÌ¼ÇÀ» È£ÃâÇÏ°Ô µË´Ï´Ù.
+				// ì´ë¯¸ì§€ë¥¼ ê°€ì ¸ì˜¨ ì´í›„ì˜ ë¦¬ì‚¬ì´ì¦ˆí•  ì´ë¯¸ì§€ í¬ê¸°ë¥¼ ê²°ì •í•©ë‹ˆë‹¤.
+				// ì´í›„ì— ì´ë¯¸ì§€ í¬ë¡­ ì–´í”Œë¦¬ì¼€ì´ì…˜ì„ í˜¸ì¶œí•˜ê²Œ ë©ë‹ˆë‹¤.
 	
 				Intent intent = new Intent("com.android.camera.action.CROP");
 				intent.setDataAndType(mImageCaptureUri, "image/*");
@@ -170,10 +170,10 @@ public class FragSettingsProfile extends Activity implements OnClickListener
 		
 		new AlertDialog.Builder(this)
 		
-			.setTitle("¾÷·ÎµåÇÒ ÀÌ¹ÌÁö ¼±ÅÃ")
-			.setPositiveButton("»çÁøÃÔ¿µ", cameraListener)
-			.setNeutralButton("¾Ù¹ü¼±ÅÃ", albumListener)
-			.setNegativeButton("Ãë¼Ò", cancelListener)
+			.setTitle("ì—…ë¡œë“œí•  ì´ë¯¸ì§€ ì„ íƒ")
+			.setPositiveButton("ì‚¬ì§„ì´¬ì˜", cameraListener)
+			.setNeutralButton("ì•¨ë²”ì„ íƒ", albumListener)
+			.setNegativeButton("ì·¨ì†Œ", cancelListener)
 			.show();
 		
 	

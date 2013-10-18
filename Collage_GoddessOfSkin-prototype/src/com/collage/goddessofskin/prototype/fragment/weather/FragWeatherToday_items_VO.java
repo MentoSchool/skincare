@@ -2,23 +2,56 @@ package com.collage.goddessofskin.prototype.fragment.weather;
 
 public class FragWeatherToday_items_VO {
 
-	private String weather_Type_Name;
-	
 	private String name_Of_Space;
-	
-	private String temperature;
-	
-	private String wind;
-	
-	private String humidity;
 
-	
-	public String getWeather_Type_Name() {
-		return weather_Type_Name;
+	private String curConditionCode;
+
+	private String curTemp;
+
+	private String Select_Low_Temp;
+
+	private String Select_High_Temp;
+
+	private String Select_ConditionCode;
+
+	public String getCurConditionCode() {
+		return curConditionCode;
 	}
 
-	public void setWeather_Type_Name(String weather_Type_Name) {
-		this.weather_Type_Name = weather_Type_Name;
+	public void setCurConditionCode(String curConditionCode) {
+		this.curConditionCode = curConditionCode;
+	}
+
+	public String getCurTemp() {
+		return curTemp;
+	}
+
+	public void setCurTemp(String curTemp) {
+		this.curTemp = curTemp;
+	}
+
+	public String getSelect_Low_Temp() {
+		return Select_Low_Temp;
+	}
+
+	public void setSelect_Low_Temp(String select_Low_Temp) {
+		Select_Low_Temp = select_Low_Temp;
+	}
+
+	public String getSelect_High_Temp() {
+		return Select_High_Temp;
+	}
+
+	public void setSelect_High_Temp(String select_High_Temp) {
+		Select_High_Temp = select_High_Temp;
+	}
+
+	public String getSelect_ConditionCode() {
+		return Select_ConditionCode;
+	}
+
+	public void setSelect_ConditionCode(String select_ConditionCode) {
+		Select_ConditionCode = select_ConditionCode;
 	}
 
 	public String getName_Of_Space() {
@@ -29,33 +62,4 @@ public class FragWeatherToday_items_VO {
 		this.name_Of_Space = name_Of_Space;
 	}
 
-	public String getTemperature() {
-		return temperature;
-	}
-
-	public void setTemperature(String temperature) {
-		this.temperature = temperature;
-	}
-
-	public String getWind() {
-		return wind;
-	}
-
-	public void setWind(String wind) {
-		this.wind = wind;
-	}
-
-
-	public String getHumidity() {
-		return humidity;
-	}
-
-	public void setHumidity(String humidity) {
-		this.humidity = humidity;
-	}
-
-	
-	
-	
-	
 }

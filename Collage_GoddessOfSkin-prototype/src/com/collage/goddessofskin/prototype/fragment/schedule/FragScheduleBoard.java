@@ -17,11 +17,12 @@ public class FragScheduleBoard extends Fragment {
 	Button btn_graph;
 
 	Fragment fragment;
-
+	View rootView ;
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.frag_schedule_board,
+		rootView  = inflater.inflate(R.layout.frag_schedule_board,
 				container, false);
 
 		return rootView;

@@ -40,33 +40,38 @@ import org.xml.sax.InputSource;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
 /**
  * Sample demo
  * 
  * @author jungho.song@kodeglam.com (threeword)
- * @since 2013. 9. 7. �좎?�伊?�옙��?�占?��?�뺧?�醫묒삕2:51:19
+ * @since 2013. 9. 7. 占쎌쥙?占썰펺?占쎌삕占쏙옙?占썲뜝?占쏙옙?占쎈벨?占썽넫臾믪굲2:51:19
  */
-public class ActMain {
+public class ApiMain {
 
-	public static Weather_VO vo = new Weather_VO();
+	private static ApiMain Instance;
 
-	private static ActMain intance = new ActMain();
-
-	public ActMain() {
+	public ApiMain() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static ActMain getInstance() {
+	public static ApiMain getInstance() {
 
-		return intance;
+		if (Instance == null) {
+			Instance = new ApiMain();
+		}
 
+		return Instance;
 	}
+
+	public static IndexModel model = new IndexModel();
+
+	public static Weather_VO vo = new Weather_VO();
 
 	// Server settings
 	private static final String SERVER_SCHEME = HttpHost.DEFAULT_SCHEME_NAME;
@@ -109,6 +114,9 @@ public class ActMain {
 			params.add(new BasicNameValuePair(PARAM_AREA_NO, mSpotCode));
 
 			doHttpTransaction(request, params);
+
+			// �꾩튂瑜�Yh_AsyncWeather��static VO��Gps �뺣낫瑜��ｌ뼱以�떎.
+
 		}
 	}
 
@@ -134,15 +142,16 @@ public class ActMain {
 		}
 
 		SampleAsyncTask task = new SampleAsyncTask();
-		task.execute(request);
+		task.execute(request); // 占쏙옙占쏙옙占쏙옙 START
 	}
 
 	/**
 	 * 
 	 * 
 	 * @author jungho.song@kodeglam.com (threeword)
-	 * @since 2013. 9. 7. �좎?�伊?�옙��?�占?��?�뺧?�醫묒삕2:51:14
+	 * @since 2013. 9. 7. 占쎌쥙?占썰펺?占쎌삕占쏙옙?占썲뜝?占쏙옙?占쎈벨?占썽넫臾믪굲2:51:14
 	 */
+
 	private class SampleAsyncTask extends
 			AsyncTask<HttpGet, Integer, WrapperResult> {
 		private DefaultHttpClient mHttpClient;
@@ -179,7 +188,8 @@ public class ActMain {
 			HttpResponse response = null;
 			try {
 				// execute
-				response = mHttpClient.execute(mRequest);
+				response = mHttpClient.execute(mRequest); // 占쏙옙占쏙옙占쏙옙 占쏙옙청占쏙옙
+															// 占쏙옙
 
 				// status code
 				Log.d("ActMain", "doInBackground >>> " + "status code : "
@@ -191,17 +201,14 @@ public class ActMain {
 					String responseToString = EntityUtils.toString(
 							response.getEntity(), SERVER_ENCODING);
 
-					// TODO :: XML
-					// �좎?�伊?�옙?��?��?�곸굲占?�쥙�댐?��?�삕?�쎈?�援꿨뜝�뚯쪠占?�꺈�숋?��?�굲?�쎌쥙�?�옙�얠?�占?�맦�㏆?�袁??�占?�룊�숋?��?�맶�좎?��?�옙類앸?�占?�뜄�욅?�類?�삕�좎?�伊?�옙館嫄??��?�롫짗占?�늸琉껓?�誘?���좎?�裕꾬옙�놁?��?�∥吏�??��??��?�쎌�?��?�옙�됯?��좎럥留�?��??���ル?��ε?��?�꺏?�쎌?��?�옙�?��븸壤깍옙�∽?���앾?��?�굲(?�쎌쥙��땟?�쎈?��좎럩�뺝?��?�삕?�쎄?��?�뜝�쇰맪瑗?�뜝�뚯쪠�룹쉻�숋?��?�맶�좎?��뽬굢�륁?��좎럥�삣?��??��?�쎈벨�?�넫濡レ?���?���숋?��?�쐻?�쎈��?�뜝�덉??��?�옙�숋?�占?�뤁�좎?��귨옙�뗭?�占?�뜆��
-					// // �좎?�伊?�옙館嫄??��?�롫짗占?�눨�앾?�袁?�쳥�좎룞�?�옙?�쎈?��좑옙
 					return new WrapperResult().setObj(
 							AbsResponse.fromXML(responseToString,
 									UltraViolet.class))
 							.setXml(responseToString);
+
 				}
 			}
-			// TODO :: �좎?�爰곻옙�쏆?�占?�럩�뺧?�醫뤿�?ttp
-			// �좎?�伊?�옙�쎌?�疫??���먲?�醫롫쑕?�쎌�?��?�옙?�쎌?�占?�눨�앾?�諭�븸壤깍?��?�옙��?�옙�덉�?}
+
 			catch (ClientProtocolException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
@@ -218,33 +225,37 @@ public class ActMain {
 			try {
 				if (result != null) {
 					// Debug
-					IndexModel model = new IndexModel();
+
 					model.setToday(((UltraViolet) result.getObj()).getBody()
 							.getIndexModel().getToday());
-
-					
 
 					vo.setToday_UltraViolet(((UltraViolet) result.getObj())
 							.getBody().getIndexModel().getToday());
 
-					Log.v("item", "媛�" + model.getToday());
-					Log.v("item","媛�"+ (prettyPrint(result.getXml()).toString().concat(((UltraViolet) result.getObj()).getBody().getIndexModel().getToday())));
-					Log.d("ite", "媛� "+ (vo.getToday_UltraViolet()));
+					Log.v("dd", "자외선" + model.getToday());
+					Log.v("dd",
+							"자외선"
+									+ (prettyPrint(result.getXml()).toString().concat(((UltraViolet) result
+											.getObj()).getBody()
+											.getIndexModel().getToday())));
+					Log.d("dd", "자외선 " + (vo.getToday_UltraViolet()));
 
 				}
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
 			super.onPostExecute(result);
 		}
+
 	}
 
 	/**
 	 * Result wrapper
 	 * 
 	 * @author jungho.song@kodeglam.com (threeword)
-	 * @since 2013. 9. 7. �좎?�伊?�옙��?�占?��?�뺧?�醫묒삕:08:58
+	 * @since 2013. 9. 7. 占쎌쥙?占썰펺?占쎌삕占쏙옙?占썲뜝?占쏙옙?占쎈벨?占썽넫臾믪굲:08:58
 	 */
 	private class WrapperResult {
 		private Object obj;

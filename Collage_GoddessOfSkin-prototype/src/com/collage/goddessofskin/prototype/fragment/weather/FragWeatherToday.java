@@ -29,7 +29,7 @@ public class FragWeatherToday extends Fragment {
 	Ult_Db db;
 
 	SimpleCursorAdapter adapter;
-	// ¾ßÈÄ url
+	// ï¿½ï¿½ï¿½ï¿½ url
 	String params = "http://weather.yahooapis.com/forecastrss?p=KSXX0037&u=c";
 
 	String[] weather_detail;
@@ -101,14 +101,14 @@ public class FragWeatherToday extends Fragment {
 
 		weather.execute(params);
 
-		// Ult.setText("ÀÚ¿Ü¼±:" + ult);
+		// Ult.setText("ï¿½Ú¿Ü¼ï¿½:" + ult);
 
 	}
 
-	public Handler handler = new Handler() {// ÇÚµé·¯ Ã³¸®ºÎºĞ
+	public Handler handler = new Handler() {// ï¿½Úµé·¯ Ã³ï¿½ï¿½ï¿½Îºï¿½
 
 		public void handleMessage(android.os.Message msg) {
-//ÇÚµé·¯
+//ï¿½Úµé·¯
 			switch (msg.what) {
 			case 0:
 
@@ -116,7 +116,7 @@ public class FragWeatherToday extends Fragment {
 
 				String ult = ApiMain.model.getToday();
 
-				Log.v("dd","ÀÚ¿Ü¼± ½ÇÇè::" + ult);
+				Log.v("dd","ï¿½Ú¿Ü¼ï¿½ ï¿½ï¿½ï¿½ï¿½::" + ult);
 try{				
 				if(ult == null){
 					
@@ -154,19 +154,19 @@ try{
 		private void Weather_Detail() {
 			// TODO Auto-generated method stub
 
-			tv_cur_Weather.setText("ÇöÀç³¯¾¾:"
+			tv_cur_Weather.setText("í˜„ì¬ ë‚ ì”¨:  "
 					+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
 							.getCurConditionCode())]);
-			tv_select_Weather.setText("¿À´Ã³¯¾¾:"
+			tv_select_Weather.setText("ì˜¤ëŠ˜ ë‚ ì”¨:  "
 					+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
 							.getTodayConditionCode())]);
-			tv_local.setText("Áö¿ª:" + Yh_AsyncWeather.vo.getCurLocation());
-			tv_temperature_cur.setText("ÇöÀç:" + Yh_AsyncWeather.vo.getCurTemp()
-					+ "¡É");
-			tv_temperature_hi.setText("ÃÖ°í:" + Yh_AsyncWeather.vo.getTodayHigh()
-					+ "¡É");
-			tv_temperature_low.setText("ÃÖÇÏ:" + Yh_AsyncWeather.vo.getTodayLow()
-					+ "¡É");
+			tv_local.setText("ì§€ì—­:" + Yh_AsyncWeather.vo.getCurLocation());
+			tv_temperature_cur.setText("í˜„ì¬ ì˜¨ë„:" + Yh_AsyncWeather.vo.getCurTemp()
+					+ "â„ƒ");
+			tv_temperature_hi.setText("ìµœê³  ì˜¨ë„:" + Yh_AsyncWeather.vo.getTodayHigh()
+					+ "â„ƒ");
+			tv_temperature_low.setText("ìµœí•˜ ì˜¨ë„:" + Yh_AsyncWeather.vo.getTodayLow()
+					+ "â„ƒ");
 
 		};
 
@@ -188,7 +188,7 @@ try{
 	}
 
 	OnClickListener listener = new OnClickListener() {
-		// ´ÙÀÌ¾ó·Î±×
+		// ï¿½ï¿½ï¿½Ì¾ï¿½Î±ï¿½
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub

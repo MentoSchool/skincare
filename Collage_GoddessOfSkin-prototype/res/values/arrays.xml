@@ -27,53 +27,53 @@
     </string-array>
     <string-array name="weather">
         <item>          폭풍                               </item>
-        <item>          열대폭풍                             </item>
-        <item>          허리케인                             </item>
-        <item>          강한 뇌우                            </item>
+        <item>          열대폭풍                           </item>
+        <item>          허리케인                           </item>
+        <item>          강한 뇌우                          </item>
         <item>          뇌우                               </item>
-        <item>          눈 또는 비                           </item>
-        <item>          비 또는 진눈깨비                        </item>
-        <item>          눈 또는 진눈깨비                        </item>
-        <item>          결빙성 진눈깨비                         </item>
-        <item>          이슬비                              </item>
-        <item>          어는비                              </item>
-        <item>          소나기                              </item>
-        <item>          소나기                              </item>
-        <item>          함박눈                              </item>
-        <item>          약한 눈                             </item>
-        <item>          강한 눈                             </item>
-        <item>          눈                                </item>
+        <item>          눈 또는 비                         </item>
+        <item>          비 또는 진눈깨비                   </item>
+        <item>          눈 또는 진눈깨비                   </item>
+        <item>          결빙성 진눈깨비                    </item>
+        <item>          이슬비                             </item>
+        <item>          어는비                             </item>
+        <item>          소나기                             </item>
+        <item>          소나기                             </item>
+        <item>          함박눈                             </item>
+        <item>          약한 눈                            </item>
+        <item>          강한 눈                            </item>
+        <item>          눈                                 </item>
         <item>          우박                               </item>
-        <item>          진눈깨비                             </item>
+        <item>          진눈깨비                           </item>
         <item>          황사                               </item>
-        <item>          짙은 안개                            </item>
-        <item>          옅은 안개                            </item>
+        <item>          짙은 안개                          </item>
+        <item>          옅은 안개                          </item>
         <item>          연무                               </item>
         <item>          강풍                               </item>
         <item>          약풍                               </item>
         <item>          추움                               </item>
         <item>          흐림                               </item>
-        <item>          대체로 흐림(밤)                           </item>
-        <item>          대체로 흐림(낮)                           </item>
-        <item>          일부 흐림(밤)                            </item>
-        <item>          일부 흐림(낮)                            </item>
-        <item>          흐린 후 갬                           </item>
+        <item>          대체로 흐림(밤)             </item>
+        <item>          대체로 흐림(낮)             </item>
+        <item>          일부 흐림(밤)              </item>
+        <item>          일부 흐림(낮)              </item>
+        <item>          흐린 후 갬                          </item>
         <item>          맑음                               </item>
-        <item>          쾌청(밤)                            </item>
-        <item>          쾌청(낮)                            </item>
-        <item>          비 또는 우박                          </item>
-        <item>          더움                               </item>
-        <item>          국지성 뇌우                           </item>
-        <item>          산발성 뇌우                           </item>
-        <item>          산발성 뇌우                           </item>
-        <item>          산발성 소나기                          </item>
-        <item>          대설                               </item>
-        <item>          산발성 눈보라                          </item>
+        <item>          쾌청(밤)                  </item>
+        <item>          쾌청(낮)                  </item>
+        <item>          비 또는 우박                        </item>
+        <item>          더움                                </item>
+        <item>          국지성 뇌우                         </item>
+        <item>          산발성 뇌우                         </item>
+        <item>          산발성 뇌우                         </item>
+        <item>          산발성 소나기                       </item>
+        <item>          대설                                </item>
+        <item>          산발성 눈보라                       </item>
         <item>          많은 눈                             </item>
-        <item>          약간 흐림                            </item>
-        <item>          뇌우 소나기                           </item>
+        <item>          약간 흐림                           </item>
+        <item>          뇌우 소나기                         </item>
         <item>          눈보라                              </item>
-        <item>          국지성 뇌우 소나기                       </item>
+        <item>          국지성 뇌우 소나기                  </item>
     </string-array>
 
 </resources>

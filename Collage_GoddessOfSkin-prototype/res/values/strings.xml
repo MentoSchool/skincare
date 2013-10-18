@@ -45,5 +45,22 @@
     <string name="type_choice_oily">Oily</string>
     <string name="type_choice_dry">Dry</string>
     <string name="type_choice_combination">Combination</string>
+    <!-- FragWeather Today -->
+    <string name="tw_cur_weather">현재 날씨:</string>
+    <string name="tw_today_weather">오늘 날씨:</string>
+    <string name="tw_location_weather">지역:</string>
+    <string name="tw_cur_temp_weather">현재 온도:</string>
+    <string name="tw_hi_weather">최고 온도:</string>
+    <string name="tw_low_weather">최저 온도:</string>
     
+    
+    <!-- FragWeather Fun -->
+    
+    
+    
+    
+    <!-- FragwWeather FunSub -->
+    
+    <!-- Special Characters -->
+    <string name="temp">℃</string>
 </resources>

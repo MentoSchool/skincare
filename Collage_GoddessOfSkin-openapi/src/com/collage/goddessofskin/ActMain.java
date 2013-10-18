@@ -52,10 +52,27 @@ import com.collage.goddessofskin.model.response.life.UltraViolet;
  * Sample demo
  * 
  * @author jungho.song@kodeglam.com (threeword)
- * @since 2013. 9. 7. �좎뜫�뗰옙占�2:51:19
+ * @since 2013. 9. 7. 占쎌쥙�ワ옙�곗삕�좑옙2:51:19
  */
-public class ActMain extends Activity
+public class ActMain 
 {
+	
+	private static ActMain Instance;
+	
+	private ActMain() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public static ActMain getIntance(){
+		if(Instance == null){
+			Instance = new ActMain();
+		}
+		
+		return Instance;
+	}
+	
+	
+	
 	// Server settings
 	private static final String SERVER_SCHEME = HttpHost.DEFAULT_SCHEME_NAME;
     private static final Integer SERVER_PORT = 80;
@@ -79,16 +96,15 @@ public class ActMain extends Activity
 	private static final String PARAM_SERVICE_KEY = "ServiceKey";
 	private static final String PARAM_AREA_NO = "AreaNo";
 	
-	private EditText mSpotCodeView;
+	private String mSpotCodeView = "1111000000";
 	private TextView mConsole;
 
 	/**
 	 * Request click listener
 	 */
-	View.OnClickListener reqeustOnClickListener = new View.OnClickListener()
-	{
-		@Override
-		public void onClick(View v)
+	
+	
+		public void onClick1()
 		{
 			if (mConsole != null) mConsole.setText("");
 			
@@ -99,23 +115,14 @@ public class ActMain extends Activity
 				
 				List<NameValuePair> params = new ArrayList<NameValuePair>(1);
 				params.add(new BasicNameValuePair(PARAM_SERVICE_KEY, SERVICE_KEY_LIFE));
-				params.add(new BasicNameValuePair(PARAM_AREA_NO, mSpotCodeView.getText().toString()));
+				params.add(new BasicNameValuePair(PARAM_AREA_NO, mSpotCodeView));
 				
 				doHttpTransaction(request, params);
 			}
 		}
-	};
+	
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState)
-	{
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.act_main);
-
-		mSpotCodeView = (EditText) findViewById(R.id.act_main_et_spot_code);
-		mConsole = (TextView) findViewById(R.id.act_main_console);
-		findViewById(R.id.act_main_btn_request).setOnClickListener(reqeustOnClickListener);
-	}
+	
 	
 	/**
 	 * Do transaction
@@ -146,7 +153,7 @@ public class ActMain extends Activity
 	 * 
 	 * 
 	 * @author jungho.song@kodeglam.com (threeword)
-	 * @since 2013. 9. 7. �좎뜫�뗰옙占�2:51:14
+	 * @since 2013. 9. 7. 占쎌쥙�ワ옙�곗삕�좑옙2:51:14
 	 */
 	private class SampleAsyncTask extends AsyncTask<HttpGet, Integer, WrapperResult>
 	{
@@ -192,13 +199,13 @@ public class ActMain extends Activity
 					// response entity to string
 					String responseToString = EntityUtils.toString(response.getEntity(), SERVER_ENCODING);
 					
-					// TODO :: XML �좎럥�ｏ옙占썲뜝�숈삕�좎뜫�뉛옙占썲뜝�덉굡獄�씛�쇿뜝�숈삕占쎈뜄裕��좎럥큔占쏙옙援쒒겫�쒓덧�좎룞�쇿뜝�숈삕�됵옙�좎럥�놅옙占썹춯節뚭섬占쏙옙(占썩뫀踰�옙��숁��щ턄�좎룞�쇿뜝�쇰뿪��뜝�숈삕�좎럥踰∽옙占썲뜝�뚭섭�됯퉵�숋옙�덈츎 �좎럥큔占쏙옙占쎄쑬��キ占�	
+					// TODO :: XML 占쎌쥙�ο옙節륁삕�좎뜴�앾옙�덉굲占쎌쥙�ワ옙�쏆삕�좎뜴�앾옙�됯덧�꾬옙�쏉옙�용쐻占쎌늿�뺝뜝�덈쐞獒뺧옙占쎌쥙�ν걫�좎룞�숁뤃�믨껀占쎌뮄�㏆옙醫롫짗占쎌눨�앾옙�덉굲占쎈맮�숋옙醫롫윥占쎈냵�쇿뜝�뱀땡影�슡�у뜝�숈삕(�좎뜦維�린占쎌삕占쏙옙�곻옙占싼됲꼧占쎌쥙猷욑옙�용쐻占쎌눖肉わ옙占쎈쐻占쎌늿�뺧옙醫롫윥甕겸댙�쇿뜝�뀀쐻占쎈슡��옙��돲占쎌닂�숋옙�덉툗 占쎌쥙�ν걫�좎룞�쇿뜝�꾩뫊占쏙옙��뜝占�
 					return new WrapperResult()
 					.setObj(AbsResponse.fromXML(responseToString, UltraViolet.class))
 					.setXml(responseToString);
 				}
 			}
-				// TODO :: �リ옇�∽옙占퐃ttp �좎럡�길틦占썲뜝�댢�옙占썹춯節뚭섬占쏙옙			}
+				// TODO :: 占썬꺁�뉛옙�쎌삕�좏릡ttp 占쎌쥙�∽옙湲명떐�좎뜴�앾옙��옙�쇿뜝�뱀땡影�슡�у뜝�숈삕			}
 			catch (ClientProtocolException e)
 			{
 				e.printStackTrace();
@@ -223,8 +230,8 @@ public class ActMain extends Activity
 				if(result != null)
 				{
 					// Debug
-					mConsole.setText(prettyPrint(result.getXml()));
-					mConsole.setText(mConsole.getText().toString().concat("\n\ntoday :: " + ((UltraViolet)result.getObj()).getBody().getIndexModel().getToday()));
+//					mConsole.setText(prettyPrint(result.getXml()));
+//					mConsole.setText(mConsole.getText().toString().concat("\n\ntoday :: " + ((UltraViolet)result.getObj()).getBody().getIndexModel().getToday()));
 				}
 			}
 			catch (Exception e)
@@ -240,7 +247,7 @@ public class ActMain extends Activity
 	 * Result wrapper
 	 * 
 	 * @author jungho.song@kodeglam.com (threeword)
-	 * @since 2013. 9. 7. �좎뜫�뗰옙占�:08:58
+	 * @since 2013. 9. 7. 占쎌쥙�ワ옙�곗삕�좑옙:08:58
 	 */
 	private class WrapperResult
 	{

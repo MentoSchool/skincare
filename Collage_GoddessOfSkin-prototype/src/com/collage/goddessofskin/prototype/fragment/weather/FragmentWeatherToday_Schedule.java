@@ -38,23 +38,12 @@ public class FragmentWeatherToday_Schedule extends Fragment {
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
 
-		// db_Adapter = new Db_Adapter(getActivity());
-
-		// Å×ÀÌºí ³»ÀÇ ¸ðµç µ¥ÀÌÅÍ Á¶È¸ÇÏ±â
-
-		// Cursor cursor = db_Adapter.fetchAllNotes();
-		//
-		// adapter = new SimpleCursorAdapter(getActivity(),
-		// android.R.layout.simple_list_item_2, cursor,
-		// new String[]{"_id","title"},
-		// new int[]{android.R.id.text1,android.R.id.text2}
-		// );
+		
 
 		view = (TextView) getActivity().findViewById(R.id.ult_text);
 
-		// ¿ì¼± Àû¿ëÀº ÇØ³ù´Âµ¥ Áö¼ö°¡ ´Ê°Ô ¶ä
-
-		view.setText("ÀÚ¿Ü¼± Áö¼ö:" + ApiMain.model.getToday());
+	
+		view.setText("ï¿½Ú¿Ü¼ï¿½ ï¿½ï¿½ï¿½ï¿½:" + ApiMain.model.getToday());
 
 	}
 

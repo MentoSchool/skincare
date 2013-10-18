@@ -2,15 +2,16 @@ package com.collage.goddessofskin.prototype.fragment.settings;
 
 import java.io.File;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.ContactsContract.CommonDataKinds.Photo;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.collage.goddessofskin.prototype.R;
+import com.collage.goddessofskin.prototype.utils.io.FileUtil;
 
 public class FragSettingsProfile extends Fragment implements OnClickListener {
 	private static final int PICK_FROM_CAMERA = 0;
@@ -109,11 +111,20 @@ public class FragSettingsProfile extends Fragment implements OnClickListener {
 			// 임시 파일을 삭제합니다.
 			final Bundle extras = data.getExtras();
 
+			
+			
+			
 			if (extras != null) {
 				Bitmap photo = extras.getParcelable("data");
 				mPhotoImageView.setImageBitmap(photo);
+			
+				FileUtil.save(photo,getActivity().getExternalCacheDir().getAbsolutePath(),"frofile.jpg");
+				
+				
 			}
 
+			
+			
 			// 임시 파일 삭제
 			File f = new File(mImageCaptureUri.getPath());
 			if (f.exists()) {
@@ -152,11 +163,12 @@ public class FragSettingsProfile extends Fragment implements OnClickListener {
 
 	public void onClick(View v) {
 		new AlertDialog.Builder(getActivity())
-		
+		 .setIcon(R.drawable.ic_launcher)
 		.setTitle("업로드할 이미지 선택")
 		.setPositiveButton("사진촬영", cameraListener)
-			.setNeutralButton("앨범선택", albumListener)
-			.setNegativeButton("취소", cancelListener).show();
+		.setNeutralButton("앨범선택", albumListener)
+		.setNegativeButton("취소", cancelListener).show();
+		
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.collage.goddessofskin.prototype.fragment.weather;
+package com.collage.goddessofskin.prototype.utils.custom_layout;
 
 import android.content.*;
 import android.graphics.*;
@@ -8,23 +8,23 @@ import android.view.animation.*;
 import android.widget.*;
 
 
-public class FragWeatherToday_CustemGallery extends Gallery {
+public class CustemGallery extends Gallery {
 
 	private static Camera mCamera;
 	
-	public FragWeatherToday_CustemGallery(Context context) {
+	public CustemGallery(Context context) {
 		// TODO Auto-generated constructor stub
 		this(context, null);
 	}
 
-	public FragWeatherToday_CustemGallery(Context context, AttributeSet attrs) {
+	public CustemGallery(Context context, AttributeSet attrs) {
 		// TODO Auto-generated constructor stub
 		this(context,attrs,0);
 		
 		
 	}
 
-	public FragWeatherToday_CustemGallery(Context context, AttributeSet attrs,
+	public CustemGallery(Context context, AttributeSet attrs,
 			int defStyle) {
 		// TODO Auto-generated constructor stub
 		super(context, attrs, defStyle);

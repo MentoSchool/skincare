@@ -11,14 +11,14 @@
         android:layout_weight="3"
         android:orientation="vertical" >
 
-        <com.collage.goddessofskin.prototype.fragment.weather.FragWeatherToday_CustemGallery
+        <com.collage.goddessofskin.prototype.utils.custom_layout.CustemGallery
             android:id="@+id/gallery"
             android:layout_width="fill_parent"
             android:layout_height="0px"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="20dp"
             android:layout_weight="4" >
-        </com.collage.goddessofskin.prototype.fragment.weather.FragWeatherToday_CustemGallery>
+        </com.collage.goddessofskin.prototype.utils.custom_layout.CustemGallery>
     </LinearLayout>
 
 

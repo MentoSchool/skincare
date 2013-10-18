@@ -6,6 +6,7 @@ import com.collage.goddessofskin.DB.Ult_Db;
 import com.collage.goddessofskin.api.ApiMain;
 import com.collage.goddessofskin.api.Yh_AsyncWeather;
 import com.collage.goddessofskin.prototype.R;
+import com.collage.goddessofskin.prototype.utils.custom_layout.CustemGallery;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -40,16 +41,18 @@ public class FragWeatherToday extends Fragment {
 
 	private ListView Ult;
 
-	private FragWeatherToday_CustemGallery mCustemGallery;
+	private CustemGallery mCustemGallery;
 
 	private final String TAG = "FragWeatherToday";
 
 	private Button Schedule_App;
 
 	private ListView Item_main;
+	
+	
 
 	private TextView tv_cur_Weather, tv_select_Weather, tv_local,
-			tv_temperature_cur, tv_temperature_hi, tv_temperature_low;
+			tv_temperature_cur, tv_temperature_hi, tv_temperature_low ,Gallery_text;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -89,12 +92,11 @@ public class FragWeatherToday extends Fragment {
 
 		Schedule_App.setOnClickListener(listener);
 
-		mCustemGallery = (FragWeatherToday_CustemGallery) getActivity()
+		mCustemGallery = (CustemGallery) getActivity()
 				.findViewById(R.id.gallery);
 
-		mCustemGallery.setAdapter(new FragWeatherToday_CustemCalleryAdapter(
-				getActivity()));
-
+		
+		
 		Ult = (ListView) getActivity().findViewById(R.id.Ult_Detail);
 
 		// String ult = ApiMain.model.getToday();
@@ -154,6 +156,12 @@ try{
 		private void Weather_Detail() {
 			// TODO Auto-generated method stub
 
+
+     	mCustemGallery.setAdapter(new FragWeatherToday_CustemCalleryAdapter(
+					getActivity())); 
+
+			
+			
 			tv_cur_Weather.setText("현재 날씨:  "
 					+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
 							.getCurConditionCode())]);

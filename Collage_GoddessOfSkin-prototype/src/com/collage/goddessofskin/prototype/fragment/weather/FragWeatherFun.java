@@ -16,7 +16,7 @@ public class FragWeatherFun extends Fragment {
 
 	FragwWeatherFunSub funSub;
 	Fragment fragment;
-	ImageButton button;
+	ImageButton button_1,button_2,button_3,button_4,button_5;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -29,9 +29,17 @@ public class FragWeatherFun extends Fragment {
 
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		button = (ImageButton) getActivity().findViewById(R.id.btn_015);
+		button_1 = (ImageButton) getActivity().findViewById(R.id.btn_01);
+		button_2 = (ImageButton) getActivity().findViewById(R.id.btn_02);
+		button_3 = (ImageButton) getActivity().findViewById(R.id.btn_03);
+		button_4 = (ImageButton) getActivity().findViewById(R.id.btn_04);
+		button_5 = (ImageButton) getActivity().findViewById(R.id.btn_05);
 
-		button.setOnClickListener(listener);
+		button_1.setOnClickListener(listener);
+		button_2.setOnClickListener(listener);
+		button_3.setOnClickListener(listener);
+		button_4.setOnClickListener(listener);
+		button_5.setOnClickListener(listener);
 
 	};
 
@@ -42,7 +50,20 @@ public class FragWeatherFun extends Fragment {
 			// TODO Auto-generated method stub
 			// Fragment에서 Fragment로 이동하는 방법.
 			switch (v.getId()) {
-			case R.id.btn_015:
+			case R.id.btn_01:
+				fragment = new FragwWeatherFunSub();
+				break;
+
+			case R.id.btn_02:
+				fragment = new FragwWeatherFunSub();
+				break;
+			case R.id.btn_03:
+				fragment = new FragwWeatherFunSub();
+				break;
+			case R.id.btn_04:
+				fragment = new FragwWeatherFunSub();
+				break;
+			case R.id.btn_05:
 				fragment = new FragwWeatherFunSub();
 				break;
 			}

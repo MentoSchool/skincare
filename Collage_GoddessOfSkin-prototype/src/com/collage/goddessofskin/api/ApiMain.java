@@ -102,7 +102,7 @@ public class ApiMain {
 	 * Request click listener
 	 */
 
-	public void onClick1() {
+	public void UltraApi() {
 
 		if (mSpotCode != null) {
 			// request

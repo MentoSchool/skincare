@@ -20,6 +20,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.collage.goddessofskin.api.ApiMain;
 import com.collage.goddessofskin.prototype.defined.Const.DrawerMenu;
 import com.collage.goddessofskin.prototype.fragment.FragMain;
 import com.collage.goddessofskin.prototype.fragment.schedule.FragScheduleBoard;
@@ -64,6 +65,8 @@ public class ActMain extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_main);
+        
+        ApiMain.getInstance().UltraApi();//
 
         mTitle = mDrawerTitle = getTitle();
         mDrawerMenus = getResources().getStringArray(R.array.drawer_menus);

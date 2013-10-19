@@ -8,7 +8,6 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
 
-
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -19,21 +18,21 @@ import android.util.Log;
 
 public class Yh_AsyncWeather extends AsyncTask<String, Void, Void> {
 
-	
+	private static Yh_AsyncWeather asyncWeather_instance = new Yh_AsyncWeather();
 
+	private Yh_AsyncWeather() {
+		// TODO Auto-generated constructor stub
+	}
 
+	public static Yh_AsyncWeather getInstance() {
+		if (asyncWeather_instance == null)
+			asyncWeather_instance = new Yh_AsyncWeather();
 
-
+		return asyncWeather_instance;
+	}
 
 	public static Weather_VO vo = new Weather_VO();
 
-
-	
-
-	
-		
-	
-	
 	ArrayList<String> list = new ArrayList<String>();
 
 	final protected int TIME = 5000;
@@ -43,13 +42,13 @@ public class Yh_AsyncWeather extends AsyncTask<String, Void, Void> {
 
 	Handler mHandler;
 
-	
-	public Yh_AsyncWeather(Handler mHandler2) {
+	public  Yh_AsyncWeather(Handler mHandler2) {
 		// TODO Auto-generated constructor stub
 
 		this.mHandler = mHandler2;
 
 	}
+	
 
 	@Override
 	protected void onPreExecute() {
@@ -88,7 +87,6 @@ public class Yh_AsyncWeather extends AsyncTask<String, Void, Void> {
 				int count = 0;
 
 				String tag = null;
-
 
 				String curHumidity = null;
 				String curLocation = null;
@@ -145,7 +143,7 @@ public class Yh_AsyncWeather extends AsyncTask<String, Void, Void> {
 					case XmlPullParser.START_TAG:
 						tag = xpp.getName();
 
-						// setString(str) ¸Þ¼Òµå ÀÌ¿ëÇÏ¸é html ÅÂ±× Á¤¸®
+						// setString(str) ï¿½Þ¼Òµï¿½ ï¿½Ì¿ï¿½ï¿½Ï¸ï¿½ html ï¿½Â±ï¿½ ï¿½ï¿½ï¿½ï¿½
 						if (tag.equals("location")) {
 
 							curLocation = xpp.getAttributeValue(null, "city");
@@ -163,9 +161,9 @@ public class Yh_AsyncWeather extends AsyncTask<String, Void, Void> {
 
 							curConditionCode = xpp.getAttributeValue(null,
 									"code");
-							
-							Log.v("dd", "code:"+ curConditionCode);
-							
+
+							Log.v("dd", "code:" + curConditionCode);
+
 							curTemp = xpp.getAttributeValue(null, "temp");
 							curDate = xpp.getAttributeValue(null, "date");
 						}
@@ -267,9 +265,7 @@ public class Yh_AsyncWeather extends AsyncTask<String, Void, Void> {
 				vo.setCurDate(curDate);
 				vo.setCurLocation(curLocation);
 				vo.setCurHumidity(curHumidity);
-				
-				
-				
+
 				vo.setTodayDay(todayDay);
 				vo.setTodayDate(todayDate);
 				vo.setTodayLow(todayLow);
@@ -380,13 +376,12 @@ public class Yh_AsyncWeather extends AsyncTask<String, Void, Void> {
 
 	@Override
 	protected void onPostExecute(Void result) {
-		// Ãß°¡·Î ÇØ¾ßÇÒ ºÎºÐ ÀÌÂÊ¿¡
+		// ï¿½ß°ï¿½ï¿½ï¿½ ï¿½Ø¾ï¿½ï¿½ï¿½ ï¿½Îºï¿½ ï¿½ï¿½ï¿½Ê¿ï¿½
 
 		super.onPostExecute(result);
 
 		mHandler.sendEmptyMessage(0);
 
 	}
-
 
 }

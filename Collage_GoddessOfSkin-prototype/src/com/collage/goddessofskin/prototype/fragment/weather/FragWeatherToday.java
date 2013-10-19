@@ -256,12 +256,38 @@ public class FragWeatherToday extends Fragment  {
 					// TODO Auto-generated method stub
 					
 					int resourcId = (Integer)calleryAdapter.getItem(position);
-					Drawable drawable = getResources().getDrawable(resourcId);
-					Bitmap bitmap = BitmapFactory.decodeResource(getResources(),resourcId);
 					
-					Toast.makeText(getActivity(), "Selected Image: " + getResources().getText(resourcId) 
-							+ "\nHeight: " + bitmap.getHeight() + "\nWidth: " 
-							+ bitmap.getWidth(), Toast.LENGTH_SHORT).show();
+					Log.v("dd",String.valueOf(resourcId));
+					
+
+					switch (resourcId) {
+					case 0:
+						Toast.makeText(getActivity(), "오늘의 날씨", Toast.LENGTH_SHORT).show();
+						break;
+					case 1:
+						Toast.makeText(getActivity(), "다음의 날씨", Toast.LENGTH_SHORT).show();
+						break;
+					case 2:
+						Toast.makeText(getActivity(), "다음2의 날씨", Toast.LENGTH_SHORT).show();
+						break;
+					case 3:
+						Toast.makeText(getActivity(), "다음3의 날씨", Toast.LENGTH_SHORT).show();
+						break;
+					case 4:
+						Toast.makeText(getActivity(), "다음4의 날씨", Toast.LENGTH_SHORT).show();
+						break;
+					case 5:
+						Toast.makeText(getActivity(), "다음5의 날씨", Toast.LENGTH_SHORT).show();
+						break;
+
+					default:
+						break;
+					}
+					
+					
+					
+					
+					
 				}
 				
 				};

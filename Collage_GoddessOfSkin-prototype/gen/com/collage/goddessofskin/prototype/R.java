@@ -42,27 +42,24 @@ public final class R {
     }
     public static final class drawable {
         public static final int action_search=0x7f020000;
-        public static final int background_1=0x7f020001;
-        public static final int button=0x7f020002;
-        public static final int drawer_shadow=0x7f020003;
+        public static final int button=0x7f020001;
+        public static final int drawer_shadow=0x7f020002;
+        public static final int funy_weaher_main=0x7f020003;
         public static final int ic_drawer=0x7f020004;
         public static final int ic_launcher=0x7f020005;
         public static final int ic_weather=0x7f020006;
         public static final int schedule_butten_after=0x7f020007;
         public static final int schedule_butten_start=0x7f020008;
-        public static final int weather_1=0x7f020009;
-        public static final int weather_2=0x7f02000a;
-        public static final int weather_3=0x7f02000b;
-        public static final int weather_icon_01=0x7f02000c;
-        public static final int weather_icon_02=0x7f02000d;
-        public static final int weather_icon_03=0x7f02000e;
-        public static final int weather_icon_04=0x7f02000f;
-        public static final int weather_icon_05=0x7f020010;
-        public static final int weather_icon_06=0x7f020011;
-        public static final int weather_icon_07=0x7f020012;
-        public static final int weather_icon_08=0x7f020013;
-        public static final int weather_icon_09=0x7f020014;
-        public static final int weather_icon_10=0x7f020015;
+        public static final int weather_icon_01=0x7f020009;
+        public static final int weather_icon_02=0x7f02000a;
+        public static final int weather_icon_03=0x7f02000b;
+        public static final int weather_icon_04=0x7f02000c;
+        public static final int weather_icon_05=0x7f02000d;
+        public static final int weather_icon_06=0x7f02000e;
+        public static final int weather_icon_07=0x7f02000f;
+        public static final int weather_icon_08=0x7f020010;
+        public static final int weather_icon_09=0x7f020011;
+        public static final int weather_icon_10=0x7f020012;
     }
     public static final class id {
         public static final int GalleryText=0x7f0a0029;
@@ -81,7 +78,7 @@ public final class R {
         public static final int act_type_choice_btn_combination=0x7f0a000d;
         public static final int act_type_choice_btn_dry=0x7f0a0009;
         public static final int act_type_choice_btn_oily=0x7f0a000b;
-        public static final int action_websearch=0x7f0a003a;
+        public static final int action_websearch=0x7f0a003d;
         public static final int btn_01=0x7f0a001a;
         public static final int btn_02=0x7f0a001b;
         public static final int btn_03=0x7f0a001c;
@@ -90,12 +87,12 @@ public final class R {
         public static final int btn_graph=0x7f0a0013;
         public static final int commit_Button=0x7f0a0018;
         public static final int complexity=0x7f0a000c;
-        public static final int drawer_menus=0x7f0a0036;
-        public static final int drawer_profile_avatar=0x7f0a0037;
-        public static final int drawer_profile_name=0x7f0a0038;
-        public static final int drawer_profile_skin=0x7f0a0035;
+        public static final int drawer_menus=0x7f0a0039;
+        public static final int drawer_profile_avatar=0x7f0a003a;
+        public static final int drawer_profile_name=0x7f0a003b;
+        public static final int drawer_profile_skin=0x7f0a0038;
         public static final int drawer_profile_skin1=0x7f0a0015;
-        public static final int drawer_profile_type=0x7f0a0039;
+        public static final int drawer_profile_type=0x7f0a003c;
         public static final int dry=0x7f0a0008;
         public static final int gallery=0x7f0a001f;
         public static final int image=0x7f0a0028;
@@ -105,8 +102,11 @@ public final class R {
         public static final int no_radiobtn=0x7f0a0011;
         public static final int oily=0x7f0a000a;
         public static final int profile_image12=0x7f0a0016;
+        public static final int progressBar1=0x7f0a0036;
         public static final int skin_Button1=0x7f0a0019;
         public static final int testbackbtn=0x7f0a0012;
+        public static final int textView1=0x7f0a0035;
+        public static final int textView2=0x7f0a0037;
         public static final int tv_cur_Weather=0x7f0a0020;
         public static final int tv_humidity=0x7f0a002e;
         public static final int tv_local=0x7f0a0022;
@@ -142,8 +142,9 @@ public final class R {
         public static final int frag_weather_today_gallery=0x7f03000d;
         public static final int frag_weather_today_item_row=0x7f03000e;
         public static final int frag_weather_today_schedule=0x7f03000f;
-        public static final int view_drawer=0x7f030010;
-        public static final int view_drawer_list_item=0x7f030011;
+        public static final int splash_surb=0x7f030010;
+        public static final int view_drawer=0x7f030011;
+        public static final int view_drawer_list_item=0x7f030012;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -191,6 +192,19 @@ public final class R {
         public static final int scene_type_test=0x7f070015;
         public static final int scene_weather_interesting=0x7f07001a;
         public static final int scene_weather_today=0x7f070019;
+        /**  FragWeather Fun 
+ FragwWeather FunSub 
+ Special Characters 
+         */
+        public static final int temp=0x7f07002e;
+        public static final int tw_cur_temp_weather=0x7f07002b;
+        /**  FragWeather Today 
+         */
+        public static final int tw_cur_weather=0x7f070028;
+        public static final int tw_hi_weather=0x7f07002c;
+        public static final int tw_location_weather=0x7f07002a;
+        public static final int tw_low_weather=0x7f07002d;
+        public static final int tw_today_weather=0x7f070029;
         public static final int type_btn_choice=0x7f070023;
         public static final int type_btn_test=0x7f070024;
         public static final int type_choice_combination=0x7f070027;

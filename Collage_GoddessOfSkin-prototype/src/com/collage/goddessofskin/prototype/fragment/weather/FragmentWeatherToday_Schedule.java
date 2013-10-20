@@ -43,7 +43,7 @@ public class FragmentWeatherToday_Schedule extends Fragment {
 		view = (TextView) getActivity().findViewById(R.id.ult_text);
 
 	
-		view.setText("�ڿܼ� ����:" + ApiMain.model.getToday());
+		view.setText("자외선 수치:" + ApiMain.model.getToday());
 
 	}
 

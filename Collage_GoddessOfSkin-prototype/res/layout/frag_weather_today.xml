@@ -2,115 +2,127 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EBFBFF"
+    android:background="#98DFFF"
     android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0px"
-        android:layout_weight="3"
+        android:layout_weight="0.5" >
+
+        <TextView
+            android:id="@+id/today_date"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_weight="2.5"
+        android:background="@android:color/white"
         android:orientation="vertical" >
 
         <com.collage.goddessofskin.prototype.utils.custom_layout.CustemGallery
             android:id="@+id/gallery"
             android:layout_width="fill_parent"
             android:layout_height="0px"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
             android:layout_weight="4" >
         </com.collage.goddessofskin.prototype.utils.custom_layout.CustemGallery>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
 
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="0px"
+        <TextView
+            android:id="@+id/tv_cur_Weather"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:orientation="horizontal" >
+            android:gravity="left"
+            android:text="@string/menu_weather_today"
+            android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/tv_cur_Weather"
-                android:layout_width="0px"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="@string/menu_weather_today"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/tv_select_Weather"
-                android:layout_width="0px"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="@string/menu_weather_today"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/tv_local"
-                android:layout_width="0px"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="@string/menu_weather_today"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="0px"
+        <TextView
+            android:id="@+id/tv_select_Weather"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:orientation="horizontal" >
+            android:gravity="left"
+            android:text="@string/menu_weather_today"
+            android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/tv_temperature_cur"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="@string/menu_weather_today"
-                android:textSize="15sp" />
+        <TextView
+            android:id="@+id/tv_local"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="@string/menu_weather_today"
+            android:textSize="15sp" />
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_temperature_hi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="@string/menu_weather_today"
-                android:textSize="15sp" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
 
-            <TextView
-                android:id="@+id/tv_temperature_low"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="@string/menu_weather_today"
-                android:textSize="15sp" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_temperature_cur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="@string/menu_weather_today"
+            android:textSize="15sp" />
 
+        <TextView
+            android:id="@+id/tv_temperature_hi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="@string/menu_weather_today"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_temperature_low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="@string/menu_weather_today"
+            android:textSize="15sp" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0px"
         android:layout_weight="3.5"
-        android:orientation="vertical">
+        android:orientation="vertical" >
 
         <ListView
             android:id="@+id/Ult_Detail"
             android:layout_width="match_parent"
             android:layout_height="0px"
-            android:layout_weight="2.5"
-            
-            />
+            android:layout_weight="2.5" />
 
         <Button
             android:id="@+id/Schedule_butten"

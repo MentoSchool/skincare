@@ -65,7 +65,7 @@ public class FragWeatherToday extends Fragment  {
 
 	private TextView tv_cur_Weather, tv_select_Weather, tv_local,
 			tv_temperature_cur, tv_temperature_hi, tv_temperature_low,
-			Gallery_text;
+			Gallery_text,tv_today_date;
 
 	
 
@@ -78,15 +78,15 @@ public class FragWeatherToday extends Fragment  {
 		View view = inflater.inflate(R.layout.frag_weather_today, container,
 				false);
 
+		init(view);
+		
 		return view;
 
 	}
 
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
+	private void init(View view) {
 		// TODO Auto-generated method stub
-		super.onActivityCreated(savedInstanceState);
-
+		
 		CreateDialog();//스플레쉬 적용
 
 		db = new Ult_Db(getActivity());
@@ -95,39 +95,44 @@ public class FragWeatherToday extends Fragment  {
 
 		weather_detail = res.getStringArray(R.array.weather);
 	
-		
+		tv_today_date =(TextView)view.findViewById(R.id.today_date);
 
-		Schedule_App = (Button) getActivity()
+		Schedule_App = (Button)view
 				.findViewById(R.id.Schedule_butten);
-		tv_cur_Weather = (TextView) getActivity().findViewById(
+		tv_cur_Weather = (TextView)view.findViewById(
 				R.id.tv_cur_Weather);
-		tv_select_Weather = (TextView) getActivity().findViewById(
+		tv_select_Weather = (TextView)view.findViewById(
 				R.id.tv_select_Weather);
-		tv_local = (TextView) getActivity().findViewById(R.id.tv_local);
-		tv_temperature_cur = (TextView) getActivity().findViewById(
+		tv_local = (TextView)view.findViewById(R.id.tv_local);
+		tv_temperature_cur = (TextView)view.findViewById(
 				R.id.tv_temperature_cur);
-		tv_temperature_hi = (TextView) getActivity().findViewById(
+		tv_temperature_hi = (TextView)view.findViewById(
 				R.id.tv_temperature_hi);
-		tv_temperature_low = (TextView) getActivity().findViewById(
+		tv_temperature_low = (TextView)view.findViewById(
 				R.id.tv_temperature_low);
 
 		Schedule_App.setOnClickListener(listener);
 
-		mCustemGallery = (CustemGallery) getActivity().findViewById(
+		mCustemGallery = (CustemGallery)view.findViewById(
 				R.id.gallery);
 
-		Ult = (ListView) getActivity().findViewById(R.id.Ult_Detail);
+		Ult = (ListView)view.findViewById(R.id.Ult_Detail);
 
-		// String ult = ApiMain.model.getToday();
+		;
 		
 		
 
 		weather.execute(params);
 
-		// Ult.setText("�ڿܼ�:" + ult);
-
-	}
 	
+		
+		
+		
+		
+		
+	}
+
+
 	
 	
 	
@@ -232,6 +237,7 @@ public class FragWeatherToday extends Fragment  {
 			
 			mCustemGallery.setAdapter(calleryAdapter);
 			
+			tv_today_date.setText("Date: "+Yh_AsyncWeather.vo.getCurDate());
 
 			tv_cur_Weather.setText("현재 날씨:  "
 					+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
@@ -262,7 +268,7 @@ public class FragWeatherToday extends Fragment  {
 
 					switch (resourcId) {
 					case 0:
-						
+						tv_today_date.setText("Date: "+Yh_AsyncWeather.vo.getTodayDate());
 						tv_cur_Weather.setText("현재 날씨:  "
 								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
 										.getCurConditionCode())]);
@@ -281,6 +287,7 @@ public class FragWeatherToday extends Fragment  {
 						Toast.makeText(getActivity(), "오늘의 날씨", Toast.LENGTH_SHORT).show();
 						break;
 					case 1:
+						tv_today_date.setText("Date: "+Yh_AsyncWeather.vo.getTomorrowDate());
 						Toast.makeText(getActivity(), "다음의 날씨", Toast.LENGTH_SHORT).show();
 						tv_cur_Weather.setText("현재 날씨:  "
 								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
@@ -298,6 +305,7 @@ public class FragWeatherToday extends Fragment  {
 						
 						break;
 					case 2:
+						tv_today_date.setText("Date: "+Yh_AsyncWeather.vo.getTomorrowDate_next());
 						Toast.makeText(getActivity(), "다음2의 날씨", Toast.LENGTH_SHORT).show();
 						tv_cur_Weather.setText("현재 날씨:  "
 								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
@@ -314,6 +322,7 @@ public class FragWeatherToday extends Fragment  {
 								+ Yh_AsyncWeather.vo.getTomorrowLow_next() + "℃");
 						break;
 					case 3:
+						tv_today_date.setText("Date: "+Yh_AsyncWeather.vo.getTomorrowDate_next2());
 						Toast.makeText(getActivity(), "다음3의 날씨", Toast.LENGTH_SHORT).show();
 						tv_cur_Weather.setText("현재 날씨:  "
 								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
@@ -330,6 +339,7 @@ public class FragWeatherToday extends Fragment  {
 								+ Yh_AsyncWeather.vo.getTomorrowLow_next2() + "℃");
 						break;
 					case 4:
+						tv_today_date.setText("Date: "+Yh_AsyncWeather.vo.getTomorrowDate_next3());
 						Toast.makeText(getActivity(), "다음4의 날씨", Toast.LENGTH_SHORT).show();
 						tv_cur_Weather.setText("현재 날씨:  "
 								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
@@ -346,6 +356,7 @@ public class FragWeatherToday extends Fragment  {
 								+ Yh_AsyncWeather.vo.getTomorrowLow_next3() + "℃");
 						break;
 					case 5:
+						tv_today_date.setText("Date: "+Yh_AsyncWeather.vo.getTomorrowConditionCode_next());
 						Toast.makeText(getActivity(), "다음5의 날씨", Toast.LENGTH_SHORT).show();
 						tv_cur_Weather.setText("현재 날씨:  "
 								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo

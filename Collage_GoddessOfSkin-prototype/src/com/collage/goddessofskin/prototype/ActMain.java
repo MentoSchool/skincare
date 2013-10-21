@@ -13,6 +13,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
@@ -44,7 +45,7 @@ import com.collage.goddessofskin.prototype.fragment.weather.FragWeatherToday;
  * @author jungho.song@kodeglam.com (threeword)
  * @since 2013. 9. 23. 占썬끋��1:58:47
  */
-public class ActMain extends Activity {
+public class ActMain extends FragmentActivity {
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;

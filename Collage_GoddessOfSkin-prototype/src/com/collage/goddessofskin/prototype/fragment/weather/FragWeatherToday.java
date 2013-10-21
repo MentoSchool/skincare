@@ -262,22 +262,104 @@ public class FragWeatherToday extends Fragment  {
 
 					switch (resourcId) {
 					case 0:
+						
+						tv_cur_Weather.setText("현재 날씨:  "
+								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
+										.getCurConditionCode())]);
+						tv_select_Weather.setText("오늘 날씨:  "
+								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
+										.getTodayConditionCode())]);
+						tv_local.setText("지역:" + Yh_AsyncWeather.vo.getCurLocation());
+						tv_temperature_cur.setText("현재 온도:"
+								+ Yh_AsyncWeather.vo.getCurTemp() + "℃");
+						tv_temperature_hi.setText("최고 온도:"
+								+ Yh_AsyncWeather.vo.getTodayHigh() + "℃");
+						tv_temperature_low.setText("최하 온도:"
+								+ Yh_AsyncWeather.vo.getTodayLow() + "℃");
+						
+						
 						Toast.makeText(getActivity(), "오늘의 날씨", Toast.LENGTH_SHORT).show();
 						break;
 					case 1:
 						Toast.makeText(getActivity(), "다음의 날씨", Toast.LENGTH_SHORT).show();
+						tv_cur_Weather.setText("현재 날씨:  "
+								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
+										.getCurConditionCode())]);
+						tv_select_Weather.setText("오늘 날씨:  "
+								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
+										.getTomorrowConditionCode())]);
+						tv_local.setText("지역:" + Yh_AsyncWeather.vo.getCurLocation());
+						tv_temperature_cur.setText("현재 온도:"
+								+ Yh_AsyncWeather.vo.getCurTemp() + "℃");
+						tv_temperature_hi.setText("최고 온도:"
+								+ Yh_AsyncWeather.vo.getTomorrowHigh() + "℃");
+						tv_temperature_low.setText("최하 온도:"
+								+ Yh_AsyncWeather.vo.getTomorrowLow() + "℃");
+						
 						break;
 					case 2:
 						Toast.makeText(getActivity(), "다음2의 날씨", Toast.LENGTH_SHORT).show();
+						tv_cur_Weather.setText("현재 날씨:  "
+								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
+										.getCurConditionCode())]);
+						tv_select_Weather.setText("오늘 날씨:  "
+								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
+										.getTomorrowConditionCode_next())]);
+						tv_local.setText("지역:" + Yh_AsyncWeather.vo.getCurLocation());
+						tv_temperature_cur.setText("현재 온도:"
+								+ Yh_AsyncWeather.vo.getCurTemp() + "℃");
+						tv_temperature_hi.setText("최고 온도:"
+								+ Yh_AsyncWeather.vo.getTomorrowHigh_next() + "℃");
+						tv_temperature_low.setText("최하 온도:"
+								+ Yh_AsyncWeather.vo.getTomorrowLow_next() + "℃");
 						break;
 					case 3:
 						Toast.makeText(getActivity(), "다음3의 날씨", Toast.LENGTH_SHORT).show();
+						tv_cur_Weather.setText("현재 날씨:  "
+								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
+										.getCurConditionCode())]);
+						tv_select_Weather.setText("오늘 날씨:  "
+								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
+										.getTomorrowConditionCode_next2())]);
+						tv_local.setText("지역:" + Yh_AsyncWeather.vo.getCurLocation());
+						tv_temperature_cur.setText("현재 온도:"
+								+ Yh_AsyncWeather.vo.getCurTemp() + "℃");
+						tv_temperature_hi.setText("최고 온도:"
+								+ Yh_AsyncWeather.vo.getTomorrowHigh_next2() + "℃");
+						tv_temperature_low.setText("최하 온도:"
+								+ Yh_AsyncWeather.vo.getTomorrowLow_next2() + "℃");
 						break;
 					case 4:
 						Toast.makeText(getActivity(), "다음4의 날씨", Toast.LENGTH_SHORT).show();
+						tv_cur_Weather.setText("현재 날씨:  "
+								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
+										.getCurConditionCode())]);
+						tv_select_Weather.setText("오늘 날씨:  "
+								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
+										.getTomorrowConditionCode_next3())]);
+						tv_local.setText("지역:" + Yh_AsyncWeather.vo.getCurLocation());
+						tv_temperature_cur.setText("현재 온도:"
+								+ Yh_AsyncWeather.vo.getCurTemp() + "℃");
+						tv_temperature_hi.setText("최고 온도:"
+								+ Yh_AsyncWeather.vo.getTomorrowHigh_next3() + "℃");
+						tv_temperature_low.setText("최하 온도:"
+								+ Yh_AsyncWeather.vo.getTomorrowLow_next3() + "℃");
 						break;
 					case 5:
 						Toast.makeText(getActivity(), "다음5의 날씨", Toast.LENGTH_SHORT).show();
+						tv_cur_Weather.setText("현재 날씨:  "
+								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
+										.getCurConditionCode())]);
+						tv_select_Weather.setText("오늘 날씨:  "
+								+ weather_detail[Integer.parseInt(Yh_AsyncWeather.vo
+										.getTodayConditionCode())]);
+						tv_local.setText("지역:" + Yh_AsyncWeather.vo.getCurLocation());
+						tv_temperature_cur.setText("현재 온도:"
+								+ Yh_AsyncWeather.vo.getCurTemp() + "℃");
+						tv_temperature_hi.setText("최고 온도:"
+								+ Yh_AsyncWeather.vo.getTodayHigh() + "℃");
+						tv_temperature_low.setText("최하 온도:"
+								+ Yh_AsyncWeather.vo.getTodayLow() + "℃");
 						break;
 
 					default:

@@ -199,13 +199,11 @@ public class ActMain
 					// response entity to string
 					String responseToString = EntityUtils.toString(response.getEntity(), SERVER_ENCODING);
 					
-					// TODO :: XML 占쎌쥙�ο옙節륁삕�좎뜴�앾옙�덉굲占쎌쥙�ワ옙�쏆삕�좎뜴�앾옙�됯덧�꾬옙�쏉옙�용쐻占쎌늿�뺝뜝�덈쐞獒뺧옙占쎌쥙�ν걫�좎룞�숁뤃�믨껀占쎌뮄�㏆옙醫롫짗占쎌눨�앾옙�덉굲占쎈맮�숋옙醫롫윥占쎈냵�쇿뜝�뱀땡影�슡�у뜝�숈삕(�좎뜦維�린占쎌삕占쏙옙�곻옙占싼됲꼧占쎌쥙猷욑옙�용쐻占쎌눖肉わ옙占쎈쐻占쎌늿�뺧옙醫롫윥甕겸댙�쇿뜝�뀀쐻占쎈슡��옙��돲占쎌닂�숋옙�덉툗 占쎌쥙�ν걫�좎룞�쇿뜝�꾩뫊占쏙옙��뜝占�
 					return new WrapperResult()
 					.setObj(AbsResponse.fromXML(responseToString, UltraViolet.class))
 					.setXml(responseToString);
 				}
 			}
-				// TODO :: 占썬꺁�뉛옙�쎌삕�좏릡ttp 占쎌쥙�∽옙湲명떐�좎뜴�앾옙��옙�쇿뜝�뱀땡影�슡�у뜝�숈삕			}
 			catch (ClientProtocolException e)
 			{
 				e.printStackTrace();

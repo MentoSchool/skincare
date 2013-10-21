@@ -18,32 +18,43 @@ import android.widget.TextView;
 
 public class FragmentWeatherToday_Schedule extends Fragment {
 
-	TextView view;
-
-	
+	String ult = null;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View view = inflater.inflate(R.layout.frag_weather_today_schedule,
-				container, false);
+		View view = inflater
+				.inflate(R.layout.frag_weather_today_schedule, null);
+
+		init(view);
 
 		return view;
 
 	}
 
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
+	private void init(View view) {
 		// TODO Auto-generated method stub
-		super.onActivityCreated(savedInstanceState);
 
-		
+		TextView view_01 = (TextView) view.findViewById(R.id.ult_text);
 
-		view = (TextView) getActivity().findViewById(R.id.ult_text);
+		try {
 
-	
-		view.setText("자외선 수치:" + ApiMain.model.getToday());
+			ult = ApiMain.model.getToday();
+
+			if (ult == "") {
+
+				view_01.setText("자외선:해가 없습니다");
+
+			} else {
+
+				view_01.setText("자외선:" + ult);
+
+			}
+
+		} catch (Exception e) {
+			view_01.setText("해가 없습니다");
+		}
 
 	}
 

@@ -68,7 +68,7 @@ public final class R {
         public static final int GalleryText=0x7f0a0033;
         public static final int LinearLayout1=0x7f0a0039;
         public static final int ListView01=0x7f0a001e;
-        public static final int Myview=0x7f0a001d;
+        public static final int MyView=0x7f0a001d;
         public static final int RadioGroup1=0x7f0a000f;
         public static final int Schedule_butten=0x7f0a0031;
         public static final int Ult_Detail=0x7f0a0030;

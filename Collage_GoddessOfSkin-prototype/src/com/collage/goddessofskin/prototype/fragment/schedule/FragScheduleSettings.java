@@ -5,7 +5,7 @@ import java.util.GregorianCalendar;
 
 import com.collage.goddessofskin.prototype.R;
 import com.collage.goddessofskin.prototype.utils.custom_layout.CustemImageView_Clock;
-import com.collage.goddessofskin.prototype.utils.custom_layout.MyView;
+import com.collage.goddessofskin.prototype.utils.custom_layout.MySurfaceView;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -27,29 +27,27 @@ import android.widget.ImageView;
 
 public class FragScheduleSettings extends Fragment {
 
-	MyView myView;
+	MySurfaceView surfaceView;
 	
-
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.frag_schedule_settings,
 				container, false);
 
+		init(rootView);
+		
 		return rootView;
 	}
 
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
+
+	private void init(View rootView) {
 		// TODO Auto-generated method stub
-		super.onActivityCreated(savedInstanceState);
-
 		
+		surfaceView = (MySurfaceView)rootView.findViewById(R.id.MyView);
 		
-		myView = (MyView) getActivity().findViewById(R.id.Myview);
-
-		
-		
+	
 	}
 
 }

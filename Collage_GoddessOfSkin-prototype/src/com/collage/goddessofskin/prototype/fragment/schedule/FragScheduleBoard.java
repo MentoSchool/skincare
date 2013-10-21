@@ -17,27 +17,37 @@ public class FragScheduleBoard extends Fragment {
 	Button btn_graph;
 
 	Fragment fragment;
-	View rootView ;
+	
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		rootView  = inflater.inflate(R.layout.frag_schedule_board,
+	View rootView  = inflater.inflate(R.layout.frag_schedule_board,
 				container, false);
 
+		init(rootView);
+		
+		
 		return rootView;
 	}
 
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
+	private void init(View rootView2) {
 		// TODO Auto-generated method stub
-		super.onActivityCreated(savedInstanceState);
-
-		btn_graph = (Button) getActivity().findViewById(R.id.btn_graph);
+		btn_graph = (Button)rootView2.findViewById(R.id.btn_graph);
 
 		btn_graph.setOnClickListener(listener);
-
 	}
+
+//	@Override
+//	public void onActivityCreated(Bundle savedInstanceState) {
+//		// TODO Auto-generated method stub
+//		super.onActivityCreated(savedInstanceState);
+//
+//		btn_graph = (Button) getActivity().findViewById(R.id.btn_graph);
+//
+//		btn_graph.setOnClickListener(listener);
+//
+//	}
 
 	OnClickListener listener = new OnClickListener() {
 

@@ -2,14 +2,54 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#d0ecf7"
     android:orientation="vertical" >
 
-    <com.collage.goddessofskin.prototype.utils.custom_layout.MySurfaceView
-        android:id="@+id/MyView"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.15"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="Sleep:06시30분" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="Time:06시30분" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="Water:50L" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="0px"
-        android:layout_gravity="center"
-        android:layout_weight="1" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <com.collage.goddessofskin.prototype.utils.custom_layout.MySurfaceView
+            android:id="@+id/MyView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2" />
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"

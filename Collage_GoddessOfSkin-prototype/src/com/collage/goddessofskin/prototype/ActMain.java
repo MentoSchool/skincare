@@ -12,6 +12,7 @@ import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
@@ -71,6 +72,7 @@ public class ActMain extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.act_main);
+		//StrictMode.enableDefaults();
 
 		ApiMain.getInstance().UltraApi();//자외선 Api
 		

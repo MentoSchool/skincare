@@ -30,6 +30,7 @@ import android.widget.ListView;
 import com.collage.goddessofskin.api.ApiMain;
 import com.collage.goddessofskin.prototype.defined.Const.DrawerMenu;
 import com.collage.goddessofskin.prototype.fragment.FragMain;
+import com.collage.goddessofskin.prototype.fragment.FragMain_Pack;
 import com.collage.goddessofskin.prototype.fragment.schedule.FragScheduleBoard;
 import com.collage.goddessofskin.prototype.fragment.schedule.FragScheduleSettings;
 import com.collage.goddessofskin.prototype.fragment.settings.FragSettingsHelp;
@@ -212,7 +213,7 @@ public class ActMain extends FragmentActivity {
 		DrawerMenu dm = DrawerMenu.values()[position];
 		switch (dm) {
 		case Home:
-			fragment = new FragMain();
+			fragment = new FragMain_Pack();
 			break;
 
 		case ScheduleSettings:
@@ -233,7 +234,7 @@ public class ActMain extends FragmentActivity {
 			break;
 
 		case Share:
-
+			fragment = new FragMain();
 			break;
 
 		case SettingsProfile:

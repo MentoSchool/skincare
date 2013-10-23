@@ -10,7 +10,7 @@ import com.collage.goddessofskin.api.ApiMain;
 import com.collage.goddessofskin.api.Yh_AsyncWeather;
 import com.collage.goddessofskin.prototype.ActSplash;
 import com.collage.goddessofskin.prototype.R;
-import com.collage.goddessofskin.prototype.utils.custom_layout.CustemGallery;
+import com.collage.goddessofskin.prototype.utils.custom.CustemGallery;
 
 import android.app.Dialog;
 import android.app.Fragment;

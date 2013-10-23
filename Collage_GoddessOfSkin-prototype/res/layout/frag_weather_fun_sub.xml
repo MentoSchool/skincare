@@ -2,11 +2,156 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#d0ecf7"
     android:orientation="vertical" >
+    
 
-    <TextView
-        android:text="안녕하세요 재미있는 지수"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="0px"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20px"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="10px"
+            android:text="2013년 10월 18일 기준" />
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20px"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="10px"
+            android:text="지역: 서울" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_gravity="center"
+        android:layout_weight="3"
+        android:layout_margin="10dp"
+        android:background="@drawable/com_rounded_action_bar"
+        android:orientation="vertical" >
+
+        <com.collage.goddessofskin.prototype.utils.custom.CustemGallery
+            android:id="@+id/fun_gallery"
+            android:layout_width="fill_parent"
+            android:layout_height="0px"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1" >
+        </com.collage.goddessofskin.prototype.utils.custom.CustemGallery>
+     
+  </LinearLayout>
+ 
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_weight="3"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="안녕하세요 재미있는 지수 안녕 (설명tip)" />
+
+        <ImageView
+            android:background="@drawable/com_rounded_botten"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_marginLeft="10px"
+            android:layout_marginRight="10px"
+            android:layout_weight="1"
+            android:src="@drawable/bar_1" />
+    </LinearLayout>
+ -
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="불쾨지수::"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="자외선::"
+            android:textSize="15sp" />
+    </LinearLayout>
+ 
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="감기지수::"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="체감온도::"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="썬글라스지수::"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="양산지수::"
+            android:textSize="15sp" />
+    </LinearLayout>
 
 </LinearLayout>

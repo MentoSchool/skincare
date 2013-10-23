@@ -1,4 +1,4 @@
-package com.collage.goddessofskin.prototype.utils.custom_layout;
+package com.collage.goddessofskin.prototype.utils.custom;
 
 public class Click_Vo {
 

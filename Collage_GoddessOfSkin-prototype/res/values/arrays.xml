@@ -26,54 +26,54 @@
         <item>소리4</item>
     </string-array>
     <string-array name="weather">
-        <item>          폭풍                               </item>
-        <item>          열대폭풍                           </item>
-        <item>          허리케인                           </item>
-        <item>          강한 뇌우                          </item>
-        <item>          뇌우                               </item>
-        <item>          눈 또는 비                         </item>
-        <item>          비 또는 진눈깨비                   </item>
-        <item>          눈 또는 진눈깨비                   </item>
-        <item>          결빙성 진눈깨비                    </item>
-        <item>          이슬비                             </item>
-        <item>          어는비                             </item>
-        <item>          소나기                             </item>
-        <item>          소나기                             </item>
-        <item>          함박눈                             </item>
-        <item>          약한 눈                            </item>
-        <item>          강한 눈                            </item>
-        <item>          눈                                 </item>
-        <item>          우박                               </item>
-        <item>          진눈깨비                           </item>
-        <item>          황사                               </item>
-        <item>          짙은 안개                          </item>
-        <item>          옅은 안개                          </item>
-        <item>          연무                               </item>
-        <item>          강풍                               </item>
-        <item>          약풍                               </item>
-        <item>          추움                               </item>
-        <item>          흐림                               </item>
-        <item>          대체로 흐림(밤)             </item>
-        <item>          대체로 흐림(낮)             </item>
-        <item>          일부 흐림(밤)              </item>
-        <item>          일부 흐림(낮)              </item>
-        <item>          흐린 후 갬                          </item>
-        <item>          맑음                               </item>
-        <item>          쾌청(밤)                  </item>
-        <item>          쾌청(낮)                  </item>
-        <item>          비 또는 우박                        </item>
-        <item>          더움                                </item>
-        <item>          국지성 뇌우                         </item>
-        <item>          산발성 뇌우                         </item>
-        <item>          산발성 뇌우                         </item>
-        <item>          산발성 소나기                       </item>
-        <item>          대설                                </item>
-        <item>          산발성 눈보라                       </item>
-        <item>          많은 눈                             </item>
-        <item>          약간 흐림                           </item>
-        <item>          뇌우 소나기                         </item>
-        <item>          눈보라                              </item>
-        <item>          국지성 뇌우 소나기                  </item>
+        <item>          폭풍                               </item>1
+        <item>          열대폭풍                           </item>2
+        <item>          허리케인                           </item>3
+        <item>          강한 뇌우                          </item>4
+        <item>          뇌우                               </item>5
+        <item>          눈 또는 비                         </item>6
+        <item>          비 또는 진눈깨비                   </item>7
+        <item>          눈 또는 진눈깨비                   </item>8
+        <item>          결빙성 진눈깨비                    </item>9
+        <item>          이슬비                             </item>0
+        <item>          어는비                             </item>11
+        <item>          소나기                             </item>12
+        <item>          소나기                             </item>13
+        <item>          함박눈                             </item>14
+        <item>          약한 눈                            </item>15
+        <item>          강한 눈                            </item>16
+        <item>          눈                                 </item>17
+        <item>          우박                               </item>18
+        <item>          진눈깨비                           </item>19
+        <item>          황사                               </item>20
+        <item>          짙은 안개                          </item>21
+        <item>          옅은 안개                          </item>22
+        <item>          연무                               </item>23
+        <item>          강풍                               </item>24
+        <item>          약풍                               </item>25
+        <item>          추움                               </item>26
+        <item>          흐림                               </item>27
+        <item>          대체로 흐림(밤)                    </item>28
+        <item>          대체로 흐림(낮)                    </item>29
+        <item>          일부 흐림(밤)                      </item>30
+        <item>          일부 흐림(낮)                      </item>31
+        <item>          흐린 후 갬                         </item>32
+        <item>          맑음                               </item>33
+        <item>          쾌청(밤)                           </item>34
+        <item>          쾌청(낮)                           </item>35
+        <item>          비 또는 우박                       </item>36
+        <item>          더움                               </item>37
+        <item>          국지성 뇌우                        </item>38
+        <item>          산발성 뇌우                        </item>39
+        <item>          산발성 뇌우                        </item>40
+        <item>          산발성 소나기                      </item>41
+        <item>          대설                               </item>42
+        <item>          산발성 눈보라                      </item>43
+        <item>          많은 눈                            </item>44
+        <item>          약간 흐림                          </item>45
+        <item>          뇌우 소나기                        </item>46
+        <item>          눈보라                             </item>47
+        <item>          국지성 뇌우 소나기                 </item>48
     </string-array>
 
 </resources>

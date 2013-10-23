@@ -1,4 +1,4 @@
-package com.collage.goddessofskin.prototype.utils.custom_layout;
+package com.collage.goddessofskin.prototype.utils.custom;
 
 import android.content.*;
 import android.graphics.*;

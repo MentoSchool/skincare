@@ -43,7 +43,7 @@ public class AreaNoDB {
 		
 		db = mHelper.getReadableDatabase();
 	
-		/*
+		
 		Cursor c = db.rawQuery("SELECT name FROM sqlite_master WHERE type='table'", null);
 		if(c.moveToFirst())
 		{
@@ -54,7 +54,7 @@ public class AreaNoDB {
 			}
 		}
 		Log.d("AreaNoDB", db + "");
-		*/
+		
 		
 		Cursor cursor = db.query(table, columns, selection, selectionArgs, groupBy, having, orderBy);
 		

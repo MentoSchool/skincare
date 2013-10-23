@@ -16,39 +16,43 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:orientation="horizontal"
         android:layout_weight="2"
         android:gravity="bottom"
-         >
+        android:orientation="horizontal" >
 
         <ImageButton
             android:id="@+id/btn_01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:scaleType="fitXY"
             android:src="@drawable/ic_launcher" />
 
         <ImageButton
             android:id="@+id/btn_02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:scaleType="fitXY"
             android:src="@drawable/ic_launcher" />
 
         <ImageButton
             android:id="@+id/btn_03"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:scaleType="fitXY"
             android:src="@drawable/ic_launcher" />
 
         <ImageButton
             android:id="@+id/btn_04"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:scaleType="fitXY"
             android:src="@drawable/ic_launcher" />
 
         <ImageButton
             android:id="@+id/btn_05"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:scaleType="fitXY"
             android:src="@drawable/ic_launcher" />
     </LinearLayout>
 

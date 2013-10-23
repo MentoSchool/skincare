@@ -4,8 +4,8 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import com.collage.goddessofskin.prototype.R;
-import com.collage.goddessofskin.prototype.utils.custom_layout.CustemImageView_Clock;
-import com.collage.goddessofskin.prototype.utils.custom_layout.MySurfaceView;
+import com.collage.goddessofskin.prototype.utils.custom.CustemImageView_Clock;
+import com.collage.goddessofskin.prototype.utils.custom.MySurfaceView;
 
 import android.app.Fragment;
 import android.content.Context;

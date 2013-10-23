@@ -20,17 +20,17 @@ public class ActTypeChoice extends TabActivity
 		
 		TabSpec spec;
 		spec=mTabHost.newTabSpec("tag");
-		spec.setIndicator("�Ǽ�");
+		spec.setIndicator("Dry");
 		spec.setContent(R.id.dry);
 		mTabHost.addTab(spec);
 		
 		spec=mTabHost.newTabSpec("tag");
-		spec.setIndicator("����");
+		spec.setIndicator("Oily");
 		spec.setContent(R.id.oily);
 		mTabHost.addTab(spec);
 		
 		spec=mTabHost.newTabSpec("tag");
-		spec.setIndicator("���ռ�");
+		spec.setIndicator("Combination");
 		spec.setContent(R.id.complexity);
 		mTabHost.addTab(spec);
 		

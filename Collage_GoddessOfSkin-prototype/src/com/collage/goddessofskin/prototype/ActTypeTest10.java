@@ -23,7 +23,7 @@ public class ActTypeTest10 extends Activity {
 		acttypetest9.finish();
 		
 		TextView txttest1=(TextView) findViewById(R.id.txttest1);
-		String text="10.�⸧���̸� �Ϸ翡 3���̻� ����ؾ� �Ѵ�.";
+		String text="10.기름종이를 하루에 3번 이상 사용한다.";
 		txttest1.setText(text);
 		Intent intent=getIntent();
 		final ArrayList<Integer> mYesNocount=intent.getIntegerArrayListExtra("count");
@@ -53,7 +53,7 @@ public class ActTypeTest10 extends Activity {
 					    if(rb!=null){
 					    	if(checkedId==R.id.yes_radiobtn){   
 					    		mYesNocount.add(9,1);
-					    		Toast.makeText(ActTypeTest10.this,"Yes select"+mYesNocount.size(), Toast.LENGTH_SHORT).show();
+					    		Toast.makeText(ActTypeTest10.this,"Yes select", Toast.LENGTH_SHORT).show();
 					    	}else if(checkedId==R.id.no_radiobtn){   
 					    		mYesNocount.add(9,0);
 					    		Toast.makeText(ActTypeTest10.this,"no select", Toast.LENGTH_SHORT).show();

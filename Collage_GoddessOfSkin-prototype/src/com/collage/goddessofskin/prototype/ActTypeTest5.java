@@ -22,7 +22,7 @@ public class ActTypeTest5 extends Activity {
 		acttypetest4.finish();
 		
 		TextView txttest1=(TextView) findViewById(R.id.txttest1);
-		String text="5.ȭ��ǰ ���´� ������ �ͺ��� ����� �� Ÿ���� ����.";
+		String text="5.화장품 형태는 촉촉한것 보다는 산뜻한 젤 타입이 좋다.";
 		txttest1.setText(text);
 		Intent intent=getIntent();
 		final ArrayList<Integer> mYesNocount=intent.getIntegerArrayListExtra("count");
@@ -53,7 +53,7 @@ public class ActTypeTest5 extends Activity {
 					    if(rb!=null){
 					    	if(checkedId==R.id.yes_radiobtn){   
 					    		mYesNocount.add(4,1);
-					    		Toast.makeText(ActTypeTest5.this,"Yes select"+mYesNocount.size(), Toast.LENGTH_SHORT).show();
+					    		Toast.makeText(ActTypeTest5.this,"Yes select", Toast.LENGTH_SHORT).show();
 					    	}else if(checkedId==R.id.no_radiobtn){   
 					    		mYesNocount.add(4,0);
 					    		Toast.makeText(ActTypeTest5.this,"no select", Toast.LENGTH_SHORT).show();

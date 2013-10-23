@@ -22,7 +22,7 @@ public class ActTypeTest8 extends Activity {
 		acttypetest7.finish();
 		
 		TextView txttest1=(TextView) findViewById(R.id.txttest1);
-		String text="8.�Ǻδ� �׻� ���Ⱑ ���� �� ���Ÿ���.";
+		String text="8.피부는 항상 윤기가 도는 듯 번들거린다.";
 		txttest1.setText(text);
 		Intent intent=getIntent();
 		final ArrayList<Integer> mYesNocount=intent.getIntegerArrayListExtra("count");
@@ -53,7 +53,7 @@ public class ActTypeTest8 extends Activity {
 					    if(rb!=null){
 					    	if(checkedId==R.id.yes_radiobtn){   
 					    		mYesNocount.add(7,1);
-					    		Toast.makeText(ActTypeTest8.this,"Yes select"+mYesNocount.size(), Toast.LENGTH_SHORT).show();
+					    		Toast.makeText(ActTypeTest8.this,"Yes select", Toast.LENGTH_SHORT).show();
 					    	}else if(checkedId==R.id.no_radiobtn){   
 					    		mYesNocount.add(7,0);
 					    		Toast.makeText(ActTypeTest8.this,"no select", Toast.LENGTH_SHORT).show();

@@ -234,6 +234,7 @@ public class ActMain extends FragmentActivity {
 			break;
 
 		case Share:
+			ApiMain.getInstance().UltraApi();
 			fragment = new FragMain();
 			break;
 

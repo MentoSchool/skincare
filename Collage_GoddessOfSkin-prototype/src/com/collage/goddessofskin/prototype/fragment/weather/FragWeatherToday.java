@@ -65,7 +65,7 @@ public class FragWeatherToday extends Fragment {
 
 	private TextView tv_cur_Weather, tv_select_Weather, tv_local,
 			tv_temperature_cur, tv_temperature_hi, tv_temperature_low,
-			Gallery_text, tv_today_date;
+			Gallery_text, tv_today_date, Ult_detail, Ult_score;
 
 	private Dialog mDialog = null;
 
@@ -111,7 +111,8 @@ public class FragWeatherToday extends Fragment {
 
 		mCustemGallery = (CustemGallery) view.findViewById(R.id.gallery);
 
-		Ult = (ListView) view.findViewById(R.id.Ult_Detail);
+		Ult_score = (TextView) view.findViewById(R.id.tv_ult_score);
+		Ult_detail = (TextView) view.findViewById(R.id.tv_ult_detail);
 
 		;
 
@@ -154,6 +155,12 @@ public class FragWeatherToday extends Fragment {
 
 		public void handleMessage(android.os.Message msg) {
 
+			Resources resources = getResources();
+
+			String[] ult_score = resources.getStringArray(R.array.ult_values);
+
+			String[] ult_detail = resources.getStringArray(R.array.ult_score);
+
 			switch (msg.what) {
 
 			case 0:
@@ -168,26 +175,41 @@ public class FragWeatherToday extends Fragment {
 				try {
 					if (ult == null) {
 
-						Prosess("5");
+						Ult_score.setText("자외선:"+ult_score[5]);
+						Ult_detail.setText("설명:"+ult_detail[5]);
 
 					} else if (ult != null) {
 
 						if (Integer.parseInt(ult) <= 2) {
-							Prosess("5");
+							Ult_score.setText("자외선:"+ult_score[4]);
+							Ult_detail.setText("설명:"+ult_detail[4]);
+
 						} else if (Integer.parseInt(ult) <= 5) {
-							Prosess("4");
+							Ult_score.setText("자외선:"+ult_score[3]);
+							Ult_detail.setText("설명:"+ult_detail[3]);
+
 						} else if (Integer.parseInt(ult) <= 7) {
-							Prosess("3");
+							Ult_score.setText("자외선:"+ult_score[2]);
+							Ult_detail.setText("설명:"+ult_detail[2]);
+
 						} else if (Integer.parseInt(ult) <= 10) {
-							Prosess("2");
+
+							Ult_score.setText("자외선:"+ult_score[1]);
+							Ult_detail.setText("설명:"+ult_detail[1]);
+
 						} else if (Integer.parseInt(ult) >= 11) {
-							Prosess("1");
+							Ult_score.setText("자외선:"+ult_score[0]);
+							Ult_detail.setText("설명:"+ult_detail[0]);
+
 						}
 
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
-					Prosess("6");
+
+					Ult_score.setText("자외선:"+ult_score[0]);
+					Ult_detail.setText("설명:"+ult_detail[0]);
+
 				}
 				break;
 
@@ -402,19 +424,6 @@ public class FragWeatherToday extends Fragment {
 	};
 
 	Yh_AsyncWeather weather = new Yh_AsyncWeather(handler);
-
-	private void Prosess(String id) {
-		// TODO Auto-generated method stub
-
-		Cursor cursor = db.selectNotes(id);
-
-		adapter = new SimpleCursorAdapter(getActivity(),
-				android.R.layout.simple_list_item_1, cursor, new String[] {
-						"title", "_id" }, new int[] { android.R.id.text1 });
-
-		Ult.setAdapter(adapter);
-
-	}
 
 	OnClickListener listener = new OnClickListener() {
 		// ���̾�α�

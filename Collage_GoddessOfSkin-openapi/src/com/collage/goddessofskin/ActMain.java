@@ -227,9 +227,9 @@ public class ActMain
 			{
 				if(result != null)
 				{
-					// Debug
-//					mConsole.setText(prettyPrint(result.getXml()));
-//					mConsole.setText(mConsole.getText().toString().concat("\n\ntoday :: " + ((UltraViolet)result.getObj()).getBody().getIndexModel().getToday()));
+					
+					mConsole.setText(prettyPrint(result.getXml()));
+					mConsole.setText(mConsole.getText().toString().concat("\n\ntoday :: " + ((UltraViolet)result.getObj()).getBody().getIndexModel().getToday()));
 				}
 			}
 			catch (Exception e)

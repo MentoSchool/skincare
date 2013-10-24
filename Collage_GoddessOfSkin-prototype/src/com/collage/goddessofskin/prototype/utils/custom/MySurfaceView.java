@@ -137,7 +137,7 @@ class MyViewThread extends Thread {
 	Paint Pnt = new Paint();
 
 	int Start = mothed.vo.getStart_clock();// 시작
-
+  
 	int End = mothed.vo.getEnd_clock();
 
 	int imgX = 0;

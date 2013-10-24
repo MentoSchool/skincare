@@ -240,24 +240,27 @@ public class ApiMain {
 				if (result != null) {
 					// Debug
 
-//					model.setToday(((UltraViolet) result.getObj()).getBody()
-//							.getIndexModel().getToday());
-//
-//					vo.setToday_UltraViolet(((UltraViolet) result.getObj())
-//							.getBody().getIndexModel().getToday());
-//
-//					Log.v("dd", "자외선::" + model.getToday());
-					Log.v("dd", "열지수1::" + model.getH15());
+					model.setToday(((UltraViolet) result.getObj()).getBody()
+							.getIndexModel().getToday());
+					model.setH12(((UltraViolet) result.getObj()).getBody()
+							.getIndexModel().getH12());
+
+					vo.setToday_UltraViolet(((UltraViolet) result.getObj())
+							.getBody().getIndexModel().getToday());
+					
+
+					Log.v("dd", "자외선::" + model.getToday());
+					Log.v("dd", "열지수1::" + model.getH12());
 					Log.v("dd", "열지수2::" + model.getH3());
 					Log.v("dd", "열지수3::" + model.getH9());
 					Log.v("dd", "열지수4::" + model.getH15());
-//					Log.v("dd","자외선::"+ (prettyPrint(result.getXml()).toString().concat(((UltraViolet) result
-//											.getObj()).getBody()
-//											.getIndexModel().getToday())));
-//					Log.v("dd","열지수::"+ (prettyPrint(result.getXml()).toString().concat(((UltraViolet) result
-//											.getObj()).getBody()
-//											.getIndexModel().getH3())));
-//					Log.d("dd", "자외선::" + (vo.getToday_UltraViolet()));
+					Log.v("dd","자외선::"+ (prettyPrint(result.getXml()).toString().concat(((UltraViolet) result
+											.getObj()).getBody()
+											.getIndexModel().getToday())));
+					Log.v("dd","열지수::"+ (prettyPrint(result.getXml()).toString().concat(((UltraViolet) result
+											.getObj()).getBody()
+											.getIndexModel().getH3())));
+					Log.d("dd", "자외선::" + (vo.getToday_UltraViolet()));
 
 				}
 

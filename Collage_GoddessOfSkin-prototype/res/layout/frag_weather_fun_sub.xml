@@ -23,6 +23,7 @@
             android:text="2013년 10월 18일 기준" />
 
         <TextView
+            android:id="@+id/Fun_Location"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_marginTop="20px"
@@ -39,7 +40,7 @@
         android:layout_gravity="center"
         android:layout_weight="3"
         android:layout_margin="10dp"
-        android:background="@drawable/com_rounded_action_bar"
+        android:background="@drawable/com_rounded_action_gallery"
         android:orientation="vertical" >
 
         <com.collage.goddessofskin.prototype.utils.custom.CustemGallery
@@ -67,13 +68,14 @@
             android:text="안녕하세요 재미있는 지수 안녕 (설명tip)" />
 
         <ImageView
-            android:background="@drawable/com_rounded_botten"
+            android:background="@drawable/com_rounded_action_bar"
+            android:id="@+id/value"
             android:layout_width="match_parent"
             android:layout_height="0px"
             android:layout_marginLeft="10px"
             android:layout_marginRight="10px"
             android:layout_weight="1"
-            android:src="@drawable/bar_1" />
+            />
     </LinearLayout>
  -
 

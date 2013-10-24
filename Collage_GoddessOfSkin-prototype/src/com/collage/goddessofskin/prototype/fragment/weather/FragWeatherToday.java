@@ -175,8 +175,8 @@ public class FragWeatherToday extends Fragment {
 				try {
 					if (ult == null) {
 
-						Ult_score.setText("자외선:"+ult_score[5]);
-						Ult_detail.setText("설명:"+ult_detail[5]);
+						Ult_score.setText("자외선:"+ult_score[4]);
+						Ult_detail.setText("설명:"+ult_detail[4]);
 
 					} else if (ult != null) {
 
@@ -207,8 +207,8 @@ public class FragWeatherToday extends Fragment {
 				} catch (Exception e) {
 					e.printStackTrace();
 
-					Ult_score.setText("자외선:"+ult_score[0]);
-					Ult_detail.setText("설명:"+ult_detail[0]);
+					Ult_score.setText("자외선:"+ult_score[4]);
+					Ult_detail.setText("설명:"+ult_detail[4]);
 
 				}
 				break;

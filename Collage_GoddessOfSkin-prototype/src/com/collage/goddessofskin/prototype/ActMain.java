@@ -230,11 +230,12 @@ public class ActMain extends FragmentActivity {
 			fragment = new FragWeatherToday();
 			break;
 		case WeatherFun:
+			ApiMain.getInstance().UltraApi();
 			fragment = new FragWeatherFun();
 			break;
 
 		case Share:
-			ApiMain.getInstance().UltraApi();
+			
 			fragment = new FragMain();
 			break;
 

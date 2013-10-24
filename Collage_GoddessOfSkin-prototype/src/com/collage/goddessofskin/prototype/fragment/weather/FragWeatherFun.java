@@ -16,7 +16,12 @@ public class FragWeatherFun extends Fragment {
 
 	FragwWeatherFunSub funSub;
 	Fragment fragment;
-	ImageButton button_1,button_2,button_3,button_4,button_5;
+	ImageButton button_soul, button_kang, button_degen, button_degu,
+			button_kangju, button_busan, button_jejudo;
+
+	private int date[] = { 1, 2, 3, 4, 5, 6, 7, 8 };
+
+	private String[] location = { "ì„œìš¸", "ê°•ë¦‰", "ëŒ€ì „", "ëŒ€êµ¬", "ê³µì£¼", "ë¶€ì‚°", "ì œì£¼ë„" };
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -29,17 +34,26 @@ public class FragWeatherFun extends Fragment {
 
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		button_1 = (ImageButton) getActivity().findViewById(R.id.btn_01);
-		button_2 = (ImageButton) getActivity().findViewById(R.id.btn_02);
-		button_3 = (ImageButton) getActivity().findViewById(R.id.btn_03);
-		button_4 = (ImageButton) getActivity().findViewById(R.id.btn_04);
-		button_5 = (ImageButton) getActivity().findViewById(R.id.btn_05);
+		button_soul = (ImageButton) getActivity().findViewById(R.id.btn_soul);
+		button_kang = (ImageButton) getActivity().findViewById(R.id.btn_kang);
+		 button_degen = (ImageButton)
+		 getActivity().findViewById(R.id.btn_degen);
+		 button_kangju = (ImageButton)
+		 getActivity().findViewById(R.id.btn_kangju);
+		 button_busan = (ImageButton)
+		 getActivity().findViewById(R.id.btn_busan);
+		 button_jejudo = (ImageButton)
+		 getActivity().findViewById(R.id.btn_jejudo);
+		 button_degu = (ImageButton)
+		 getActivity().findViewById(R.id.btn_degu);
 
-		button_1.setOnClickListener(listener);
-		button_2.setOnClickListener(listener);
-		button_3.setOnClickListener(listener);
-		button_4.setOnClickListener(listener);
-		button_5.setOnClickListener(listener);
+		button_soul.setOnClickListener(listener);
+		button_kang.setOnClickListener(listener);
+		button_degen.setOnClickListener(listener);
+		button_kangju.setOnClickListener(listener);
+		button_busan.setOnClickListener(listener);
+		button_jejudo.setOnClickListener(listener);
+		button_degu.setOnClickListener(listener);
 
 	};
 
@@ -48,24 +62,35 @@ public class FragWeatherFun extends Fragment {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			// Fragment¿¡¼­ Fragment·Î ÀÌµ¿ÇÏ´Â ¹æ¹ı.
+			// Fragmentï¿½ï¿½ï¿½ï¿½ Fragmentï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½.
 			switch (v.getId()) {
-			case R.id.btn_01:
-				fragment = new FragwWeatherFunSub();
+			case R.id.btn_soul:
+				fragment = new FragwWeatherFunSub(date[1], location[0]);
 				break;
 
-			case R.id.btn_02:
-				fragment = new FragwWeatherFunSub();
+			case R.id.btn_kang:
+				fragment = new FragwWeatherFunSub(date[2], location[1]);
 				break;
-			case R.id.btn_03:
-				fragment = new FragwWeatherFunSub();
+			case R.id.btn_degen:
+
+				fragment = new FragwWeatherFunSub(date[3], location[2]);
 				break;
-			case R.id.btn_04:
-				fragment = new FragwWeatherFunSub();
+			case R.id.btn_degu:
+				fragment = new FragwWeatherFunSub(date[4], location[3]);
 				break;
-			case R.id.btn_05:
-				fragment = new FragwWeatherFunSub();
+			case R.id.btn_kangju:
+				fragment = new FragwWeatherFunSub(date[0], location[4]);
 				break;
+
+			case R.id.btn_busan:
+				fragment = new FragwWeatherFunSub(date[2], location[5]);
+				break;
+
+			case R.id.btn_jejudo:
+
+				fragment = new FragwWeatherFunSub(date[0], location[6]);
+				break;
+
 			}
 			if (fragment != null) {
 				FragmentManager fragmentManager = getFragmentManager();

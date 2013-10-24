@@ -27,53 +27,53 @@
     </string-array>
     <string-array name="weather">
         <item>          폭풍                               </item>
-1                <item>          열대폭풍                           </item>
-2                <item>          허리케인                           </item>
-3                <item>          강한 뇌우                          </item>
-4                <item>          뇌우                               </item>
-5                <item>          눈 또는 비                         </item>
-6                <item>          비 또는 진눈깨비                   </item>
-7                <item>          눈 또는 진눈깨비                   </item>
-8                <item>          결빙성 진눈깨비                    </item>
-9                <item>          이슬비                             </item>
-0                <item>          어는비                             </item>
-11                <item>          소나기                             </item>
-12                <item>          소나기                             </item>
-13                <item>          함박눈                             </item>
-14                <item>          약한 눈                            </item>
-15                <item>          강한 눈                            </item>
-16                <item>          눈                                 </item>
-17                <item>          우박                               </item>
-18                <item>          진눈깨비                           </item>
-19                <item>          황사                               </item>
-20                <item>          짙은 안개                          </item>
-21                <item>          옅은 안개                          </item>
-22                <item>          연무                               </item>
-23                <item>          강풍                               </item>
-24                <item>          약풍                               </item>
-25                <item>          추움                               </item>
-26                <item>          흐림                               </item>
-27                <item>          대체로 흐림(밤)                    </item>
-28                <item>          대체로 흐림(낮)                    </item>
-29                <item>          일부 흐림(밤)                      </item>
-30                <item>          일부 흐림(낮)                      </item>
-31                <item>          흐린 후 갬                         </item>
-32                <item>          맑음                               </item>
-33                <item>          쾌청(밤)                           </item>
-34                <item>          쾌청(낮)                           </item>
-35                <item>          비 또는 우박                       </item>
-36                <item>          더움                               </item>
-37                <item>          국지성 뇌우                        </item>
-38                <item>          산발성 뇌우                        </item>
-39                <item>          산발성 뇌우                        </item>
-40                <item>          산발성 소나기                      </item>
-41                <item>          대설                               </item>
-42                <item>          산발성 눈보라                      </item>
-43                <item>          많은 눈                            </item>
-44                <item>          약간 흐림                          </item>
-45                <item>          뇌우 소나기                        </item>
-46                <item>          눈보라                             </item>
-47                <item>          국지성 뇌우 소나기                 </item>
+1                        <item>          열대폭풍                           </item>
+2                        <item>          허리케인                           </item>
+3                        <item>          강한 뇌우                          </item>
+4                        <item>          뇌우                               </item>
+5                        <item>          눈 또는 비                         </item>
+6                        <item>          비 또는 진눈깨비                   </item>
+7                        <item>          눈 또는 진눈깨비                   </item>
+8                        <item>          결빙성 진눈깨비                    </item>
+9                        <item>          이슬비                             </item>
+0                        <item>          어는비                             </item>
+11                        <item>          소나기                             </item>
+12                        <item>          소나기                             </item>
+13                        <item>          함박눈                             </item>
+14                        <item>          약한 눈                            </item>
+15                        <item>          강한 눈                            </item>
+16                        <item>          눈                                 </item>
+17                        <item>          우박                               </item>
+18                        <item>          진눈깨비                           </item>
+19                        <item>          황사                               </item>
+20                        <item>          짙은 안개                          </item>
+21                        <item>          옅은 안개                          </item>
+22                        <item>          연무                               </item>
+23                        <item>          강풍                               </item>
+24                        <item>          약풍                               </item>
+25                        <item>          추움                               </item>
+26                        <item>          흐림                               </item>
+27                        <item>          대체로 흐림(밤)                    </item>
+28                        <item>          대체로 흐림(낮)                    </item>
+29                        <item>          일부 흐림(밤)                      </item>
+30                        <item>          일부 흐림(낮)                      </item>
+31                        <item>          흐린 후 갬                         </item>
+32                        <item>          맑음                               </item>
+33                        <item>          쾌청(밤)                           </item>
+34                        <item>          쾌청(낮)                           </item>
+35                        <item>          비 또는 우박                       </item>
+36                        <item>          더움                               </item>
+37                        <item>          국지성 뇌우                        </item>
+38                        <item>          산발성 뇌우                        </item>
+39                        <item>          산발성 뇌우                        </item>
+40                        <item>          산발성 소나기                      </item>
+41                        <item>          대설                               </item>
+42                        <item>          산발성 눈보라                      </item>
+43                        <item>          많은 눈                            </item>
+44                        <item>          약간 흐림                          </item>
+45                        <item>          뇌우 소나기                        </item>
+46                        <item>          눈보라                             </item>
+47                        <item>          국지성 뇌우 소나기                 </item>
 48</string-array>
     <string-array name="ult_score">
         <item>모든 예방조치가 필요함. 노출된 피부는 몇 분 내에 탈수 있음.11시와 4시 사이에는 태양에의 노출을 피하고, 그늘에 있거나 겉옷을 입고 모자와 선글라스를 쓰고적어도 SPF-15의 자외선 차단제를 2시간마다 충분히 발라야 합니다.</item>
@@ -83,14 +83,48 @@
         <item>해가 없습니다.좋은밤 되세요 Good Evening.!!</item>
         <item>해가 없습니다.</item>
     </string-array>
-    
     <string-array name="ult_values">
-        <item >극도로 위험</item>
-        <item >매우 위험</item>
-        <item >위험</item>
-        <item >보통</item>
-        <item >낮음</item>
-        <item >매우 낮음</item>
-     </string-array>
+        <item>극도로 위험</item>
+        <item>매우 위험</item>
+        <item>위험</item>
+        <item>보통</item>
+        <item>낮음</item>
+        <item>매우 낮음</item>
+    </string-array>
+    
+    <string-array name="Discomfort_Index">
+        <item>전원 불쾌감을 느낌</item>
+        <item>50% 정도 불쾌감을 느낌</item>
+        <item>불쾌감을 나타내기 시작</item>
+        <item>전원 쾌적함을 느낌</item>
+        <item>매우 쾌적함</item>
+    </string-array>
+    <string-array name="Heat_Index">
+        <item>일사병 위험 매우 높음</item>
+        <item>일사병,열경련,열피폐 위험 높음</item>
+        <item>일사병,열경련,열피폐 위험 가능성</item>
+        <item>신체활동시 피로 위험 높음</item>
+    </string-array>
+    <string-array name="Dewpoint_Index">
+        <item>노출된 피부는 몇분내로 얼며,야외 환경은 생명에 매우 위험함</item>
+        <item>10~15분 이내 동상 위험이 있으며,보호장구없이 장기간 노출 또는 활동시 저체온에 빠질 위험이 큼</item>
+        <item>노출된 피부에 매우 찬기운이 느껴지고,보호 장구 없이 장기간 노출시 저체온에 빠질 위험이 있음</item>
+        <item>추위를 느끼는 불편함이 증가</item>
+        <item>추위를 느끼는 불편함이 없음</item>
+    </string-array>
+    <string-array name="cold_Index">
+        <item>체온을 유지하고,실내습도 저절하기</item>
+        <item>충분한 수면 취하고, 과로하지 말기</item>
+        <item>규칙적인 생활습관 유지하기</item>
+        <item>평소 건강관리 유의하기</item>
+        <item>감기 지수 낮음</item>
+    </string-array>
+    <string-array name="sunglasses_Index">
+        <item>썬글라스 착용 필수</item>
+        <item>썬글라스 착용 필요함</item>
+        <item>썬글라스 착용 보통</item>
+        <item>썬글라스 착용 낮음</item>
+        <item>밤입니다.</item>
+    </string-array>
 
 </resources>

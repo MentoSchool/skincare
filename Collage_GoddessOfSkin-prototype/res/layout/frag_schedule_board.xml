@@ -3,18 +3,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+<!-- 시간때 설정 -->
+  <LinearLayout android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
+      <Button android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="0시-12시"
+   		  android:layout_weight=".5"/>
+  	  <Button android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="12시-24시"
+   		  android:layout_weight=".5"/>
+  </LinearLayout>
+ 
+<!-- 시간표(?)및 그래프 보여주기 -->
 
-    <Button
-        android:id="@+id/btn_graph"
-        android:text="그래프로 넘어가기"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+	 <ImageButton
+	     android:id="@+id/btn_graph"
+	     android:layout_width="match_parent"
+	     android:layout_height="161dp"
+	     android:src="@drawable/w_09"
+	     android:text="그래프로 넘어가기" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/scene_schedule_board"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
+	<ProgressBar android:id="@+id/progress_horizontal"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:max="10"
+	    android:progress="4"
+	    style="?android:attr/progressBarStyleHorizontal"/>
+	
+<!-- button 3개 넣기 -->
+	<LinearLayout android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal">
+	    <Button android:id="@+id/schedule_setting_sleep"
+	      android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="잠"
+   		  android:layout_weight=".33"/>
+	    <Button android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="물"
+   		  android:layout_weight=".33"/>
+	    <Button android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="차단제"
+   		  android:layout_weight=".33"/>
+	</LinearLayout>
+	    <ListView	
+        android:id="@+id/alarms_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+	
 </LinearLayout>

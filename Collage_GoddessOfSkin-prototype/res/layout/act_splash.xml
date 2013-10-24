@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent" 
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center">
 
-    <TextView
-        android:id="@+id/act_splash_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/scene_splash"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <ImageView
+        android:id="@+id/act_splash_image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/splash" />
 
-    <ProgressBar
+    <!-- ProgressBar
         android:id="@+id/act_splash_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/act_splash_title"
         android:layout_centerInParent="true"
         android:layout_margin="@dimen/splash_progress_margin"
-        android:indeterminateOnly="true" />
+        android:indeterminateOnly="true" /-->
+    
 
     <LinearLayout
         android:id="@+id/act_splash_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:gravity="center"
+        android:layout_gravity="center"
         android:orientation="vertical"
         android:visibility="gone" >
 
@@ -39,26 +41,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/type_buttonbar_margin"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:gravity="center"
+        	android:layout_gravity="center" >
 
             <Button
                 android:id="@+id/act_splash_btn_choice"
-                style="?android:attr/buttonStyleInset"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+      			android:background="@drawable/splash_btn"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_weight="1"
-                android:onClick="gotoTypeChoice"
-                android:text="@string/type_btn_choice" />
+                android:onClick="gotoTypeChoice"/>
 
             <Button
                 android:id="@+id/act_splash_btn_test"
-                style="?android:attr/buttonStyleInset"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:background="@drawable/splash_btn2"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:layout_weight="1"
-                android:onClick="gotoTypeTest"
-                android:text="@string/type_btn_test" />
+                android:onClick="gotoTypeTest" />
         </LinearLayout>
     </LinearLayout>
 
-</RelativeLayout>
+ </LinearLayout>

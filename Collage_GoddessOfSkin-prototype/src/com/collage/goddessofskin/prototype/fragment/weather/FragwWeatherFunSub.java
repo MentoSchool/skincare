@@ -111,7 +111,7 @@ public class FragwWeatherFunSub extends Fragment {
 		Fun_value = (TextView) view.findViewById(R.id.fun_main_detail);
 		Fun_Detail = (TextView) view.findViewById(R.id.fun_Detail);
 
-		Fun_value_imageView.setImageResource(value[surIn]);
+		Fun_value_imageView.setImageResource(value[0]);
 
 		FunSub = (CustemGallery) view.findViewById(R.id.fun_gallery);
 		calleryAdapter = new FragWeatherFun_CustemCalleryAdapter(getActivity());

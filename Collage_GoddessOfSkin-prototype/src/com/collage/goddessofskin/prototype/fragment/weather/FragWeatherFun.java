@@ -19,9 +19,13 @@ public class FragWeatherFun extends Fragment {
 	ImageButton button_soul, button_kang, button_degen, button_degu,
 			button_kangju, button_busan, button_jejudo;
 
-	private int date[] = { 1, 2, 3, 4, 5, 6, 7, 8 };
+	
+	
+	
+	
+	private int date[] = { 1, 2, 3, 4 };
 
-	private String[] location = { "서울", "강릉", "대전", "대구", "공주", "부산", "제주도" };
+	private String[] location = { "서울", "강릉", "대전","대구", "공주", "부산", "제주도" };
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -76,7 +80,7 @@ public class FragWeatherFun extends Fragment {
 				fragment = new FragwWeatherFunSub(date[3], location[2]);
 				break;
 			case R.id.btn_degu:
-				fragment = new FragwWeatherFunSub(date[4], location[3]);
+				fragment = new FragwWeatherFunSub(date[3], location[3]);
 				break;
 			case R.id.btn_kangju:
 				fragment = new FragwWeatherFunSub(date[0], location[4]);

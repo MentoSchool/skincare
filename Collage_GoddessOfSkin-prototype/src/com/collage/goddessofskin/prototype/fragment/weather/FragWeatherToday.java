@@ -43,7 +43,7 @@ public class FragWeatherToday extends Fragment {
 
 	Ult_Db db;
 
-	SimpleCursorAdapter adapter;
+	
 	// ���� url
 	String params = "http://weather.yahooapis.com/forecastrss?p=KSXX0037&u=c";
 

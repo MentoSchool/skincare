@@ -46,8 +46,7 @@ public class FragWeatherFun_CustemCalleryAdapter extends BaseAdapter {
 
 	};
 
-	private int[] mImageID = { R.drawable.ggkalu, 
-			R.drawable.sugglas, R.drawable.hangsa};
+	private int[] mImageID = { R.drawable.fun_ggkalu,R.drawable.fun_bulke ,R.drawable.fun_sugglas, R.drawable.fun_hangsa};
 
 //	private int weather_0 = Integer
 //			.parseInt(weather.vo.getTodayConditionCode());
@@ -108,7 +107,7 @@ public class FragWeatherFun_CustemCalleryAdapter extends BaseAdapter {
 		// R.drawable.weather_icon_04, R.drawable.weather_icon_05 };
 
 
-		String[] weather_code = {"불퀘지수","자외선","감기지수"};
+		String[] weather_code = {"꽃가루 지수","불퀘지수","썬글라스","감기지수"};
 		if (mview == null) {
 			mview = mInflater
 					.inflate(R.layout.frag_weather_today_gallery, null);

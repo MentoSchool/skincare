@@ -53,6 +53,7 @@ public class mothed {
 		// thread.setImgX((int) dom3);
 		// thread.setImgY((int) dom2);
 
+		
 		vo.setStart_clock((int) dom3);
 		vo.setEnd_clock((int) dom2);
 

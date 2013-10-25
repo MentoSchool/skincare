@@ -19,6 +19,7 @@
             android:layout_marginTop="20px"
             android:layout_weight="1"
             android:gravity="center"
+            android:id="@+id/Fun_Date"
             android:paddingTop="10px"
             android:text="2013년 10월 18일 기준" />
 
@@ -57,13 +58,29 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0px"
-        android:layout_weight="3"
+        android:layout_weight="4"
         android:orientation="vertical" >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0px"
+            android:id="@+id/fun_value"
             android:layout_weight="1"
+            android:gravity="center"
+            android:text="안녕하세요 재미있는 지수 안녕 (설명tip)" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:id="@+id/fun_Detail"
+       
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="안녕하세요 재미있는 지수 안녕 (설명tip)" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:id="@+id/fun_main_detail"
             android:gravity="center"
             android:text="안녕하세요 재미있는 지수 안녕 (설명tip)" />
 
@@ -91,7 +108,7 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:gravity="left"
-            android:text="불쾨지수::"
+            android:text="꽃가루 지수:봄에 제공"
             android:textSize="15sp" />
 
         <TextView
@@ -100,7 +117,7 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:gravity="left"
-            android:text="자외선::"
+            android:text="불쾌지수:여름에 제공"
             android:textSize="15sp" />
     </LinearLayout>
  
@@ -117,7 +134,7 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:gravity="left"
-            android:text="감기지수::"
+            android:text="썬글라스지수:50"
             android:textSize="15sp" />
 
         <TextView
@@ -126,34 +143,11 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:gravity="left"
-            android:text="체감온도::"
+            android:text="감기지수:70"
             android:textSize="15sp" />
     </LinearLayout>
 
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0px"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:gravity="left"
-            android:text="썬글라스지수::"
-            android:textSize="15sp" />
-
-        <TextView
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:gravity="left"
-            android:text="양산지수::"
-            android:textSize="15sp" />
-    </LinearLayout>
+   
 
 </LinearLayout>

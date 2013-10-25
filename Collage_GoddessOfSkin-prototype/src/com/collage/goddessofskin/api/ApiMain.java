@@ -242,6 +242,8 @@ public class ApiMain {
 
 					model.setToday(((UltraViolet) result.getObj()).getBody()
 							.getIndexModel().getToday());
+					model.setDate(((UltraViolet) result.getObj()).getBody()
+							.getIndexModel().getDate());
 					model.setH12(((UltraViolet) result.getObj()).getBody()
 							.getIndexModel().getH12());
 
@@ -250,6 +252,8 @@ public class ApiMain {
 					
 
 					Log.v("dd", "자외선::" + model.getToday());
+					Log.v("dd", "내일자외선::" + model.getTomorrow());
+					Log.v("dd", "시간::" + model.getDate());
 					Log.v("dd", "열지수1::" + model.getH12());
 					Log.v("dd", "열지수2::" + model.getH3());
 					Log.v("dd", "열지수3::" + model.getH9());

@@ -31,12 +31,24 @@ protected void onCreate(Bundle savedInstanceState) {
 		public void onCheckedChanged(RadioGroup group, int checkedId) {
 			if(checkedId!=-1){
 				 Intent intent=new Intent(ActTypeTest.this,ActTypeTest2.class);
+				 mYesNocount.add(0, 0);
+				 mYesNocount.add(1, 0);
+				 mYesNocount.add(2, 0);
+				 mYesNocount.add(3, 0);
+				 mYesNocount.add(4, 0);
+				 mYesNocount.add(5, 0);
+				 mYesNocount.add(6, 0);
+				 mYesNocount.add(7, 0);
+				 mYesNocount.add(8, 0);
+				 mYesNocount.add(9, 0);
 			  final RadioButton rb=(RadioButton) findViewById(checkedId);
 				    if(rb!=null){
 				    	if(checkedId==R.id.yes_radiobtn){
+				    		mYesNocount.remove(0);
 				    		mYesNocount.add(0,1);
 				    		Toast.makeText(ActTypeTest.this,"Yes select", Toast.LENGTH_SHORT).show();
 				    	}else if(checkedId==R.id.no_radiobtn){   
+				    		mYesNocount.remove(0);
 				    		mYesNocount.add(0,0);
 				    		Toast.makeText(ActTypeTest.this,"no select", Toast.LENGTH_SHORT).show();
 				    	}

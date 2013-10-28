@@ -13,39 +13,240 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             
-            <!-- 건성 -->
+            <!-- 건성 -->  
             <LinearLayout 
                 android:id="@+id/dry"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:orientation="vertical">
                  <TextView
         			android:layout_width="wrap_content"
         			android:layout_height="wrap_content"
-        			android:text="건성 피부 내용"/>
+        			android:text="  "
+        			android:textSize="20sp"/>
+                 <TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:text="건성 피부란?"
+        			android:textSize="20sp"
+        			android:textStyle="bold"/>
+                 
+                 <!-- 건성피부란? 내용 -->
+               <LinearLayout android:layout_height="wrap_content"
+                   android:layout_width="fill_parent"
+                   android:orientation="horizontal">
+                   <TextView 
+                       android:layout_width="wrap_content"
+                       android:layout_height="fill_parent"
+                       android:layout_weight="1"
+                       android:text="    "/>
+                   <LinearLayout android:layout_width="fill_parent"
+                       android:layout_height="fill_parent"
+                       android:layout_weight="4"
+                       android:orientation="vertical">
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 세안 후 피부가 당긴다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 모공이 작아 피부 결은 좋아 보이지만 윤기가 없다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 계절의 변화에 따라 각질이 일어난다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 입가, 눈가에 잔주름이 쉽게 생긴다." />
+                   </LinearLayout>
+               </LinearLayout>
+               <TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:text="  "
+        			android:textSize="10sp"/>
+                  <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="  * 기름기가 없고, 피부가 잘 갈라지고 비늘이 생기는 피부입니다." />
+                  <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="  25세 이하 여성에게는 거의 드물지만, 피부관리의 잘못으로 인해 건성피부가 될 수 있습니다." />
+                  <TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:text="  "
+        			android:textSize="20sp"/>
+               	 <TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:text="건성 피부 관리법은?"
+        			android:textSize="20sp"
+        			android:textStyle="bold"/>
+               	  <!-- 건성피부관리법? 내용 -->
+               <LinearLayout android:layout_height="wrap_content"
+                   android:layout_width="fill_parent"
+                   android:orientation="horizontal">
+                   <TextView 
+                       android:layout_width="wrap_content"
+                       android:layout_height="fill_parent"
+                       android:layout_weight="1"
+                       android:text="    "/>
+                   <LinearLayout android:layout_width="fill_parent"
+                       android:layout_height="fill_parent"
+                       android:layout_weight="4"
+                       android:orientation="vertical">
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 환절기에는 각질이 자주 일어남으로 유분이 있는 크림을 발라 피부를 관리해야 합니다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 기름기가 부족하므로 순한 비누로 세안하고 적당한 moisture 화장품을 사용해야 합니다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 건조함을 막아주는 제품을 사용하고, 물을 자주 마셔야 합니다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 수분을 가져가는 건조한 곳, 사우나 같은 곳에 오래 있지 않아야 합니다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 눈가 노화가 빨리 올 수 있으므로 아이크림을 발라 눈가피부를 관리해야 합니다." />
+                   </LinearLayout>
+               </LinearLayout>
+               	 
+               	 
                  <Button android:text="건성 선택"
                 	android:id="@+id/act_type_choice_btn_dry"
                 	android:layout_width="wrap_content"
                 	android:layout_height="wrap_content"
                 	android:onClick="doChoice"
-                	/>
+                	android:layout_gravity="right"/>
             </LinearLayout>
             
              <!-- 지성 -->
             <LinearLayout 
                 android:orientation="vertical"
                 android:id="@+id/oily"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                 <TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:text="  "
+        			android:textSize="20sp"/>
                <TextView
         			android:layout_width="wrap_content"
         			android:layout_height="wrap_content"
-        			android:text="지성 피부 내용"/>
+        			android:text="지성 피부란?"
+        			android:textSize="20sp"
+        			android:textStyle="bold"/>
+                 
+                 <!-- 지성피부란? 내용 -->
+               <LinearLayout android:layout_height="wrap_content"
+                   android:layout_width="fill_parent"
+                   android:orientation="horizontal">
+                   <TextView 
+                       android:layout_width="wrap_content"
+                       android:layout_height="fill_parent"
+                       android:layout_weight="1"
+                       android:text="    "/>
+                   <LinearLayout android:layout_width="fill_parent"
+                       android:layout_height="fill_parent"
+                       android:layout_weight="4"
+                       android:orientation="vertical">
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 피지분비량이 많기 때문에 쉽게 번들거린다" />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 모공이 크고 피부가 두껍다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 코, 이마 등에 여드름, 뾰루지가 잘 생긴다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 화장을 하면 잘 지워지고 특히 피지분비량이 많은 T존이 잘 지워진다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 유분은 많으나 수분이 부족한 느낌이 든다." />
+                   </LinearLayout>
+               </LinearLayout>
+               <TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:text="  "
+        			android:textSize="10sp"/>
+                  <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="  * 유년기 시절에는 거의 모두가 지성피부이며, 호르몬변화로 인하여 여드름 피부가 됩니다." />
+                  <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text=" 신체의 변화가 안정된 20살에도 자신이 지성피부라면 유전적인 요인으로 인한 것입니다." />
+                  <TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:text="  "
+        			android:textSize="20sp"/>
+               	 <TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:text="지성 피부 관리법은?"
+        			android:textSize="20sp"
+        			android:textStyle="bold"/>
+               	  <!--지성피부관리법? 내용 -->
+               <LinearLayout android:layout_height="wrap_content"
+                   android:layout_width="fill_parent"
+                   android:orientation="horizontal">
+                   <TextView 
+                       android:layout_width="wrap_content"
+                       android:layout_height="fill_parent"
+                       android:layout_weight="1"
+                       android:text="    "/>
+                   <LinearLayout android:layout_width="fill_parent"
+                       android:layout_height="fill_parent"
+                       android:layout_weight="4"
+                       android:orientation="vertical">
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 여드름을 유발시키는 기름기 있는 음식을 피해야 합니다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 피부 세안을 꼼꼼하게 하여 기름기 없는 상태를 유지해야 합니다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 기초화장을 쓸 때에는 지성전용의 제품을 사용해야 합니다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 가끔씩 스크럽을 이용한 가벼운 마사지로 각질을 제거합니다." />
+                   </LinearLayout>
+               </LinearLayout>
+               
+               
                <Button android:text="지성 선택"
                 	android:id="@+id/act_type_choice_btn_oily"
                 	android:layout_width="wrap_content"
                 	android:layout_height="wrap_content"
-                	android:onClick="doChoice"/>
+                	android:onClick="doChoice"
+                	android:layout_gravity="right"/>
             </LinearLayout>
              
              
@@ -53,17 +254,118 @@
             <LinearLayout 
                 android:orientation="vertical"
                 android:id="@+id/complexity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:text="  "
+        			android:textSize="20sp"/>
                <TextView
         			android:layout_width="wrap_content"
         			android:layout_height="wrap_content"
-        			android:text="복합성 피부 내용"/>
+        			android:text="복합성 피부란?"
+        			android:textSize="20sp"
+        			android:textStyle="bold"/>
+                 
+                 <!-- 복합성피부란? 내용 -->
+               <LinearLayout android:layout_height="wrap_content"
+                   android:layout_width="fill_parent"
+                   android:orientation="horizontal">
+                   <TextView 
+                       android:layout_width="wrap_content"
+                       android:layout_height="fill_parent"
+                       android:layout_weight="1"
+                       android:text="    "/>
+                   <LinearLayout android:layout_width="fill_parent"
+                       android:layout_height="fill_parent"
+                       android:layout_weight="4"
+                       android:orientation="vertical">
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 세안 후, 눈가와 입가 예민한 부분은 약간 당기지만 시간이 지나면 괜찮아진다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 모공이 크지 않고 코 주변이나 볼에만 약간 크다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 피부 결이 부드러운 편이며, 화장이 잘 된다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 피부가 쉽게 번들거리거나 쉽게 당기지 않는다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 환절기에는 피부트러블이 발생하지만 대체로 건강한 편이다." />
+                   </LinearLayout>
+               </LinearLayout>
+               <TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:text="  "
+        			android:textSize="10sp"/>
+                  <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="   * 심한 지성피부, 건성피부가 아닌 대부분 여성들의 피부타입입니다." />
+                  <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text=" 얼굴의 피지선분포가 많아 피지의 분비가 다른 부위보다 왕성하여, 기름이 많지만, 그 외 부위는 정상이 타입입니다." />
+                  <TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:text="  "
+        			android:textSize="20sp"/>
+               	 <TextView
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:text="복합성 피부 관리법은?"
+        			android:textSize="20sp"
+        			android:textStyle="bold"/>
+               	  <!--복합성피부관리법? 내용 -->
+               <LinearLayout android:layout_height="wrap_content"
+                   android:layout_width="fill_parent"
+                   android:orientation="horizontal">
+                   <TextView 
+                       android:layout_width="wrap_content"
+                       android:layout_height="fill_parent"
+                       android:layout_weight="1"
+                       android:text="    "/>
+                   <LinearLayout android:layout_width="fill_parent"
+                       android:layout_height="fill_parent"
+                       android:layout_weight="4"
+                       android:orientation="vertical">
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 순한 비누로 매일 세안하며, 유분이 없는 제품을 사용해야 합니다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 지나치게 건조하게 하거나 기름기가 많은 화장품은 피해야 합니다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 기초화장을 쓸 때에는 지성전용의 제품을 사용해야 합니다." />
+                        <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="- 주름이 생기기 쉬운 입가, 눈가에는 잊지 말고 전용제품을 사용해야 합니다." />
+                   </LinearLayout>
+               </LinearLayout>
+               
+               
                <Button android:text="복합성 선택"
                 	android:id="@+id/act_type_choice_btn_combination"
                 	android:layout_width="wrap_content"
                 	android:layout_height="wrap_content"
-                	android:onClick="doChoice"/>
+                	android:onClick="doChoice"
+                	android:layout_gravity="right"/>
             </LinearLayout>
             
             

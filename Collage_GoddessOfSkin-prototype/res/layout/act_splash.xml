@@ -47,15 +47,15 @@
 
             <Button
                 android:id="@+id/act_splash_btn_choice"
-      			android:background="@drawable/splash_btn"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:onClick="gotoTypeChoice"/>
+                android:onClick="gotoTypeChoice"
+                 android:background="@drawable/test_splashbtn"/>
 
             <Button
                 android:id="@+id/act_splash_btn_test"
-                android:background="@drawable/splash_btn2"
+                android:background="@drawable/test_splashbtn2"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
                 android:layout_weight="1"

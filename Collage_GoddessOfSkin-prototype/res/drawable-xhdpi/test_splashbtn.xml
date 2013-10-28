@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- pressed Button -->
+    <item android:drawable="@drawable/b1_after"
+        android:state_pressed="true"></item>
+    <!-- unpressed Button--> 
+    <item android:drawable="@drawable/b1"
+        android:state_pressed="false"></item>
+
+</selector>

@@ -6,13 +6,15 @@ import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.ContentUris;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.StrictMode;
+import android.provider.MediaStore;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
@@ -21,8 +23,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -244,32 +244,13 @@ public class ActMain extends FragmentActivity {
 
 			break;
 		case SettingsAlarm: {
-			Builder d = new AlertDialog.Builder(this);
-			d.setTitle("소리설정");
-			d.setSingleChoiceItems(R.array.select_sound, 0,
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int whichButton) {
-
-							mp = MediaPlayer.create(ActMain.this, R.raw.asdd);
-
-							mp.start();
-
-						}
-
-					});
-
-			d.setPositiveButton("확인", new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int whichButton) {
-					// 이구간은 확인버튼을 선택했을때 노래가 설정되어야하는 구간이니까 멘토님한테 물어본다.
-				}
-			});
-			d.setNegativeButton("취소", new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int which) {
-					dialog.cancel();
-				}
-			});
-			d.show();
+			Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
+			 intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE,"알림음 설정");
+			 Uri uri = ContentUris.withAppendedId(
+			 MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, 1l);
+			 intent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, false);
+			 intent.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, uri);
+			 startActivityForResult(intent, 123);
 
 		}
 			break;

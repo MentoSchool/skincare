@@ -7,30 +7,35 @@
         android:id="@+id/drawer_profile_skin1"
         android:layout_width="@dimen/drawer_width_1"
         android:layout_height="@dimen/profile_height_1"
-        android:background="@android:color/holo_blue_bright" />
+        android:background="#dae7f7" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/drawer_profile_skin1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:text="sedong" />
 
     <ImageView
         android:id="@+id/profile_image12"
         android:layout_width="@dimen/profile_avatar_width_1"
         android:layout_height="@dimen/profile_avatar_height_1"
-        android:layout_alignBottom="@id/drawer_profile_skin1"
-        android:layout_alignRight="@id/drawer_profile_skin1"
-        android:layout_marginBottom="@dimen/profile_avatar_margin"
-        android:layout_marginRight="@dimen/profile_avatar_margin_right"
+        android:layout_above="@id/textView1"
+        android:layout_centerHorizontal="true"
         android:background="@android:color/white"
         android:padding="@dimen/profile_avatar_padding"
         android:src="@android:color/holo_blue_dark" />
 
-    <EditText
-
-        android:id="@+id/namegogo"
+    <ListView
+        android:id="@android:id/list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/drawer_profile_skin1"
-        android:layout_toLeftOf="@+id/profile_image12"
-        android:ems="10"
-        android:hint="이름을 입력하세요." />
-   
+        android:layout_above="@+id/commit_Button"
+        android:layout_below="@+id/drawer_profile_skin1" >
+    </ListView>
+
     <Button
         android:id="@+id/commit_Button"
         android:layout_width="wrap_content"
@@ -39,16 +44,5 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:text="저장하기" />
-	
-
-
-    <Button
-        android:id="@+id/skin_Button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@id/profile_image12"
-        android:layout_below="@id/drawer_profile_skin1"
-        android:layout_marginTop="17dp"
-        android:text="피부타입 설정" />
 
 </RelativeLayout>

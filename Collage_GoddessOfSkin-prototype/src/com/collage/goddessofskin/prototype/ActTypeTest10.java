@@ -2,10 +2,9 @@ package com.collage.goddessofskin.prototype;
 
 import java.util.ArrayList;
 
-import com.collage.goddessofskin.prototype.defined.Const.SkinType;
-import com.collage.goddessofskin.prototype.manager.SharedPreferenceManager;
-
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,10 +13,13 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.collage.goddessofskin.prototype.defined.Const.SkinType;
+import com.collage.goddessofskin.prototype.manager.SharedPreferenceManager;
 
 public class ActTypeTest10 extends Activity {
 	ActTypeTest9 acttypetest9=(ActTypeTest9) ActTypeTest9.ActTypeTestActivity9;
+	SkinType type;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -46,7 +48,7 @@ public class ActTypeTest10 extends Activity {
 			@Override
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				if(checkedId!=-1){
-					 SkinType type = SkinType.Normal;
+					  type = SkinType.Normal;
 				  final RadioButton rb=(RadioButton) findViewById(checkedId);
 					    if(rb!=null){
 					    	if(checkedId==R.id.yes_radiobtn){   
@@ -71,17 +73,17 @@ public class ActTypeTest10 extends Activity {
 								scount++;
 						}
 						if(scount<=3){
-							type = SkinType.Dry; 		
+							buttonDialog2();	
 							}else if(scount<=6){
-							type = SkinType.Combimation;
+							buttonDialog4();
 							}else{
-							type = SkinType.Oily;	
+							buttonDialog3();
 							}
-						SharedPreferenceManager.getInstance(getApplicationContext()).setType(type);
-						Intent intent=new Intent(ActTypeTest10.this,ActMain.class);
-						startActivity(intent);
+						//SharedPreferenceManager.getInstance(getApplicationContext()).setType(type);
+						//Intent intent=new Intent(ActTypeTest10.this,ActMain.class);
+						//startActivity(intent);
 						
-						finish();
+						//finish();
 						
 				}
 			
@@ -91,5 +93,94 @@ public class ActTypeTest10 extends Activity {
 		
 		
 	}
+	/*건성일때*/
+	void buttonDialog2(){
+		AlertDialog.Builder builder=new AlertDialog.Builder(this);
+		builder.setTitle("피부타입 설정");
+		builder.setMessage("테스트 결과 : 당신은 건성입니다.");
+		builder.setPositiveButton("피부타입 지정하기", new DialogInterface.OnClickListener(){
+			public void onClick(DialogInterface dialog, int id){
+				type = SkinType.Dry; 
+				SharedPreferenceManager.getInstance(getApplicationContext()).setType(type);
+				Intent intent=new Intent(ActTypeTest10.this,ActMain.class);
+				startActivity(intent);
+				
+				finish();
+				//ActTypeTest10.this.finish();
+			}
+		});
+		builder.setNeutralButton("다시 지정하기", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				Intent intent=new Intent(ActTypeTest10.this,ActSplash.class);
+				startActivity(intent);
+				ActTypeTest10.this.finish();
+			}
+		});
+		AlertDialog dialog=builder.create();
+		dialog.show();
+			
+	}
+	/*지성일때*/
+	void buttonDialog3(){
+		AlertDialog.Builder builder=new AlertDialog.Builder(this);
+		builder.setTitle("피부타입 설정");
+		builder.setMessage("테스트 결과 : 당신은 지성입니다.");
+		builder.setPositiveButton("피부타입 지정하기", new DialogInterface.OnClickListener(){
+			public void onClick(DialogInterface dialog, int id){
+				type = SkinType.Oily; 
+				SharedPreferenceManager.getInstance(getApplicationContext()).setType(type);
+				Intent intent=new Intent(ActTypeTest10.this,ActMain.class);
+				startActivity(intent);
+				
+				finish();
+				//ActTypeTest10.this.finish();
+			}
+		});
+		builder.setNeutralButton("다시 지정하기", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				Intent intent=new Intent(ActTypeTest10.this,ActSplash.class);
+				startActivity(intent);
+				ActTypeTest10.this.finish();
+			}
+		});
+		AlertDialog dialog=builder.create();
+		dialog.show();
+			
+	}
+	/*복합성일때*/
+	void buttonDialog4(){
+		AlertDialog.Builder builder=new AlertDialog.Builder(this);
+		builder.setTitle("피부타입 설정");
+		builder.setMessage("테스트 결과 : 당신은 복합성입니다.");
+		builder.setPositiveButton("피부타입 지정하기", new DialogInterface.OnClickListener(){
+			public void onClick(DialogInterface dialog, int id){
+				type = SkinType.Combimation; 
+				SharedPreferenceManager.getInstance(getApplicationContext()).setType(type);
+				Intent intent=new Intent(ActTypeTest10.this,ActMain.class);
+				startActivity(intent);
+				
+				finish();
+				//ActTypeTest10.this.finish();
+			}
+		});
+		builder.setNeutralButton("다시 지정하기", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				Intent intent=new Intent(ActTypeTest10.this,ActSplash.class);
+				startActivity(intent);
+				ActTypeTest10.this.finish();
+			}
+		});
+		AlertDialog dialog=builder.create();
+		dialog.show();
+			
+	}
+		
 }
+
 

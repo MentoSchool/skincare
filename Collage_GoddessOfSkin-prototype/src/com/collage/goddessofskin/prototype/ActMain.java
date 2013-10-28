@@ -26,9 +26,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.collage.goddessofskin.api.ApiMain;
 import com.collage.goddessofskin.prototype.defined.Const.DrawerMenu;
+import com.collage.goddessofskin.prototype.defined.Const.SkinType;
 import com.collage.goddessofskin.prototype.fragment.FragMain;
 import com.collage.goddessofskin.prototype.fragment.FragMain_Pack;
 import com.collage.goddessofskin.prototype.fragment.schedule.FragScheduleBoard;
@@ -39,6 +42,7 @@ import com.collage.goddessofskin.prototype.fragment.weather.FragWeatherFun;
 import com.collage.goddessofskin.prototype.fragment.weather.FragWeatherToday;
 //�묒븘�꾩삩�담뀖�쇈꽩�담뀖�ｋ윭�ｃ뀖;�담뀋癒몃━�ⓦ뀑�뗣뀑.�띲뀪�졼뀪
 //�고듃瑜�諛붽퓞
+import com.collage.goddessofskin.prototype.manager.SharedPreferenceManager;
 
 
 /**
@@ -77,8 +81,11 @@ public class ActMain extends FragmentActivity {
 
 		ApiMain.getInstance().UltraApi();//자외선 Api
 		
+		SkinType type = SharedPreferenceManager.getInstance(getApplicationContext()).getType();
+		Toast.makeText(getApplicationContext(), String.format("Your skin type is %s", type.name()), Toast.LENGTH_SHORT).show();
 		
-		
+		TextView drawer_profile_type=(TextView) findViewById(R.id.drawer_profile_type);
+		drawer_profile_type.setText(type.name());
 
 		mTitle = mDrawerTitle = getTitle();
 		mDrawerMenus = getResources().getStringArray(R.array.drawer_menus);

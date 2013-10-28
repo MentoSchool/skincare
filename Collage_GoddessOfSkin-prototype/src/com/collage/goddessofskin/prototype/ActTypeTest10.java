@@ -52,11 +52,11 @@ public class ActTypeTest10 extends Activity {
 					    	if(checkedId==R.id.yes_radiobtn){   
 					    		mYesNocount.remove(9);
 					    		mYesNocount.add(9,1);
-					    		Toast.makeText(ActTypeTest10.this,"Yes select", Toast.LENGTH_SHORT).show();
+					    		
 					    	}else if(checkedId==R.id.no_radiobtn){  
 					    		mYesNocount.remove(9);
 					    		mYesNocount.add(9,0);
-					    		Toast.makeText(ActTypeTest10.this,"no select", Toast.LENGTH_SHORT).show();
+					    		
 					    	}
 					    	
 					    	

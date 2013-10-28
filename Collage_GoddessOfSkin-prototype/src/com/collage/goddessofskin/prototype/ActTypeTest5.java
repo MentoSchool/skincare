@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -26,21 +29,17 @@ public class ActTypeTest5 extends Activity {
 		txttest1.setText(text);
 		Intent intent=getIntent();
 		final ArrayList<Integer> mYesNocount=intent.getIntegerArrayListExtra("count");
-		/*if(mYesNocount.get(1)!=null){
-			mYesNocount.remove(1);
-		}*/
-		//back��ư ������ ��,
-		/*Button testBackbutton=(Button) findViewById(R.id.testbackbtn);
+
+
+		Button testBackbutton=(Button) findViewById(R.id.testbackbtn);
 		testBackbutton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-			
-			this.setResult(RESULT_OK);
-			finish();
-				
+				Intent intent=new Intent(ActTypeTest5.this,ActTypeTest4.class);
+				startActivity(intent);
 			}
 		});
-		*/
+		
 		
 		final RadioGroup radiogroup=(RadioGroup) findViewById(R.id.RadioGroup1);
 		
@@ -51,10 +50,12 @@ public class ActTypeTest5 extends Activity {
 					 Intent intent=new Intent(ActTypeTest5.this,ActTypeTest6.class);
 				  final RadioButton rb=(RadioButton) findViewById(checkedId);
 					    if(rb!=null){
-					    	if(checkedId==R.id.yes_radiobtn){   
+					    	if(checkedId==R.id.yes_radiobtn){ 
+					    		mYesNocount.remove(4);
 					    		mYesNocount.add(4,1);
 					    		Toast.makeText(ActTypeTest5.this,"Yes select", Toast.LENGTH_SHORT).show();
-					    	}else if(checkedId==R.id.no_radiobtn){   
+					    	}else if(checkedId==R.id.no_radiobtn){
+					    		mYesNocount.remove(4);
 					    		mYesNocount.add(4,0);
 					    		Toast.makeText(ActTypeTest5.this,"no select", Toast.LENGTH_SHORT).show();
 					    	}

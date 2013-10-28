@@ -34,7 +34,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/type_question" />
+            android:text="@string/type_question" 
+            android:textSize="15sp"
+            android:textStyle="bold"/>
 
         <LinearLayout
             style="?android:attr/buttonBarButtonStyle"
@@ -44,22 +46,43 @@
             android:orientation="horizontal"
             android:gravity="center"
         	android:layout_gravity="center" >
-
-            <Button
-                android:id="@+id/act_splash_btn_choice"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_weight="1"
-                android:onClick="gotoTypeChoice"
-                 android:background="@drawable/test_splashbtn"/>
-
-            <Button
-                android:id="@+id/act_splash_btn_test"
-                android:background="@drawable/test_splashbtn2"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_weight="1"
-                android:onClick="gotoTypeTest" />
+			<LinearLayout 
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:orientation="vertical"
+			    android:gravity="center">
+			    <Button
+	                android:id="@+id/act_splash_btn_choice"
+	                android:layout_width="150dp"
+	                android:layout_height="150dp"
+	                android:layout_weight="1"
+	                android:onClick="gotoTypeChoice"
+	                android:background="@drawable/test_splashbtn"/>
+			    <TextView
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="SkinType Select"
+		            android:textStyle="bold" />
+			</LinearLayout>
+	        <LinearLayout 
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:orientation="vertical"
+			    android:gravity="center">
+	
+	            <Button
+	                android:id="@+id/act_splash_btn_test"
+	                android:background="@drawable/test_splashbtn2"
+	                android:layout_width="160dp"
+	                android:layout_height="160dp"
+	                android:layout_weight="1"
+	                android:onClick="gotoTypeTest" />
+	             <TextView
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="SkinType Test" 
+		            android:textStyle="bold"/>
+	         </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

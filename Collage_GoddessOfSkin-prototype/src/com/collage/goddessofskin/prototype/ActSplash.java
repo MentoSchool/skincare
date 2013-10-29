@@ -25,7 +25,7 @@ public class ActSplash extends Activity
 			if (type == SkinType.Normal)
 			{
 				findViewById(R.id.act_splash_question).setVisibility(View.VISIBLE);
-				findViewById(R.id.act_splash_image).setVisibility(View.GONE);
+//				findViewById(R.id.act_splash_image).setVisibility(View.GONE);
 				//findViewById(R.id.act_splash_title).setVisibility(View.GONE);
 				//findViewById(R.id.act_splash_progress).setVisibility(View.GONE);
 			}

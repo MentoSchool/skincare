@@ -44,7 +44,6 @@ import com.collage.goddessofskin.prototype.fragment.weather.FragWeatherToday;
 //�고듃瑜�諛붽퓞
 import com.collage.goddessofskin.prototype.manager.SharedPreferenceManager;
 
-
 /**
  * Main activity
  * 
@@ -67,26 +66,25 @@ public class ActMain extends FragmentActivity {
 	 */
 	private AdapterView.OnItemClickListener mDrawerListItemClickListener = new AdapterView.OnItemClickListener() {
 		@Override
-		public void onItemClick(AdapterView<?> parent, View view, int position,
-				long id) {
+		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 			doMenuSelected(position);
 		}
 	};
 
-	//시험
-	
+	// 시험
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.act_main);
-		//StrictMode.enableDefaults();
+		// StrictMode.enableDefaults();
 
-		ApiMain.getInstance().UltraApi();//자외선 Api
-		
+		ApiMain.getInstance().UltraApi();// 자외선 Api
+
 		SkinType type = SharedPreferenceManager.getInstance(getApplicationContext()).getType();
 		Toast.makeText(getApplicationContext(), String.format("Your skin type is %s", type.name()), Toast.LENGTH_SHORT).show();
-		
-		TextView drawer_profile_type=(TextView) findViewById(R.id.drawer_profile_type);
+
+		TextView drawer_profile_type = (TextView) findViewById(R.id.drawer_profile_type);
 		drawer_profile_type.setText(type.name());
 
 		mTitle = mDrawerTitle = getTitle();
@@ -98,11 +96,9 @@ public class ActMain extends FragmentActivity {
 
 		// set a custom shadow that overlays the main content when the drawer
 		// opens
-		mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
-				GravityCompat.START);
+		mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
 		// set up the drawer's list view with items and click listener
-		mDrawerList.setAdapter(new ArrayAdapter<String>(this,
-				R.layout.view_drawer_list_item, mDrawerMenus));
+		mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.view_drawer_list_item, mDrawerMenus));
 		mDrawerList.setOnItemClickListener(mDrawerListItemClickListener);
 
 		// enable ActionBar app icon to behave as action to toggle nav drawer
@@ -119,14 +115,10 @@ public class ActMain extends FragmentActivity {
 		) {
 			public void onDrawerClosed(View view) {
 				getActionBar().setTitle(mTitle);
-				invalidateOptionsMenu(); // creates call to
-											// onPrepareOptionsMenu()
 			}
 
 			public void onDrawerOpened(View drawerView) {
 				getActionBar().setTitle(mDrawerTitle);
-				invalidateOptionsMenu(); // creates call to
-											// onPrepareOptionsMenu()
 			}
 		};
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
@@ -136,48 +128,11 @@ public class ActMain extends FragmentActivity {
 		}
 	}
 
-	
-
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.main, menu);
-		return super.onCreateOptionsMenu(menu);
-	}
-
-	/* Called whenever we call invalidateOptionsMenu() */
-	@Override
-	public boolean onPrepareOptionsMenu(Menu menu) {
-		// If the nav drawer is open, hide action items related to the content
-		// view
-		boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawer);
-		menu.findItem(R.id.action_websearch).setVisible(!drawerOpen);
-		return super.onPrepareOptionsMenu(menu);
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// The action bar home/up action should open or close the drawer.
-		// ActionBarDrawerToggle will take care of this.
-		if (mDrawerToggle.onOptionsItemSelected(item)) {
-			return true;
-		}
-		// Handle action buttons
-		switch (item.getItemId()) {
-		case R.id.action_websearch:
-			/*
-			 * // create intent to perform web search for this planet Intent
-			 * intent = new Intent(Intent.ACTION_WEB_SEARCH);
-			 * intent.putExtra(SearchManager.QUERY, getActionBar().getTitle());
-			 * // catch event that there's no activity to handle intent if
-			 * (intent.resolveActivity(getPackageManager()) != null) {
-			 * startActivity(intent); } else { Toast.makeText(this,
-			 * R.string.app_not_available, Toast.LENGTH_LONG).show(); }
-			 */
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
-		}
+	public boolean onOptionsItemSelected(MenuItem item) 
+	{
+		if (mDrawerToggle.onOptionsItemSelected(item)) return true;
+		else return super.onOptionsItemSelected(item);
 	}
 
 	/**
@@ -203,7 +158,7 @@ public class ActMain extends FragmentActivity {
 	public void setTitle(CharSequence title) {
 		mTitle = title;
 		getActionBar().setTitle(mTitle);
-		
+
 	}
 
 	/**
@@ -225,16 +180,15 @@ public class ActMain extends FragmentActivity {
 			fragment = new FragMain_Pack();
 			break;
 
-		case ScheduleSettings:
-			fragment = new FragScheduleSettings();
-			break;
-		case ScheduleBoard:
+//		case ScheduleSettings:
+//			fragment = new FragScheduleSettings();
+//			break;
+			
+		case Schedule:
 			fragment = new FragScheduleBoard();
 			break;
 
 		case WeatherToday:
-
-			
 
 			fragment = new FragWeatherToday();
 			break;
@@ -243,37 +197,36 @@ public class ActMain extends FragmentActivity {
 			fragment = new FragWeatherFun();
 			break;
 
-		case Share:
-			
-			fragment = new FragMain();
-			break;
+//		case Share:
+//
+//			fragment = new FragMain();
+//			break;
 
-		case SettingsProfile:
+		case Settings:
 			fragment = new FragSettingsProfile();
 
 			break;
+			
+			/*
 		case SettingsAlarm: {
 			Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
-			 intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE,"알림음 설정");
-			 Uri uri = ContentUris.withAppendedId(
-			 MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, 1l);
-			 intent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, false);
-			 intent.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, uri);
-			 startActivityForResult(intent, 123);
+			intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE, "알림음 설정");
+			Uri uri = ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, 1l);
+			intent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, false);
+			intent.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, uri);
+			startActivityForResult(intent, 123);
 
 		}
 			break;
 		case SettingsPopup: {
 			Builder d = new AlertDialog.Builder(this);
 			d.setTitle("팝업설정");
-			d.setSingleChoiceItems(R.array.select_popup, 0,
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int whichButton) {
+			d.setSingleChoiceItems(R.array.select_popup, 0, new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int whichButton) {
 
-						}
+				}
 
-					});
+			});
 			d.setPositiveButton("확인", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int whichButton) {
 					// 이구간은 확인버튼을 선택했을때 설정되어야하는 구간이니까 멘토님한테 물어본다.
@@ -291,17 +244,17 @@ public class ActMain extends FragmentActivity {
 		case SettingsSkinType: {
 		}
 			break;
+			*/
+			
 		case SettingsHelp: {
-
-			Intent intent = new Intent(ActMain.this, FragSettingsHelp.class);
-			startActivity(intent);
+			fragment = new FragSettingsHelp();
 		}
 			break;
+
 		}
 		if (fragment != null) {
 			FragmentManager fragmentManager = getFragmentManager();
-			fragmentManager.beginTransaction()
-					.replace(R.id.act_main_content_frame, fragment).commit();
+			fragmentManager.beginTransaction().replace(R.id.act_main_content_frame, fragment).commit();
 		}
 
 		// update selected item and title, then close the drawer

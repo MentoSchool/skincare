@@ -15,15 +15,17 @@ public class Const
 	public enum DrawerMenu
 	{
 		Home,
-		ScheduleSettings,
-		ScheduleBoard,
+//		ScheduleSettings,
+//		ScheduleBoard,
+		Schedule,
 		WeatherToday,
 		WeatherFun,
-		Share,
-		SettingsProfile,
-		SettingsAlarm,
-		SettingsPopup,
-		SettingsSkinType,
+//		Share,
+//		SettingsProfile,
+//		SettingsAlarm,
+//		SettingsPopup,
+//		SettingsSkinType,
+		Settings,
 		SettingsHelp
 	}
 }

@@ -5,10 +5,13 @@ import java.io.File;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.ListFragment;
+import android.app.AlertDialog.Builder;
+import android.content.ContentUris;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -42,14 +45,16 @@ public class FragSettingsProfile extends ListFragment implements
 	private static final int CROP_FROM_CAMERA = 2;
 	private static final int INSERT_ID = Menu.FIRST;
 	private static final int DELETE_ID = Menu.FIRST + 1;
-	private static final int ACTIVITY_CREATE = 0;
+	private static final int ACTIVITY_CREATE = 3;
 	private static final int ACTIVITY_EDIT = 1;
 	private Uri mImageCaptureUri;
 	private ImageView mPhotoImageView;
 	private Button mbutton;
 	NotesDbAdapter dbAdapter;
 	SimpleCursorAdapter adapter;
-
+	private ImageView profile_image12;
+	private Button popup_Button1;
+	private Button Alarmsound_Button;
 	DialogInterface.OnClickListener cameraListener = new DialogInterface.OnClickListener() {
 
 		@Override
@@ -84,11 +89,17 @@ public class FragSettingsProfile extends ListFragment implements
 				.findViewById(R.id.profile_image12);
 		mPhotoImageView.setOnClickListener(this);
 
+
+		popup_Button1 = (Button) rootView.findViewById(R.id.popup_Button1);
+		popup_Button1.setOnClickListener(this);
+		
+
+		Alarmsound_Button = (Button) rootView.findViewById(R.id.Alarmsound_Button);
+		Alarmsound_Button.setOnClickListener(this);
 		setHasOptionsMenu(true);
-		// 구글링하다가 이게 있어야 fragment에서 onCreateOptionsMenu가 활성화된다길래..
-       //컨텍스트 메뉴와 리스트 뷰 연결...삭제 메뉴가 뜨도록 하려고
-		View view=rootView.findViewById(android.R.id.list);
-		this.registerForContextMenu(view);	
+		
+		View view = rootView.findViewById(android.R.id.list);
+		this.registerForContextMenu(view);
 		return rootView;
 	}
 
@@ -122,19 +133,10 @@ public class FragSettingsProfile extends ListFragment implements
 		startActivityForResult(intent, PICK_FROM_ALBUM);
 	}
 
-	
-	
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		
-		
-		
-		
-		if (resultCode != getActivity().RESULT_OK)   {
 
-		
-			
-		
+		if (resultCode != getActivity().RESULT_OK) {
 
 			return;
 
@@ -188,19 +190,68 @@ public class FragSettingsProfile extends ListFragment implements
 
 			break;
 		}
-	
+		case ACTIVITY_CREATE: {
+			fillData();
+			break;
 		}
 
-		fillData();
-	
+		}
+
 	}
 
 	public void onClick(View v) {
-		new AlertDialog.Builder(getActivity()).setIcon(R.drawable.ic_launcher)
-				.setTitle("업로드할 이미지 선택")
-				.setPositiveButton("사진촬영", cameraListener)
-				.setNeutralButton("앨범선택", albumListener)
-				.setNegativeButton("취소", cancelListener).show();
+		
+		switch (v.getId()) {
+		case R.id.profile_image12:
+			new AlertDialog.Builder(getActivity()).setIcon(R.drawable.ic_launcher)
+		.setTitle("업로드할 이미지 선택")
+		.setPositiveButton("사진촬영", cameraListener)
+		.setNeutralButton("앨범선택", albumListener)
+		.setNegativeButton("취소", cancelListener).show();
+			break;
+		
+			
+		
+		
+			
+		case R.id.Alarmsound_Button:
+		
+			 Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
+			 intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE,"알림음 설정");
+			 Uri uri = ContentUris.withAppendedId(
+			 MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, 1l);
+			 intent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, false);
+			 intent.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, uri);
+			 startActivityForResult(intent, 123);
+			 
+			 break;
+		
+		case R.id.popup_Button1:
+			
+			Builder d = new AlertDialog.Builder(getActivity());
+			d.setTitle("팝업설정");
+			d.setSingleChoiceItems(R.array.select_popup, 0,
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog,
+								int whichButton) {
+
+						}
+
+					});
+			d.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int whichButton) {
+					// 이구간은 확인버튼을 선택했을때 설정되어야하는 구간이니까 멘토님한테 물어본다.
+				}
+			});
+			d.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.cancel();
+				}
+			});
+			d.show();
+		
+		}
+		
 
 	}
 
@@ -240,25 +291,45 @@ public class FragSettingsProfile extends ListFragment implements
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 
+		/*
 		menu.add(Menu.NONE, INSERT_ID, Menu.NONE, "추가")
 				.setIcon(android.R.drawable.ic_menu_add)
 				.setAlphabeticShortcut('a');
 		super.onCreateOptionsMenu(menu, inflater);
+		*/
+		
+		inflater.inflate(R.menu.frag_settings, menu);
+		super.onCreateOptionsMenu(menu, inflater);
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
+	public boolean onOptionsItemSelected(MenuItem item) 
+	{
+		switch (item.getItemId()) 
+		{
+			case R.id.action_new_note :
+			{
+				Intent intent = new Intent(getActivity(), NoteEdit.class);
+				startActivityForResult(intent, ACTIVITY_CREATE);
+			}
+			return true;
+	
+			default : return (super.onOptionsItemSelected(item));
+		}
+		
+		/*
 		switch (item.getItemId()) {
 		case INSERT_ID:
 			// NoteEdit로 아이디 없이 넘어가면 추가
 			Intent intent = new Intent(getActivity(), NoteEdit.class);
 			startActivityForResult(intent, ACTIVITY_CREATE);
+
 			return true;
 		}
 		return (super.onOptionsItemSelected(item));
+		*/
 	}
 
-	// 역시 삭제도 안되네여..
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenuInfo menuInfo) {

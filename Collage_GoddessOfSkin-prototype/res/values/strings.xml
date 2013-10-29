@@ -5,6 +5,12 @@
     <string name="action_websearch">Web search</string>
     <string name="app_not_available">Sorry, there\'s no web browser available</string>
     
+    <string name="action_new_schedule">New Alarm</string>
+    <string name="action_new_sleep">Sleep</string>
+    <string name="action_new_water">Water</string>
+    <string name="action_new_uv">UV</string>
+    <string name="action_new_note">New Note</string>
+    
     <!-- menu -->
     <string name="menu_home">Home</string>
     <string name="menu_schedule">Schedule</string>

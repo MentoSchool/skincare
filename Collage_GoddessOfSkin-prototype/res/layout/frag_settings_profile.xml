@@ -7,42 +7,68 @@
         android:id="@+id/drawer_profile_skin1"
         android:layout_width="@dimen/drawer_width_1"
         android:layout_height="@dimen/profile_height_1"
-        android:background="#dae7f7" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/drawer_profile_skin1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="14dp"
-        android:text="sedong" />
+        android:background="@android:color/holo_blue_bright" />
 
     <ImageView
         android:id="@+id/profile_image12"
         android:layout_width="@dimen/profile_avatar_width_1"
         android:layout_height="@dimen/profile_avatar_height_1"
-        android:layout_above="@id/textView1"
-        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/drawer_profile_skin1"
+        android:layout_alignRight="@id/drawer_profile_skin1"
+        android:layout_marginBottom="@dimen/profile_avatar_margin"
+        android:layout_marginRight="@dimen/profile_avatar_margin_right"
         android:background="@android:color/white"
         android:padding="@dimen/profile_avatar_padding"
-        android:src="@android:color/holo_blue_dark" />
+        android:src="@drawable/profile" />
+
+    <TextView
+        android:id="@+id/namegogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/drawer_profile_skin1"
+        android:layout_toLeftOf="@+id/profile_image12"
+        android:text="이름"
+        android:textSize="9pt" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/namegogo"
+        android:layout_toLeftOf="@id/profile_image12"
+        android:text="타입"
+        android:textSize="9pt" />
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/commit_Button"
-        android:layout_below="@+id/drawer_profile_skin1" >
-    </ListView>
+        android:layout_below="@+id/popup_Button1" />
 
     <Button
-        android:id="@+id/commit_Button"
+        android:id="@+id/skin_Button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
+        android:layout_alignBottom="@+id/popup_Button1"
+        android:layout_toLeftOf="@+id/Alarmsound_Button"
+        android:text="피부타입" />
+
+    <Button
+        android:id="@+id/popup_Button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:text="저장하기" />
+        android:layout_below="@+id/drawer_profile_skin1"
+        android:layout_marginTop="18dp"
+        android:text="팝업설정" />
+
+    <Button
+        android:id="@+id/Alarmsound_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/popup_Button1"
+        android:layout_alignBottom="@+id/popup_Button1"
+        android:layout_toLeftOf="@+id/popup_Button1"
+        android:text="알람설정" />
 
 </RelativeLayout>

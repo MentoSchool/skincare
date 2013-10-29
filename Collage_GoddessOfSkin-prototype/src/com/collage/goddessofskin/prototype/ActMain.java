@@ -73,6 +73,8 @@ public class ActMain extends FragmentActivity {
 		}
 	};
 
+	//시험
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

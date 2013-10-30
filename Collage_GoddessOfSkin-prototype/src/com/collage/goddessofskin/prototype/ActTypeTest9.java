@@ -19,7 +19,7 @@ public class ActTypeTest9 extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.act_type_test);
+		setContentView(R.layout.act_type_test_back);
 		
 		ActTypeTestActivity9 = ActTypeTest9.this;
 		acttypetest8.finish();

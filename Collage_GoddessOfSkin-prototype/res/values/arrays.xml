@@ -20,6 +20,20 @@
          -->
         <item>@string/menu_settings_help</item>
     </string-array>
+    
+    <string-array name="type_test">
+        <item>1. 세안 후 피부가 전혀 당기지 않는다.</item>
+        <item>2. 모공이 육안으로 정확히 보인다.</item>
+        <item>3. 메이크업이 금방 지워진다.</item>
+        <item>4. 영양크림 혹은 팩을 하면 트러블이 잘 생긴다.</item>
+        <item>5. 화장품 형태는 촉촉한것 보다는 산뜻한 젤 타입이 좋다.</item>
+        <item>6. 코 주변에 블랙헤드가 다수 있다.</item>
+        <item>7. 머리가 자주 가렵고 비듬도 생긴다.</item>
+        <item>8. 피부는 항상 윤기가 도는 듯 번들거린다.</item>
+        <item>9. 세안 후 기초관리를 하지 않더라도 금방 기름기가 돈다.</item>
+        <item>10. 기름종이를 하루에 3번 이상 사용한다.</item>
+    </string-array>
+    
     <string-array name="select_popup">
         <item>간략하게</item>
         <item>자세하게</item>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dae7f7"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/testbackbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@drawable/splash_back_btn" />
+
+        <TextView
+            android:id="@+id/txttest1"
+            android:layout_width="210dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="1.세안 후 피부가 전혀 당기지 않는다."
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="  " />
+
+    <RadioGroup
+        android:id="@+id/RadioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/yes_radiobtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_test_btn_yes"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingLeft="@dimen/test_radio_button_text_padding"
+            android:text="@string/test_yes"
+            android:textColor="@color/selector_test_btn" />
+
+        <RadioButton
+            android:id="@+id/no_radiobtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_test_btn_no"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingLeft="@dimen/test_radio_button_text_padding"
+            android:text="@string/test_no"
+            android:textColor="@color/selector_test_btn" />
+    </RadioGroup>
+
+</LinearLayout>

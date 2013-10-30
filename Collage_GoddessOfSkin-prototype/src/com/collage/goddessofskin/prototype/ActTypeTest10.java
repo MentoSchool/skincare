@@ -23,7 +23,7 @@ public class ActTypeTest10 extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.act_type_test);
+		setContentView(R.layout.act_type_test_back);
 		
 		acttypetest9.finish();
 		
@@ -158,7 +158,7 @@ public class ActTypeTest10 extends Activity {
 		builder.setMessage("테스트 결과 : 당신은 복합성입니다.");
 		builder.setPositiveButton("피부타입 지정하기", new DialogInterface.OnClickListener(){
 			public void onClick(DialogInterface dialog, int id){
-				type = SkinType.Combimation; 
+				type = SkinType.Combination; 
 				SharedPreferenceManager.getInstance(getApplicationContext()).setType(type);
 				Intent intent=new Intent(ActTypeTest10.this,ActMain.class);
 				startActivity(intent);

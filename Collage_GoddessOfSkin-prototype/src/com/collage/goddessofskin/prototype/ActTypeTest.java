@@ -1,71 +1,119 @@
 package com.collage.goddessofskin.prototype;
 
-import java.util.ArrayList;
+import java.util.Locale;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Toast;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
-public class ActTypeTest extends Activity{
+import com.collage.goddessofskin.prototype.defined.Const.SkinType;
+import com.collage.goddessofskin.prototype.manager.SharedPreferenceManager;
+
+public class ActTypeTest extends Activity
+{
 	public static Activity ActTypeTestActivity;
-	public static final int REQUEST_TEXT=1;
+//	public static final int REQUEST_TEXT = 1;
 
-@Override
-
-protected void onCreate(Bundle savedInstanceState) {
-	super.onCreate(savedInstanceState);
-	setContentView(R.layout.act_type_test);
+	private ListView mCheckedList;
+	private SkinType mSkinType;
 	
-	ActTypeTestActivity = ActTypeTest.this;
-	
-	final RadioGroup radiogroup=(RadioGroup) findViewById(R.id.RadioGroup1);
-	
-	
-	radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-		ArrayList<Integer> mYesNocount=new ArrayList<Integer>();
-		
+	private DialogInterface.OnClickListener onDialogClickListener = new DialogInterface.OnClickListener()
+	{
 		@Override
-		public void onCheckedChanged(RadioGroup group, int checkedId) {
-			if(checkedId!=-1){
-				 Intent intent=new Intent(ActTypeTest.this,ActTypeTest2.class);
-				 mYesNocount.add(0, 0);
-				 mYesNocount.add(1, 0);
-				 mYesNocount.add(2, 0);
-				 mYesNocount.add(3, 0);
-				 mYesNocount.add(4, 0);
-				 mYesNocount.add(5, 0);
-				 mYesNocount.add(6, 0);
-				 mYesNocount.add(7, 0);
-				 mYesNocount.add(8, 0);
-				 mYesNocount.add(9, 0);
-			  final RadioButton rb=(RadioButton) findViewById(checkedId);
-				    if(rb!=null){
-				    	if(checkedId==R.id.yes_radiobtn){
-				    		mYesNocount.remove(0);
-				    		mYesNocount.add(0,1);
-				    		Toast.makeText(ActTypeTest.this,"Yes select", Toast.LENGTH_SHORT).show();
-				    	}else if(checkedId==R.id.no_radiobtn){   
-				    		mYesNocount.remove(0);
-				    		mYesNocount.add(0,0);
-				    		Toast.makeText(ActTypeTest.this,"no select", Toast.LENGTH_SHORT).show();
-				    	}
-				}else{
-			
-				}
-				    intent.putIntegerArrayListExtra("count", mYesNocount);
-					startActivity(intent); 
+		public void onClick(DialogInterface dialog, int which)
+		{
+			switch (which)
+			{
+				case Dialog.BUTTON_POSITIVE : doStart(); break;
+				case Dialog.BUTTON_NEGATIVE : doReset(); break;
 			}
-		
 		}
+	};
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState)
+	{
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.act_type_test);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+
+		mSkinType = SkinType.Normal;
 		
-	});
+		mCheckedList = (ListView) findViewById(R.id.act_type_test_list);
+		mCheckedList.setItemsCanFocus(false);
+		mCheckedList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+		mCheckedList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, getResources().getStringArray(R.array.type_test)));
+	}
 	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		getMenuInflater().inflate(R.menu.act_type_test, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
 	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		switch (item.getItemId())
+		{
+			case android.R.id.home : 
+			{
+				finish();
+			}
+			return true;
+			
+			case R.id.action_type_test_accept :
+			{
+				int count = mCheckedList.getCheckedItemCount();
+				
+				if(count <= 3) mSkinType = SkinType.Dry;
+				else if(count <= 6) mSkinType = SkinType.Combination;
+				else mSkinType = SkinType.Oily;
+				
+				int resId = getResources().getIdentifier("type_choice_" + mSkinType.name().toLowerCase(Locale.getDefault()), "string", getPackageName());
+				
+				new AlertDialog.Builder(this)
+					.setIcon(R.drawable.ic_dialog)
+					.setTitle(R.string.type_test_dialog_title)
+					.setMessage(getString(R.string.type_test_dialog_message, getString(resId)))
+					.setPositiveButton(R.string.type_test_dialog_ok, onDialogClickListener)
+					.setNegativeButton(R.string.type_test_dialog_cancel, onDialogClickListener)
+				.create().show();
+			}
+			return true;
+
+			default : return super.onOptionsItemSelected(item);
+		}
+	}
+	
+	/**
+	 * 다시하기
+	 */
+	private void doReset()
+	{
+		int i, len = mCheckedList.getCount();
+		for(i = 0; i < len; i++)
+			mCheckedList.setItemChecked(i, false);
+		
+		mSkinType = SkinType.Normal;
+	}
+	
+	/**
+	 * 지정하기
+	 */
+	private void doStart()
+	{
+		// save preference
+		SharedPreferenceManager.getInstance(getApplicationContext()).setType(mSkinType);
+		
+		setResult(RESULT_OK);
+		finish();
+	}
 }
-
-}
-
-

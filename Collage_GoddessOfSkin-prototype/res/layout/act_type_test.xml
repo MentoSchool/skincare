@@ -2,55 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
+    android:background="@color/splash_skin_type_bg"
     android:gravity="center"
-    android:background="#dae7f7">
+    android:orientation="vertical" >
 
-    <LinearLayout
+    <TextView
+        style="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" 
-        android:gravity="center">
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/type_test_title"
+        android:textColor="@color/actionbar_bg" />
 
-        <Button
-            android:id="@+id/testbackbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/splash_back_btn" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/actionbar_bg" />
 
-        <TextView
-            android:id="@+id/txttest1"
-            android:layout_width="210dp"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="1.세안 후 피부가 전혀 당기지 않는다."
-            android:textSize="20sp" />
-
-    </LinearLayout>
-    
-	<TextView android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:text="  "/>
-    
-    <RadioGroup android:id="@+id/RadioGroup1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:id="@+id/yes_radiobtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:button="@drawable/test_radiobutton2"
-            android:text="Yes" />
-
-         <RadioButton
-             android:id="@+id/no_radiobtn"
-             android:layout_width="162dp"
-             android:layout_height="wrap_content"
-             android:button="@drawable/test_radiobutton"
-             android:text="No" />
-
-    </RadioGroup>
-
+    <ListView
+        android:id="@+id/act_type_test_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:cacheColorHint="@android:color/transparent"
+        android:choiceMode="multipleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp" />
 
 </LinearLayout>

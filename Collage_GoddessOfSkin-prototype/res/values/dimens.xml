@@ -23,5 +23,7 @@
     <dimen name="profile_name_margin">5dp</dimen>
     
     <dimen name="menu_item_drawable_padding">10dp</dimen>
+    
+    <dimen name="test_radio_button_text_padding">20dp</dimen>
 
 </resources>

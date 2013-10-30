@@ -13,28 +13,27 @@ import com.collage.goddessofskin.prototype.manager.SharedPreferenceManager;
 public class ActTypeChoice extends TabActivity
 {
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) 
+	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.act_type_choice);
 		TabHost mTabHost=getTabHost();
 		
 		TabSpec spec;
 		spec=mTabHost.newTabSpec("tag");
-		spec.setIndicator("Dry");
+		spec.setIndicator(getString(R.string.type_choice_dry));
 		spec.setContent(R.id.dry);
 		mTabHost.addTab(spec);
 		
 		spec=mTabHost.newTabSpec("tag");
-		spec.setIndicator("Oily");
+		spec.setIndicator(getString(R.string.type_choice_oily));
 		spec.setContent(R.id.oily);
 		mTabHost.addTab(spec);
 		
 		spec=mTabHost.newTabSpec("tag");
-		spec.setIndicator("Combination");
+		spec.setIndicator(getString(R.string.type_choice_combination));
 		spec.setContent(R.id.complexity);
 		mTabHost.addTab(spec);
-		
-	
 	}
 	
 	public void doChoice(View v)
@@ -45,7 +44,7 @@ public class ActTypeChoice extends TabActivity
 		{
 			case R.id.act_type_choice_btn_oily 			: type = SkinType.Oily;			break;
 			case R.id.act_type_choice_btn_dry			: type = SkinType.Dry; 			break;
-			case R.id.act_type_choice_btn_combination	: type = SkinType.Combimation;	break; 
+			case R.id.act_type_choice_btn_combination	: type = SkinType.Combination;	break; 
 		}
 		
 		// save preference

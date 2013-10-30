@@ -9,7 +9,7 @@ public class Const
 		Normal,
 		Oily,
 		Dry,
-		Combimation
+		Combination;
 	}
 	
 	public enum DrawerMenu

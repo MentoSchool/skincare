@@ -4,17 +4,17 @@
     android:layout_height="wrap_content" >
 
     <ImageView
-        android:id="@+id/drawer_profile_skin1"
+        android:id="@+id/frag_settings_skin"
         android:layout_width="@dimen/drawer_width_1"
         android:layout_height="@dimen/profile_height_1"
         android:background="@android:color/holo_blue_bright" />
 
     <ImageView
-        android:id="@+id/profile_image12"
+        android:id="@+id/frag_settings_profile"
         android:layout_width="@dimen/profile_avatar_width_1"
         android:layout_height="@dimen/profile_avatar_height_1"
-        android:layout_alignBottom="@id/drawer_profile_skin1"
-        android:layout_alignRight="@id/drawer_profile_skin1"
+        android:layout_alignBottom="@id/frag_settings_skin"
+        android:layout_alignRight="@id/frag_settings_skin"
         android:layout_marginBottom="@dimen/profile_avatar_margin"
         android:layout_marginRight="@dimen/profile_avatar_margin_right"
         android:background="@android:color/white"
@@ -22,53 +22,60 @@
         android:src="@drawable/profile" />
 
     <TextView
-        android:id="@+id/namegogo"
+        android:id="@+id/frag_settings_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/drawer_profile_skin1"
-        android:layout_toLeftOf="@+id/profile_image12"
-        android:text="이름"
+        android:layout_alignBottom="@+id/frag_settings_skin"
+        android:layout_toLeftOf="@+id/frag_settings_profile"
+        android:hint="@string/settings_name"
+        android:text="@string/settings_name"
         android:textSize="9pt" />
 
     <TextView
-        android:id="@+id/type"
+        android:id="@+id/frag_settings_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/namegogo"
-        android:layout_toLeftOf="@id/profile_image12"
-        android:text="타입"
+        android:layout_above="@id/frag_settings_name"
+        android:layout_toLeftOf="@id/frag_settings_profile"
+        android:hint="@string/settings_skin_type"
+        android:text="@string/settings_skin_type"
         android:textSize="9pt" />
+
+    <!-- button -->
+
+    <LinearLayout
+        android:id="@+id/frag_settings_buttons"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frag_settings_profile"
+        android:layout_marginTop="@dimen/profile_avatar_margin_Top"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/frag_settings_btn_skin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/settings_btn_skin_type" />
+
+        <Button
+            android:id="@+id/frag_settings_btn_popup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_btn_popup" />
+
+        <Button
+            android:id="@+id/frag_settings_btn_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_btn_alarm" />
+    </LinearLayout>
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/popup_Button1" />
-
-    <Button
-        android:id="@+id/skin_Button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/popup_Button1"
-        android:layout_toLeftOf="@+id/Alarmsound_Button"
-        android:text="피부타입" />
-
-    <Button
-        android:id="@+id/popup_Button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/drawer_profile_skin1"
-        android:layout_marginTop="18dp"
-        android:text="팝업설정" />
-
-    <Button
-        android:id="@+id/Alarmsound_Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/popup_Button1"
-        android:layout_alignBottom="@+id/popup_Button1"
-        android:layout_toLeftOf="@+id/popup_Button1"
-        android:text="알람설정" />
+        android:layout_below="@+id/frag_settings_buttons" />
 
 </RelativeLayout>

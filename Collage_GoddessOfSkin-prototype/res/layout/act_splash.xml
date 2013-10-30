@@ -6,40 +6,28 @@
     android:gravity="center"
     android:orientation="vertical" >
 
-    <ImageView
-        android:id="@+id/act_splash_image"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@drawable/splash" />
-
-    <!--
-         ProgressBar
-        android:id="@+id/act_splash_progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/act_splash_title"
-        android:layout_centerInParent="true"
-        android:layout_margin="@dimen/splash_progress_margin"
-        android:indeterminateOnly="true" /
-    -->
+    <!-- skin type -->
 
     <LinearLayout
         android:id="@+id/act_splash_question"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="visible" >
+        android:layout_height="match_parent"
+        android:background="@color/splash_skin_type_bg"
+        android:gravity="center" >
 
         <TextView
             style="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/type_question"
-            android:textColor="@android:color/white"
             android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="30dp"
+            android:background="@drawable/splash_photo" />
 
         <LinearLayout
             style="?android:attr/buttonBarButtonStyle"
@@ -67,13 +55,12 @@
                     android:background="@android:color/transparent"
                     android:onClick="gotoTypeChoice"
                     android:scaleType="centerInside"
-                    android:src="@drawable/test_splashbtn" />
+                    android:src="@drawable/selector_btn_splash_choice" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/type_btn_choice"
-                    android:textColor="@android:color/white"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -91,16 +78,33 @@
                     android:background="@android:color/transparent"
                     android:onClick="gotoTypeTest"
                     android:scaleType="centerInside"
-                    android:src="@drawable/test_splashbtn2" />
+                    android:src="@drawable/selector_btn_splash_test" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/type_btn_test"
-                    android:textColor="@android:color/white"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
+    <!-- splash -->
+
+    <RelativeLayout
+        android:id="@+id/act_splash_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splash"
+        android:clickable="false"
+        android:visibility="visible" >
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateOnly="true"
+            android:paddingTop="@dimen/splash_progress_padding" />
+    </RelativeLayout>
 
 </RelativeLayout>

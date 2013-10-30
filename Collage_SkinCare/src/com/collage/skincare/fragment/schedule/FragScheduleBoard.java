@@ -1,14 +1,21 @@
 package com.collage.skincare.fragment.schedule;
 
+import android.R.style;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.os.Bundle;
 import android.provider.BaseColumns;
 import android.text.Html;
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,19 +27,26 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 import com.collage.skincare.R;
 import com.collage.skincare.db.FragScheduleBoard_Alram_Db;
+import com.collage.skincare.utils.custom.Click_Vo;
+import com.collage.skincare.utils.custom.MyView;
 
 public class FragScheduleBoard extends Fragment {
 
 	Alram_CustomAdapter adapter;
 
 	FragScheduleBoard_Alram_Db dbAdapter;
+	
 
+      
+	
+	
 	@Override
 	public void onResume() {
 		// TODO Auto-generated method stub
@@ -59,24 +73,28 @@ public class FragScheduleBoard extends Fragment {
 		return rootView;
 	}
 
+	
+
 	private void init(View rootView) {
 		// TODO Auto-generated method stub
 
-		ImageButton btn_graph = (ImageButton) rootView
-				.findViewById(R.id.btn_graph);
-		btn_graph.setOnClickListener(new OnClickListener() {
+//		ImageButton btn_graph = (ImageButton) rootView
+//				.findViewById(R.id.btn_graph);
+//		btn_graph.setOnClickListener(new OnClickListener() {
+//
+//			@Override
+//			public void onClick(View v) {
+//				// FragScheduleGraph로 화면전환
+//				Fragment fragment = new FragScheduleGraph();
+//				FragmentManager fm = getFragmentManager();
+//				fm.beginTransaction()
+//						.replace(R.id.act_main_content_frame, fragment)
+//						.commit();
+//			}
+//		});
 
-			@Override
-			public void onClick(View v) {
-				// FragScheduleGraph로 화면전환
-				Fragment fragment = new FragScheduleGraph();
-				FragmentManager fm = getFragmentManager();
-				fm.beginTransaction()
-						.replace(R.id.act_main_content_frame, fragment)
-						.commit();
-			}
-		});
-
+		
+		
 		Button schedule_setting_all = (Button) rootView
 				.findViewById(R.id.schedule_setting_all);
 		schedule_setting_all.setOnClickListener(new Button.OnClickListener() {
@@ -84,24 +102,33 @@ public class FragScheduleBoard extends Fragment {
 			public void onClick(View v) {
 
 				fillData();
+				
+				
+				
 			}
 		});
-		
-		
+
 		Button schedule_setting_sleep = (Button) rootView
 				.findViewById(R.id.schedule_setting_sleep);
-		
+
 		schedule_setting_sleep.setOnClickListener(new Button.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 
 				String id = "0";
 
+					
+                
+                
 				Alram_Type_Data(id);
+				
+				
 
 			}
+
+			
 		});
-		
+
 		Button schedule_setting_water = (Button) rootView
 				.findViewById(R.id.schedule_setting_water);
 		schedule_setting_water.setOnClickListener(new Button.OnClickListener() {

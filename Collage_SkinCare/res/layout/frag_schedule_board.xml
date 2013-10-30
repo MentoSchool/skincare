@@ -12,26 +12,29 @@
         android:orientation="horizontal" >
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_weight=".5"
-            android:text="0시-12시" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight=".5"
-            android:text="12시-24시" />
+            android:text="Sleep 그래프" />
     </LinearLayout>
 
     <!-- 시간표(?)및 그래프 보여주기 -->
 
-    <ImageButton
+
+    <!--
+         <ImageButton
         android:id="@+id/btn_graph"
         android:layout_width="match_parent"
         android:layout_height="161dp"
         android:src="@drawable/w_09"
         android:text="그래프로 넘어가기" />
+    -->
+
+    <com.collage.skincare.utils.custom.MyView
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
 
     <ProgressBar
         android:id="@+id/progress_horizontal"

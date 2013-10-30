@@ -6,6 +6,28 @@ public class Click_Vo
 	private int Start_clock;
 
 	private int end_clock;
+	
+	
+	private int Color;
+	
+	private int Score;
+	
+
+	public int getColor() {
+		return Color;
+	}
+
+	public void setColor(int color) {
+		Color = color;
+	}
+
+	public int getScore() {
+		return Score;
+	}
+
+	public void setScore(int score) {
+		Score = score;
+	}
 
 	public int getStart_clock()
 	{
@@ -44,5 +66,7 @@ public class Click_Vo
 	{
 		return "Click_Vo [Start_clock=" + Start_clock + ", end_clock=" + end_clock + "]";
 	}
+
+	
 
 }

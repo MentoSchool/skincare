@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.collage.skincare.R;
 import com.collage.skincare.api.Yh_AsyncWeather;
@@ -19,6 +20,8 @@ public class NoteEdit extends Activity
 	private Long mRowId;
 	private NotesDbAdapter mDbHelper;
 
+	private TextView textView;
+	
 	Yh_AsyncWeather weather;
 
 	
@@ -41,10 +44,15 @@ public class NoteEdit extends Activity
 		 */
 
 		
+	String[] oil =getResources().getStringArray(R.array.oil);
+		
+		
 		
 		mDbHelper = new NotesDbAdapter(this);
 		mDbHelper.open();
 
+		textView = (TextView)findViewById(R.id.Purpose);
+		textView.setText(oil[0]);
 		mTitleText = (EditText) findViewById(R.id.title);
 		mBodyText = (EditText) findViewById(R.id.body);
 		//		Button confirmButton = (Button) findViewById(R.id.confirm);

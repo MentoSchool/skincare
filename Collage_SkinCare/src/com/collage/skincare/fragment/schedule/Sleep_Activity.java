@@ -3,6 +3,7 @@ package com.collage.skincare.fragment.schedule;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
@@ -12,6 +13,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.provider.BaseColumns;
 import android.text.Html;
@@ -35,6 +37,8 @@ import android.widget.Toast;
 
 import com.collage.skincare.R;
 import com.collage.skincare.db.FragScheduleBoard_Alram_Db;
+import com.collage.skincare.utils.custom.Click_Vo;
+import com.collage.skincare.utils.custom.MyView;
 
 public class Sleep_Activity extends Activity implements OnTimeChangedListener, OnDateChangedListener
 {
@@ -70,8 +74,15 @@ public class Sleep_Activity extends Activity implements OnTimeChangedListener, O
 
 	private TimePicker mTime;
 
+      public static	 Click_Vo vo3 = new Click_Vo();
+	
+	
 	// 통지 관련 맴버 변수
 
+	
+	
+	
+	
 	CursorAdapter cursorAdapter;
 
 	private NotificationManager mNotification;
@@ -287,11 +298,23 @@ public class Sleep_Activity extends Activity implements OnTimeChangedListener, O
 
 	};
 
+	private Canvas canvas;
+
 	// /////////////////////////////////////////알람시작
+	@SuppressLint("WrongCall")
 	protected void setAlarm()
 	{
 		// TODO Auto-generated method stub
 
+		int a = 4;
+		
+        vo3.setColor(a);
+        
+        MyView myView = new MyView(this);
+        
+        myView.onDraw(canvas);
+        
+		
 		if (System.currentTimeMillis() >= mCalendar.getTimeInMillis())
 		{
 			Log.v("dd", "현재시간" + mCalendar.getTimeInMillis());

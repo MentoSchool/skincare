@@ -2,6 +2,7 @@ package com.collage.skincare.fragment.settings;
 
 import java.io.File;
 import java.util.Locale;
+import java.util.zip.Inflater;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -121,6 +122,8 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 	private Button mAlarmBtn;
 	private Uri mImageCaptureUri;
 	private ImageView mSelectImageView;
+	
+	private LayoutInflater inflater;
 
 	private DialogInterface.OnClickListener onPhotoDialogClickListener = new DialogInterface.OnClickListener()
 	{
@@ -392,9 +395,14 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 		super.onListItemClick(l, v, position, id);
 
 		Intent intent = new Intent(getActivity(), NoteEdit.class);
-//		TextView tv = (TextView)v.findViewById(R.id.textView01);
-//		rowId = Long.parseLong(tv.getText().toString());   값을 가져오지 못한다.
-		rowId = 2;
+		
+	
+		
+		TextView tv = (TextView)v.findViewById(R.id.textView_01);
+		
+		rowId = Long.parseLong(tv.getText().toString());  // 값을 가져오지 못한다.
+		
+		
 		if (rowId != -1)
 		{
 			intent.putExtra(NotesDbAdapter._ID, rowId);

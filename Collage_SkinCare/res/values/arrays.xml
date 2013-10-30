@@ -3,24 +3,23 @@
 
     <string-array name="drawer_menus">
         <item>@string/menu_home</item>
-        <!-- 
+        <!--
         <item>@string/menu_schedule_settings</item>
         <item>@string/menu_schedule_board</item>
-         -->
+        -->
         <item>@string/menu_schedule</item>
         <item>@string/menu_weather_today</item>
         <item>@string/menu_weather_fun</item>
-        <!-- <item>@string/menu_share</item>  -->
+        <!-- <item>@string/menu_share</item> -->
         <item>@string/menu_settings</item>
         <!--
         <item>@string/menu_settings_profile</item>
         <item>@string/menu_settings_alarm</item>
         <item>@string/menu_settings_popup</item>
         <item>@string/menu_settings_type</item>
-         -->
+        -->
         <item>@string/menu_settings_help</item>
     </string-array>
-    
     <string-array name="type_test">
         <item>1. 세안 후 피부가 전혀 당기지 않는다.</item>
         <item>2. 모공이 육안으로 정확히 보인다.</item>
@@ -33,7 +32,6 @@
         <item>9. 세안 후 기초관리를 하지 않더라도 금방 기름기가 돈다.</item>
         <item>10. 기름종이를 하루에 3번 이상 사용한다.</item>
     </string-array>
-    
     <string-array name="select_popup">
         <item>간략하게</item>
         <item>자세하게</item>
@@ -47,53 +45,53 @@
     </string-array>
     <string-array name="weather">
         <item>          폭풍                               </item>
-1                                <item>          열대폭풍                           </item>
-2                                <item>          허리케인                           </item>
-3                                <item>          강한 뇌우                          </item>
-4                                <item>          뇌우                               </item>
-5                                <item>          눈 또는 비                         </item>
-6                                <item>          비 또는 진눈깨비                   </item>
-7                                <item>          눈 또는 진눈깨비                   </item>
-8                                <item>          결빙성 진눈깨비                    </item>
-9                                <item>          이슬비                             </item>
-0                                <item>          어는비                             </item>
-11                                <item>          소나기                             </item>
-12                                <item>          소나기                             </item>
-13                                <item>          함박눈                             </item>
-14                                <item>          약한 눈                            </item>
-15                                <item>          강한 눈                            </item>
-16                                <item>          눈                                 </item>
-17                                <item>          우박                               </item>
-18                                <item>          진눈깨비                           </item>
-19                                <item>          황사                               </item>
-20                                <item>          짙은 안개                          </item>
-21                                <item>          옅은 안개                          </item>
-22                                <item>          연무                               </item>
-23                                <item>          강풍                               </item>
-24                                <item>          약풍                               </item>
-25                                <item>          추움                               </item>
-26                                <item>          흐림                               </item>
-27                                <item>          대체로 흐림(밤)                    </item>
-28                                <item>          대체로 흐림(낮)                    </item>
-29                                <item>          일부 흐림(밤)                      </item>
-30                                <item>          일부 흐림(낮)                      </item>
-31                                <item>          흐린 후 갬                         </item>
-32                                <item>          맑음                               </item>
-33                                <item>          쾌청(밤)                           </item>
-34                                <item>          쾌청(낮)                           </item>
-35                                <item>          비 또는 우박                       </item>
-36                                <item>          더움                               </item>
-37                                <item>          국지성 뇌우                        </item>
-38                                <item>          산발성 뇌우                        </item>
-39                                <item>          산발성 뇌우                        </item>
-40                                <item>          산발성 소나기                      </item>
-41                                <item>          대설                               </item>
-42                                <item>          산발성 눈보라                      </item>
-43                                <item>          많은 눈                            </item>
-44                                <item>          약간 흐림                          </item>
-45                                <item>          뇌우 소나기                        </item>
-46                                <item>          눈보라                             </item>
-47                                <item>          국지성 뇌우 소나기                 </item>
+1                                        <item>          열대폭풍                           </item>
+2                                        <item>          허리케인                           </item>
+3                                        <item>          강한 뇌우                          </item>
+4                                        <item>          뇌우                               </item>
+5                                        <item>          눈 또는 비                         </item>
+6                                        <item>          비 또는 진눈깨비                   </item>
+7                                        <item>          눈 또는 진눈깨비                   </item>
+8                                        <item>          결빙성 진눈깨비                    </item>
+9                                        <item>          이슬비                             </item>
+0                                        <item>          어는비                             </item>
+11                                        <item>          소나기                             </item>
+12                                        <item>          소나기                             </item>
+13                                        <item>          함박눈                             </item>
+14                                        <item>          약한 눈                            </item>
+15                                        <item>          강한 눈                            </item>
+16                                        <item>          눈                                 </item>
+17                                        <item>          우박                               </item>
+18                                        <item>          진눈깨비                           </item>
+19                                        <item>          황사                               </item>
+20                                        <item>          짙은 안개                          </item>
+21                                        <item>          옅은 안개                          </item>
+22                                        <item>          연무                               </item>
+23                                        <item>          강풍                               </item>
+24                                        <item>          약풍                               </item>
+25                                        <item>          추움                               </item>
+26                                        <item>          흐림                               </item>
+27                                        <item>          대체로 흐림(밤)                    </item>
+28                                        <item>          대체로 흐림(낮)                    </item>
+29                                        <item>          일부 흐림(밤)                      </item>
+30                                        <item>          일부 흐림(낮)                      </item>
+31                                        <item>          흐린 후 갬                         </item>
+32                                        <item>          맑음                               </item>
+33                                        <item>          쾌청(밤)                           </item>
+34                                        <item>          쾌청(낮)                           </item>
+35                                        <item>          비 또는 우박                       </item>
+36                                        <item>          더움                               </item>
+37                                        <item>          국지성 뇌우                        </item>
+38                                        <item>          산발성 뇌우                        </item>
+39                                        <item>          산발성 뇌우                        </item>
+40                                        <item>          산발성 소나기                      </item>
+41                                        <item>          대설                               </item>
+42                                        <item>          산발성 눈보라                      </item>
+43                                        <item>          많은 눈                            </item>
+44                                        <item>          약간 흐림                          </item>
+45                                        <item>          뇌우 소나기                        </item>
+46                                        <item>          눈보라                             </item>
+47                                        <item>          국지성 뇌우 소나기                 </item>
 48</string-array>
     <string-array name="ult_score">
         <item>모든 예방조치가 필요함. 노출된 피부는 몇 분 내에 탈수 있음.11시와 4시 사이에는 태양에의 노출을 피하고, 그늘에 있거나 겉옷을 입고 모자와 선글라스를 쓰고적어도 SPF-15의 자외선 차단제를 2시간마다 충분히 발라야 합니다.</item>
@@ -158,6 +156,15 @@
         <item>서비스 제공기간이 아닙니다. 제공기간:6월~9월</item>
         <item>자외선 지수와 지역별 지수로 단계별</item>
         <item>일교차 분석으로 기상청 감기 단계별 지수</item>
+    </string-array>
+    <string-array name="oil">
+        <item>지성피부이므로 과다한 피지분비억제 및 ph조절을 위한 청정관리를 주목적으로 한다.
+                      각질제거 후 지성용 마스크팩 적용과 더불어 부가적으로 수분공급을 위한 보습관리 병행한다.</item>
+        <item>지성용 클랜징로션-수렴화장수-아이크림-수분크림-자외선차단제</item>
+        <item>지성용 클렌징로션-수렴화장수-지성용 앰플-아이크림-피지조절크림-넥크림</item>
+        <item>짙은 메이크업은 피하고 가벼운 화장을 권함,너무기름진 음식은 가급적 제한한다. 충분한 수분섭취와 수면 적절한 운동을 권장한다.</item>
+        <item>진정작용 (티트리, 캄파, 알로에 함유제품)적당하다.</item>
+        <item>자외선차단제를 바른후 수분크림을 바르면 차단기능이 저하된다</item>
     </string-array>
 
 </resources>

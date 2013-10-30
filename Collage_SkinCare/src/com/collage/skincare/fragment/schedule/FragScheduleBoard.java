@@ -118,7 +118,7 @@ public class FragScheduleBoard extends Fragment
 		{
 			case R.id.action_new_sleep:
 			{
-				Intent intent = new Intent(getActivity(), MainActivity.class);
+				Intent intent = new Intent(getActivity(), Sleep_Activity.class);
 
 				startActivity(intent);
 
@@ -127,13 +127,17 @@ public class FragScheduleBoard extends Fragment
 
 			case R.id.action_new_water:
 			{
+				Intent intent = new Intent(getActivity(), Water_Activity.class);
 
+				startActivity(intent);
 			}
 				return true;
 
 			case R.id.action_new_uv:
 			{
+				Intent intent = new Intent(getActivity(), Ult_Activity.class);
 
+				startActivity(intent);
 			}
 				return true;
 

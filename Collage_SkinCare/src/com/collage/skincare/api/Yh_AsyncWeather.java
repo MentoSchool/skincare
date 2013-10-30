@@ -21,7 +21,7 @@ public class Yh_AsyncWeather extends AsyncTask<String, Void, Void>
 
 	private static Yh_AsyncWeather asyncWeather_instance = new Yh_AsyncWeather();
 
-	private Yh_AsyncWeather()
+	public Yh_AsyncWeather()
 	{
 		// TODO Auto-generated constructor stub
 	}

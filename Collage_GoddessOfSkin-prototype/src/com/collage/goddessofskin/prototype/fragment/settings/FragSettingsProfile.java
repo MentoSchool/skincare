@@ -299,7 +299,7 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 	 */
 	private void doTakePhotoAction()
 	{
-
+ 
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
 		// 임시로 사용할 파일의 경로를 생성

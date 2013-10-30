@@ -197,7 +197,7 @@ int[] to = new int[] { R.id.textView01, R.id.textView02,
 
 // cursorAdapter = new CursorAdapter(this, c);
 
-adapter = new SimpleCursorAdapter(listView.getContext(), R.layout.cell,
+adapter = new SimpleCursorAdapter(listView.getContext(), R.layout.frag_schedule_board_list_item,
 		c, from, to);
 
 listView.setAdapter(adapter);

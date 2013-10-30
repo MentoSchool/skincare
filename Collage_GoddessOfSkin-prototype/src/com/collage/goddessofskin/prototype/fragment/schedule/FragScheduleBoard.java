@@ -159,7 +159,7 @@ public class FragScheduleBoard extends Fragment
 
 		// cursorAdapter = new CursorAdapter(this, c);
 
-		adapter = new SimpleCursorAdapter(listView.getContext(), R.layout.cell,
+		adapter = new SimpleCursorAdapter(listView.getContext(), R.layout.frag_schedule_board_list_item,
 				c, from, to);
 
 		listView.setAdapter(adapter);
@@ -238,7 +238,7 @@ public class FragScheduleBoard extends Fragment
 			// 삭제를 물어보는 다이얼로그를 생성한다.
 
 			new AlertDialog.Builder(getActivity())
-					.setTitle("http://croute.me - 예제")
+					.setTitle("--수면---")
 
 					.setMessage(Html.fromHtml(message))
 

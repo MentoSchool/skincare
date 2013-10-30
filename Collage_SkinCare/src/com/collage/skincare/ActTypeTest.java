@@ -17,9 +17,6 @@ import com.collage.skincare.manager.SharedPreferenceManager;
 
 public class ActTypeTest extends Activity
 {
-	public static Activity ActTypeTestActivity;
-	//	public static final int REQUEST_TEXT = 1;
-
 	private ListView mCheckedList;
 	private SkinType mSkinType;
 
@@ -30,12 +27,8 @@ public class ActTypeTest extends Activity
 		{
 			switch (which)
 			{
-				case Dialog.BUTTON_POSITIVE:
-					doStart();
-				break;
-				case Dialog.BUTTON_NEGATIVE:
-					doReset();
-				break;
+				case Dialog.BUTTON_POSITIVE : doStart(); break;
+				case Dialog.BUTTON_NEGATIVE : doReset(); break;
 			}
 		}
 	};
@@ -77,12 +70,9 @@ public class ActTypeTest extends Activity
 			{
 				int count = mCheckedList.getCheckedItemCount();
 
-				if (count <= 3)
-					mSkinType = SkinType.Dry;
-				else if (count <= 6)
-					mSkinType = SkinType.Combination;
-				else
-					mSkinType = SkinType.Oily;
+				if (count <= 3) mSkinType = SkinType.Dry;
+				else if (count <= 6) mSkinType = SkinType.Combination;
+				else mSkinType = SkinType.Oily;
 
 				int resId = getResources().getIdentifier("type_choice_" + mSkinType.name().toLowerCase(Locale.getDefault()), "string", getPackageName());
 

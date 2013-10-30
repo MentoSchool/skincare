@@ -2,6 +2,8 @@ package com.collage.skincare;
 
 import android.app.TabActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
@@ -16,6 +18,8 @@ public class ActTypeChoice extends TabActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.act_type_choice);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		TabHost mTabHost = getTabHost();
 
 		TabSpec spec;
@@ -57,5 +61,26 @@ public class ActTypeChoice extends TabActivity
 
 		setResult(RESULT_OK);
 		finish();
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		switch (item.getItemId())
+		{
+			case android.R.id.home:
+			{
+				finish();
+			}
+			return true;
+
+			default : return super.onOptionsItemSelected(item);
+		}
 	}
 }

@@ -125,8 +125,8 @@ public class FragScheduleBoard_Alram_Db
 		return c;
 	}
 
-	//���� Ÿ�Կ� �´� �����͸� ������ ��
-	public Cursor check(String id)
+	//타입별로 정렬한다.
+	public Cursor check_alram_Type(String id)
 	{
 		String[] selectionArgs =
 		{

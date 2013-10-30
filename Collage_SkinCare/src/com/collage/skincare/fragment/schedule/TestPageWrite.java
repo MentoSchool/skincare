@@ -19,23 +19,6 @@ public class TestPageWrite extends Activity
 		setContentView(R.layout.frag_schedule_alarm);
 		
 		Button a = (Button) findViewById(R.id.rest);
-		a.setOnClickListener(new OnClickListener()
-		{
-
-			@Override
-			public void onClick(View v)
-			{
-				// TODO Auto-generated method stub
-				resetAlarm();
-			}
-
-			private void resetAlarm() {
-				// TODO Auto-generated method stub
-				
-			}
-
-		});
-		
 		
 		
 		

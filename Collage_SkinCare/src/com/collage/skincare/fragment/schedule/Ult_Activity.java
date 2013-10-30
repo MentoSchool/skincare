@@ -342,7 +342,7 @@ public class Ult_Activity extends Activity implements OnTimeChangedListener, OnD
 
 			String cur_time = String.valueOf(g.get(Calendar.HOUR) + "시" + g.get(Calendar.MINUTE) + "분" + g.get(Calendar.SECOND) + "초");
 
-			String alram_type = "3";
+			String alram_type = "2";
 
 			dbAdapter.insertNote(cur_time, selection_time, alram_type);
 

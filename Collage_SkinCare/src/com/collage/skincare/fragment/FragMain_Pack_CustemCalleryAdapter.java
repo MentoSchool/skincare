@@ -13,8 +13,7 @@ import android.widget.TextView;
 import com.collage.skincare.R;
 import com.collage.skincare.api.Yh_AsyncWeather;
 
-public class FragMain_Pack_CustemCalleryAdapter extends BaseAdapter
-{
+public class FragMain_Pack_CustemCalleryAdapter extends BaseAdapter {
 
 	private Context mContext;
 	private ImageView image;
@@ -30,17 +29,9 @@ public class FragMain_Pack_CustemCalleryAdapter extends BaseAdapter
 
 	private Resources resources;
 
-	final static int[] Image_Weather =
-	{
-			R.drawable.w_12, R.drawable.w_12, R.drawable.w_15, R.drawable.w_08, R.drawable.w_01, R.drawable.w_06, R.drawable.w_11, R.drawable.w_11, R.drawable.w_06, R.drawable.w_06, R.drawable.w_00, R.drawable.w_06, R.drawable.w_06, R.drawable.w_03, R.drawable.w_03, R.drawable.w_03, R.drawable.w_03, R.drawable.w_00, R.drawable.w_00, R.drawable.w_16, R.drawable.w_16, R.drawable.w_16, R.drawable.w_16, R.drawable.w_12, R.drawable.w_12, R.drawable.w_02, R.drawable.w_09, R.drawable.w_05, R.drawable.w_04, R.drawable.w_05, R.drawable.w_04, R.drawable.w_07, R.drawable.w_13, R.drawable.w_14, R.drawable.w_13, R.drawable.w_01, R.drawable.w_13, R.drawable.w_08, R.drawable.w_08, R.drawable.w_08, R.drawable.w_06, R.drawable.w_03, R.drawable.w_02, R.drawable.w_03, R.drawable.w_04, R.drawable.w_08, R.drawable.w_02, R.drawable.w_08
-
-	};
-
-	private int[] mImageID =
-	{
-			R.drawable.w_02, R.drawable.w_03, R.drawable.w_04, R.drawable.w_08
-	};
-
+	
+	private int[] mImageID = { R.drawable.pack_1, R.drawable.pack_2,
+			R.drawable.pack_3, R.drawable.pack_4 };
 	// private int weather_0 = Integer
 	// .parseInt(weather.vo.getTodayConditionCode());
 	// private int weather_1 = Integer.parseInt(weather.vo
@@ -52,11 +43,11 @@ public class FragMain_Pack_CustemCalleryAdapter extends BaseAdapter
 	// private int weather_4 = Integer.parseInt(weather.vo
 	// .getTomorrowConditionCode_next3());
 
-	public FragMain_Pack_CustemCalleryAdapter(Context c)
-	{
+	public FragMain_Pack_CustemCalleryAdapter(Context c) {
 		// TODO Auto-generated constructor stub
 		mContext = c;
-		mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		mInflater = (LayoutInflater) mContext
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 		count = mImageID.length;
 
@@ -78,39 +69,31 @@ public class FragMain_Pack_CustemCalleryAdapter extends BaseAdapter
 	}
 
 	@Override
-	public int getCount()
-	{
+	public int getCount() {
 		return count;
 	}
 
 	@Override
-	public Object getItem(int position)
-	{
+	public Object getItem(int position) {
 		return position;
 	}
 
 	@Override
-	public long getItemId(int position)
-	{
+	public long getItemId(int position) {
 		return position;
 	}
 
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent)
-	{
+	public View getView(int position, View convertView, ViewGroup parent) {
 		View mview = convertView;
 
 		// int[] mImageID = { R.drawable.weather_icon_01,
 		// R.drawable.weather_icon_02, R.drawable.weather_icon_03,
 		// R.drawable.weather_icon_04, R.drawable.weather_icon_05 };
 
-		String[] weather_code =
-		{
-				"딸기팩", "살구팩", "요쿠르트", "우유"
-		};
+		String[] weather_code = { "녹차가루 한 스푼을 넣어주세요.", "물 세 스푼을 넣어주세요.", "물과 가루가 섞이게 골고루 섞어주세요.", "섞여진 팩을 얼굴에 골고루 발라주세요." };
 
-		if (mview == null)
-		{
+		if (mview == null) {
 			mview = mInflater.inflate(R.layout.frag_main_pak_gallery, null);
 		}
 

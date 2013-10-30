@@ -5,20 +5,37 @@
     android:background="@drawable/com_rounded_action_gallery"
     android:orientation="vertical" >
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_gravity="center"
         android:layout_weight="1"
-        android:gravity="center"
-        android:text="팩팩팩!!" />
+        android:background="@drawable/com_rounded_action_gallery"
+        android:orientation="vertical" >
 
-    <com.collage.skincare.utils.custom.CustemGallery
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/grean_tea_pack"
+            android:text="팩팩팩!!" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_gravity="center"
-        android:id="@+id/FragMain_Pack"
         android:layout_weight="1"
-        android:gravity="center" />
+        android:background="@drawable/com_rounded_action_gallery"
+        android:orientation="vertical" >
+
+        <com.collage.skincare.utils.custom.CustemGallery
+            android:id="@+id/FragMain_Pack"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center" />
+    </LinearLayout>
 
 </LinearLayout>

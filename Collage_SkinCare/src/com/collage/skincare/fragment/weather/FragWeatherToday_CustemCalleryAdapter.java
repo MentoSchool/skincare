@@ -14,8 +14,7 @@ import android.widget.TextView;
 import com.collage.skincare.R;
 import com.collage.skincare.api.Yh_AsyncWeather;
 
-public class FragWeatherToday_CustemCalleryAdapter extends BaseAdapter
-{
+public class FragWeatherToday_CustemCalleryAdapter extends BaseAdapter {
 
 	private Context mContext;
 	private ImageView image;
@@ -31,33 +30,47 @@ public class FragWeatherToday_CustemCalleryAdapter extends BaseAdapter
 
 	private Resources resources;
 
-	final static int[] Image_Weather =
-	{
-			R.drawable.w_12, R.drawable.w_12, R.drawable.w_15, R.drawable.w_08, R.drawable.w_01, R.drawable.w_06, R.drawable.w_11, R.drawable.w_11, R.drawable.w_06, R.drawable.w_06, R.drawable.w_00, R.drawable.w_06, R.drawable.w_06, R.drawable.w_03, R.drawable.w_03, R.drawable.w_03, R.drawable.w_03, R.drawable.w_00, R.drawable.w_00, R.drawable.w_16, R.drawable.w_16, R.drawable.w_16, R.drawable.w_16, R.drawable.w_12, R.drawable.w_12, R.drawable.w_02, R.drawable.w_09, R.drawable.w_05, R.drawable.w_04, R.drawable.w_05, R.drawable.w_04, R.drawable.w_07, R.drawable.w_13, R.drawable.w_14, R.drawable.w_13, R.drawable.w_01, R.drawable.w_13, R.drawable.w_08, R.drawable.w_08, R.drawable.w_08, R.drawable.w_06, R.drawable.w_03, R.drawable.w_02, R.drawable.w_03, R.drawable.w_04, R.drawable.w_08, R.drawable.w_02, R.drawable.w_08
+	final static int[] Image_Weather = { R.drawable.w_12, R.drawable.w_12,
+			R.drawable.w_15, R.drawable.w_08, R.drawable.w_01, R.drawable.w_06,
+			R.drawable.w_11, R.drawable.w_11, R.drawable.w_06, R.drawable.w_06,
+			R.drawable.w_00, R.drawable.w_06, R.drawable.w_06, R.drawable.w_03,
+			R.drawable.w_03, R.drawable.w_03, R.drawable.w_03, R.drawable.w_00,
+			R.drawable.w_00, R.drawable.w_16, R.drawable.w_16, R.drawable.w_16,
+			R.drawable.w_16, R.drawable.w_12, R.drawable.w_12, R.drawable.w_02,
+			R.drawable.w_09, R.drawable.w_05, R.drawable.w_04, R.drawable.w_05,
+			R.drawable.w_04, R.drawable.w_07, R.drawable.w_13, R.drawable.w_14,
+			R.drawable.w_13, R.drawable.w_01, R.drawable.w_13, R.drawable.w_08,
+			R.drawable.w_08, R.drawable.w_08, R.drawable.w_06, R.drawable.w_03,
+			R.drawable.w_02, R.drawable.w_03, R.drawable.w_04, R.drawable.w_08,
+			R.drawable.w_02, R.drawable.w_08
 
 	};
 
-	private int[] mImageID =
-	{
-			Image_Weather[Integer.parseInt(weather.vo.getTodayConditionCode())], Image_Weather[Integer.parseInt(weather.vo.getTomorrowConditionCode())], Image_Weather[Integer.parseInt(weather.vo.getTomorrowConditionCode_next())], Image_Weather[Integer.parseInt(weather.vo.getTomorrowLow_next2())], Image_Weather[Integer.parseInt(weather.vo.getTomorrowLow_next3())]
-	};
+	private int[] mImageID = {
+			Image_Weather[Integer.parseInt(weather.vo.getTodayConditionCode())],
+			Image_Weather[Integer.parseInt(weather.vo
+					.getTomorrowConditionCode())],
+			Image_Weather[Integer.parseInt(weather.vo
+					.getTomorrowConditionCode_next())],
+			Image_Weather[Integer.parseInt(weather.vo.getTomorrowLow_next2())],
+			Image_Weather[Integer.parseInt(weather.vo.getTomorrowLow_next3())] };
 
-	//	private int weather_0 = Integer
-	//			.parseInt(weather.vo.getTodayConditionCode());
-	//	private int weather_1 = Integer.parseInt(weather.vo
-	//			.getTomorrowConditionCode());
-	//	private int weather_2 = Integer.parseInt(weather.vo
-	//			.getTomorrowConditionCode_next());
-	//	private int weather_3 = Integer.parseInt(weather.vo
-	//			.getTomorrowConditionCode_next2());
-	//	private int weather_4 = Integer.parseInt(weather.vo
-	//			.getTomorrowConditionCode_next3());
+	// private int weather_0 = Integer
+	// .parseInt(weather.vo.getTodayConditionCode());
+	// private int weather_1 = Integer.parseInt(weather.vo
+	// .getTomorrowConditionCode());
+	// private int weather_2 = Integer.parseInt(weather.vo
+	// .getTomorrowConditionCode_next());
+	// private int weather_3 = Integer.parseInt(weather.vo
+	// .getTomorrowConditionCode_next2());
+	// private int weather_4 = Integer.parseInt(weather.vo
+	// .getTomorrowConditionCode_next3());
 
-	public FragWeatherToday_CustemCalleryAdapter(Context c)
-	{
+	public FragWeatherToday_CustemCalleryAdapter(Context c) {
 		// TODO Auto-generated constructor stub
 		mContext = c;
-		mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		mInflater = (LayoutInflater) mContext
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 		count = mImageID.length;
 
@@ -79,26 +92,22 @@ public class FragWeatherToday_CustemCalleryAdapter extends BaseAdapter
 	}
 
 	@Override
-	public int getCount()
-	{
+	public int getCount() {
 		return count;
 	}
 
 	@Override
-	public Object getItem(int position)
-	{
+	public Object getItem(int position) {
 		return position;
 	}
 
 	@Override
-	public long getItemId(int position)
-	{
+	public long getItemId(int position) {
 		return position;
 	}
 
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent)
-	{
+	public View getView(int position, View convertView, ViewGroup parent) {
 		View mview = convertView;
 
 		Log.v("dd", "날씨아이콘" + weather.vo.getTomorrowLow_next2());
@@ -109,14 +118,21 @@ public class FragWeatherToday_CustemCalleryAdapter extends BaseAdapter
 
 		weather_detail = resources.getStringArray(R.array.weather);
 
-		String[] weather_code =
-		{
-				weather_detail[Integer.parseInt(weather.vo.getTodayConditionCode())], weather_detail[Integer.parseInt(weather.vo.getTomorrowConditionCode())], weather_detail[Integer.parseInt(weather.vo.getTomorrowConditionCode_next())], weather_detail[Integer.parseInt(weather.vo.getTomorrowConditionCode_next2())], weather_detail[Integer.parseInt(weather.vo.getTomorrowConditionCode_next3())]
-		};
+		String[] weather_code = {
+				weather_detail[Integer.parseInt(weather.vo
+						.getTodayConditionCode())],
+				weather_detail[Integer.parseInt(weather.vo
+						.getTomorrowConditionCode())],
+				weather_detail[Integer.parseInt(weather.vo
+						.getTomorrowConditionCode_next())],
+				weather_detail[Integer.parseInt(weather.vo
+						.getTomorrowConditionCode_next2())],
+				weather_detail[Integer.parseInt(weather.vo
+						.getTomorrowConditionCode_next3())] };
 
-		if (mview == null)
-		{
-			mview = mInflater.inflate(R.layout.frag_weather_today_gallery, null);
+		if (mview == null) {
+			mview = mInflater
+					.inflate(R.layout.frag_weather_today_gallery, null);
 		}
 
 		image = (ImageView) mview.findViewById(R.id.image);

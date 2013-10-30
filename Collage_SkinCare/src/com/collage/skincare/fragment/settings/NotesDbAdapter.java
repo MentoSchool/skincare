@@ -8,13 +8,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class NotesDbAdapter
 {
-	public final static String TABLE_NAME = "notes1";
+	public final static String TABLE_NAME = "notes4";
 	public static final String _ID = "_id";
 	public static final String TITLE = "title";
 	public static final String BODY = "body";
 	public static final String CURWHEATERCODE = "curwheathercode";
 
-	public final static String DB_NAME = "lab1.db";
+	public final static String DB_NAME = "lab4.db";
 	public final static String CREATE_TABLE = "create table if not exists  " + TABLE_NAME + " (" + _ID + " integer primary key autoincrement, " + TITLE + " text, " + BODY + " text, " + CURWHEATERCODE + " text )";
 
 	Context mContext;

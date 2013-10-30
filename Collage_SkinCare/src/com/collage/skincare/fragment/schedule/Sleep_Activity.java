@@ -36,7 +36,7 @@ import android.widget.Toast;
 import com.collage.skincare.R;
 import com.collage.skincare.db.FragScheduleBoard_Alram_Db;
 
-public class MainActivity extends Activity implements OnTimeChangedListener, OnDateChangedListener
+public class Sleep_Activity extends Activity implements OnTimeChangedListener, OnDateChangedListener
 {
 
 	private static final int INSERT_ID = Menu.FIRST;
@@ -275,7 +275,7 @@ public class MainActivity extends Activity implements OnTimeChangedListener, OnD
 
 			// 삭제를 물어보는 다이얼로그를 생성한다.
 
-			new AlertDialog.Builder(MainActivity.this).setTitle("http://croute.me - 예제")
+			new AlertDialog.Builder(Sleep_Activity.this).setTitle("http://croute.me - 예제")
 
 			.setMessage(Html.fromHtml(message))
 
@@ -325,7 +325,7 @@ public class MainActivity extends Activity implements OnTimeChangedListener, OnD
 			c.setTimeInMillis(time);
 			g.setTimeInMillis(curtime);
 			Intent intent = new Intent(getApplicationContext(), AlramReceiver.class);
-			PendingIntent sender = PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0);
+			PendingIntent sender = PendingIntent.getBroadcast(Sleep_Activity.this, 0, intent, 0);
 
 			AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
 			am.setRepeating(AlarmManager.RTC_WAKEUP, mCalendar.getTimeInMillis(), 0, sender);

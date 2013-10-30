@@ -33,10 +33,12 @@
         android:layout_weight="1"
         android:scrollbars="vertical" />
 
+    <!-- 액션바로 변경
     <Button
         android:id="@+id/confirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="저장" />
+    -->
 
 </LinearLayout>

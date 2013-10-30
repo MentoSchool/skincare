@@ -34,10 +34,10 @@
         android:visibility="visible" >
 
         <TextView
+            style="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/type_question"
-            style="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
@@ -46,10 +46,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/type_buttonbar_marginTop"
+            android:layout_marginBottom="@dimen/type_buttonbar_margin"
             android:layout_marginLeft="@dimen/type_buttonbar_margin"
             android:layout_marginRight="@dimen/type_buttonbar_margin"
-            android:layout_marginBottom="@dimen/type_buttonbar_margin"
+            android:layout_marginTop="@dimen/type_buttonbar_marginTop"
             android:gravity="center"
             android:orientation="horizontal" >
 
@@ -72,7 +72,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SkinType Select"
+                    android:text="@string/type_btn_choice"
                     android:textColor="@android:color/white"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -96,7 +96,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SkinType Test"
+                    android:text="@string/type_btn_test"
                     android:textColor="@android:color/white"
                     android:textStyle="bold" />
             </LinearLayout>

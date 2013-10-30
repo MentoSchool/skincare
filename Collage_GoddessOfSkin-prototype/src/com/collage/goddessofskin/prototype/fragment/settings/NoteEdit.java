@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
+import com.collage.goddessofskin.api.Yh_AsyncWeather;
 import com.collage.goddessofskin.prototype.R;
 
 public class NoteEdit extends Activity
@@ -17,6 +18,9 @@ public class NoteEdit extends Activity
 	private Long mRowId;
 	private NotesDbAdapter mDbHelper;
 
+	Yh_AsyncWeather weather;
+	
+	
 	//Bundle savedInstanceState
 	//파일에 내부적으로 정보(일반적으로 번들 형태)에 저장하도록 하는 인자 
 	@Override
@@ -145,7 +149,7 @@ public class NoteEdit extends Activity
 		//아이디가 없으면 추가
 		if (mRowId == null)
 		{
-			long id = mDbHelper.insertNote(title, body, "8");
+			long id = mDbHelper.insertNote(title, body, weather.vo.getCurConditionCode());
 			Log.e("tag", title);
 			Log.e("tag", String.valueOf(id));
 			if (id > 0)

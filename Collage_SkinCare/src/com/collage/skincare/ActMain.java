@@ -13,6 +13,8 @@ import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
@@ -27,6 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.collage.skincare.api.ApiMain;
+import com.collage.skincare.api.Yh_AsyncWeather;
 import com.collage.skincare.defined.Const.DrawerMenu;
 import com.collage.skincare.defined.Const.SkinType;
 import com.collage.skincare.fragment.FragMain_Pack;
@@ -46,12 +49,14 @@ public class ActMain extends FragmentActivity
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
 
+	
 	private CharSequence mDrawerTitle;
 	private CharSequence mTitle;
 	private String[] mDrawerMenus;
 	private View mDrawer;
 	private MediaPlayer mp;
 	private Dialog mDialog = null;
+
 
 	/**
 	 * Drawer menu list item click event listener
@@ -74,8 +79,12 @@ public class ActMain extends FragmentActivity
 		setContentView(R.layout.act_main);
 		// StrictMode.enableDefaults();
 
+		
+		
 		ApiMain.getInstance().UltraApi();// 자외선 Api
 
+		
+		
 		SkinType type = SharedPreferenceManager.getInstance(getApplicationContext()).getType();
 		Toast.makeText(getApplicationContext(), String.format("Your skin type is %s", type.name()), Toast.LENGTH_SHORT).show();
 
@@ -121,6 +130,9 @@ public class ActMain extends FragmentActivity
 			doMenuSelected(0);
 		}
 	}
+	
+	
+	
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item)

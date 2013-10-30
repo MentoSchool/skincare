@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/drawer_profile_skin"
-        android:layout_width="@dimen/profile_width"
-        android:layout_height="@dimen/profile_height"
+        android:layout_width="@dimen/profile_skin_width"
+        android:layout_height="@dimen/profile_skin_height"
         android:background="@android:color/darker_gray" />
 
     <!-- menu list -->
@@ -34,9 +34,10 @@
         android:layout_alignBottom="@+id/drawer_profile_skin"
         android:layout_alignRight="@+id/drawer_profile_skin"
         android:layout_marginBottom="@dimen/profile_avatar_margin"
-        android:background="@android:color/white"
-        android:padding="@dimen/profile_avatar_padding"
-        android:src="@android:color/holo_blue_dark" />
+        android:background="@drawable/shape_profile_bg"
+        android:padding="@dimen/profile_avatar_padding_inner"
+        android:scaleType="fitCenter"
+        android:src="@drawable/profile" />
 
     <!-- profile :: name -->
 

@@ -33,6 +33,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.collage.skincare.R;
+import com.collage.skincare.defined.Const;
 import com.collage.skincare.utils.io.FileUtil;
 
 public class FragSettingsProfile extends ListFragment implements OnClickListener
@@ -54,14 +55,16 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 	private static final int NOTE_CREATE = 3;
 	private static final int NOTE_EDIT = NOTE_CREATE + 1;
 
-	private Uri mImageCaptureUri;
+	private ImageView mSkinImageView;
 	private ImageView mPhotoImageView;
 	private Button mbutton;
-	NotesDbAdapter dbAdapter;
-	CustomAdapter adapter;
+	private NotesDbAdapter dbAdapter;
+	private CustomAdapter adapter;
 	private ImageView profile_image12;
-	private Button popup_Button1;
-	private Button Alarmsound_Button;
+	private Button mPopupBtn;
+	private Button mAlarmBtn;
+	private Uri mImageCaptureUri;
+	private ImageView mSelectImageView;
 
 	private DialogInterface.OnClickListener onPhotoDialogClickListener = new DialogInterface.OnClickListener()
 	{
@@ -104,14 +107,17 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 		View rootView = inflater.inflate(R.layout.frag_settings_profile, container, false);
 		setHasOptionsMenu(true);
 
+		mSkinImageView = (ImageView) rootView.findViewById(R.id.frag_settings_skin);
+		mSkinImageView.setOnClickListener(this);
+		
 		mPhotoImageView = (ImageView) rootView.findViewById(R.id.frag_settings_profile);
 		mPhotoImageView.setOnClickListener(this);
 
-		popup_Button1 = (Button) rootView.findViewById(R.id.frag_settings_btn_popup);
-		popup_Button1.setOnClickListener(this);
+		mPopupBtn = (Button) rootView.findViewById(R.id.frag_settings_btn_popup);
+		mPopupBtn.setOnClickListener(this);
 
-		Alarmsound_Button = (Button) rootView.findViewById(R.id.frag_settings_btn_alarm);
-		Alarmsound_Button.setOnClickListener(this);
+		mAlarmBtn = (Button) rootView.findViewById(R.id.frag_settings_btn_alarm);
+		mAlarmBtn.setOnClickListener(this);
 
 		View view = rootView.findViewById(android.R.id.list);
 		this.registerForContextMenu(view);
@@ -125,31 +131,6 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 
 		switch (requestCode)
 		{
-			case CROP_FROM_CAMERA:
-			{
-				// 크롭이 된 이후의 이미지를 넘겨 받습니다. 이미지뷰에 이미지를 보여준다거나 부가적인 작업 이후에
-				// 임시 파일을 삭제합니다.
-				final Bundle extras = data.getExtras();
-
-				if (extras != null)
-				{
-					Bitmap photo = extras.getParcelable("data");
-					mPhotoImageView.setImageBitmap(photo);
-
-					FileUtil.save(photo, getActivity().getExternalCacheDir().getAbsolutePath(), "frofile.jpg");
-
-				}
-
-				// 임시 파일 삭제
-				File f = new File(mImageCaptureUri.getPath());
-				if (f.exists())
-				{
-					f.delete();
-				}
-
-			}
-			break;
-
 			case PICK_FROM_ALBUM:
 			{
 				// 이후의 처리가 카메라와 같으므로 일단 break없이 진행합니다.
@@ -160,17 +141,42 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 			{
 				// 이미지를 가져온 이후의 리사이즈할 이미지 크기를 결정합니다.
 				// 이후에 이미지 크롭 어플리케이션을 호출하게 됩니다.
+				
+				int width = mSelectImageView.getWidth();
+				int height = mSelectImageView.getHeight();
 
 				Intent intent = new Intent("com.android.camera.action.CROP");
 				intent.setDataAndType(mImageCaptureUri, "image/*");
 
-				intent.putExtra("outputX", 100);
-				intent.putExtra("outputY", 100);
-				intent.putExtra("aspectX", 1);
+				intent.putExtra("outputX", width);
+				intent.putExtra("outputY", height);
+				intent.putExtra("aspectX", (int) width/height);
 				intent.putExtra("aspectY", 1);
 				intent.putExtra("scale", true);
 				intent.putExtra("return-data", true);
 				startActivityForResult(intent, CROP_FROM_CAMERA);
+			}
+			break;
+			case CROP_FROM_CAMERA:
+			{
+				// 크롭이 된 이후의 이미지를 넘겨 받습니다. 이미지뷰에 이미지를 보여준다거나 부가적인 작업 이후에
+				// 임시 파일을 삭제합니다.
+				final Bundle extras = data.getExtras();
+
+				if (extras != null)
+				{
+					Bitmap photo = extras.getParcelable("data");
+					mSelectImageView.setImageBitmap(photo);
+
+					FileUtil.save(photo, getActivity().getExternalCacheDir().getAbsolutePath(), (mSelectImageView == mSkinImageView) ? Const.PHOTO_SKIN : Const.PHOTO_PROFILE);
+				}
+
+				// 임시 파일 삭제
+				File f = new File(mImageCaptureUri.getPath());
+				if (f.exists())
+				{
+					f.delete();
+				}
 
 			}
 			break;
@@ -202,9 +208,18 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 
 		switch (v.getId())
 		{
-			case R.id.frag_settings_profile:
+			case R.id.frag_settings_skin :
+			case R.id.frag_settings_profile :
 			{
-				new AlertDialog.Builder(getActivity()).setIcon(R.drawable.ic_logo).setTitle(R.string.settings_photo_dialog_select).setPositiveButton(R.string.settings_photo_dialog_positive, onPhotoDialogClickListener).setNeutralButton(R.string.settings_photo_dialog_neutral, onPhotoDialogClickListener).setNegativeButton(android.R.string.ok, onPhotoDialogClickListener).show();
+				mSelectImageView = (ImageView) v;
+				
+				new AlertDialog.Builder(getActivity())
+					.setIcon(R.drawable.ic_dialog)
+					.setTitle(R.string.settings_photo_dialog_select)
+					.setPositiveButton(R.string.settings_photo_dialog_positive, onPhotoDialogClickListener)
+					.setNeutralButton(R.string.settings_photo_dialog_neutral, onPhotoDialogClickListener)
+					.setNegativeButton(android.R.string.cancel, onPhotoDialogClickListener)
+				.show();
 			}
 			break;
 

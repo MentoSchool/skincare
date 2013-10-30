@@ -23,4 +23,7 @@ public class Const
 		//		SettingsHelp
 		Settings, Help
 	}
+	
+	public static final String PHOTO_PROFILE = "profile.jpg"; 
+	public static final String PHOTO_SKIN = "skin.jpg"; 
 }

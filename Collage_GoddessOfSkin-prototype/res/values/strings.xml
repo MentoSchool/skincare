@@ -64,6 +64,20 @@
     <string name="tw_low_weather">최저 온도:</string>
     
     
+    <!-- settings -->
+    <string name="settings_name">이름</string>
+    <string name="settings_skin_type">피부타입</string>
+    <string name="settings_photo_dialog_select">이미지 설정</string>
+    <string name="settings_photo_dialog_positive">사진촬영</string>
+    <string name="settings_photo_dialog_neutral">앨범선택</string>
+    
+    <string name="settings_alarm_dialog_select">알림음 설정</string>
+    <string name="settings_popup_dialog_select">팝업 설정</string>
+    
+    <string name="settings_btn_skin_type">피부타입설정</string>
+    <string name="settings_btn_popup">팝업설정</string>
+    <string name="settings_btn_alarm">알람설정</string>
+    
     <!-- FragWeather Fun -->
     
     

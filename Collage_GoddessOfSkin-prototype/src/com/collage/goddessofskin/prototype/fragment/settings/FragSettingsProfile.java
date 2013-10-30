@@ -4,7 +4,7 @@ import java.io.File;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
+import android.app.Dialog;
 import android.app.ListFragment;
 import android.content.ContentUris;
 import android.content.DialogInterface;
@@ -57,32 +57,31 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 	private ImageView profile_image12;
 	private Button popup_Button1;
 	private Button Alarmsound_Button;
-	DialogInterface.OnClickListener cameraListener = new DialogInterface.OnClickListener()
+	
+	private DialogInterface.OnClickListener onPhotoDialogClickListener = new DialogInterface.OnClickListener()
 	{
-
 		@Override
 		public void onClick(DialogInterface dialog, int which)
-
 		{
-			doTakePhotoAction();
+			switch (which)
+			{
+				case Dialog.BUTTON_POSITIVE : doTakePhotoAction(); break;
+				case Dialog.BUTTON_NEUTRAL : doTakeAlbumAction(); break;
+				case Dialog.BUTTON_NEGATIVE : dialog.dismiss(); break;
+			}
 		}
 	};
 
-	DialogInterface.OnClickListener albumListener = new DialogInterface.OnClickListener()
+	DialogInterface.OnClickListener onPopupDialogClickListener = new DialogInterface.OnClickListener()
 	{
 		@Override
 		public void onClick(DialogInterface dialog, int which)
 		{
-			doTakeAlbumAction();
-		}
-	};
-
-	DialogInterface.OnClickListener cancelListener = new DialogInterface.OnClickListener()
-	{
-		@Override
-		public void onClick(DialogInterface dialog, int which)
-		{
-			dialog.dismiss();
+			switch (which)
+			{
+				case Dialog.BUTTON_POSITIVE : break;
+				case Dialog.BUTTON_NEGATIVE : break;
+			}
 		}
 	};
 
@@ -90,49 +89,20 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		View rootView = inflater.inflate(R.layout.frag_settings_profile, container, false);
+		setHasOptionsMenu(true);
 
-		mPhotoImageView = (ImageView) rootView.findViewById(R.id.profile_image12);
+		mPhotoImageView = (ImageView) rootView.findViewById(R.id.frag_settings_profile);
 		mPhotoImageView.setOnClickListener(this);
 
-		popup_Button1 = (Button) rootView.findViewById(R.id.popup_Button1);
+		popup_Button1 = (Button) rootView.findViewById(R.id.frag_settings_btn_popup);
 		popup_Button1.setOnClickListener(this);
 
-		Alarmsound_Button = (Button) rootView.findViewById(R.id.Alarmsound_Button);
+		Alarmsound_Button = (Button) rootView.findViewById(R.id.frag_settings_btn_alarm);
 		Alarmsound_Button.setOnClickListener(this);
-		setHasOptionsMenu(true);
 
 		View view = rootView.findViewById(android.R.id.list);
 		this.registerForContextMenu(view);
 		return rootView;
-	}
-
-	/**
-	 * 카메라에서 이미지 가져오기
-	 */
-	private void doTakePhotoAction()
-	{
-
-		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-		// 임시로 사용할 파일의 경로를 생성
-		String url = "tmp_" + String.valueOf(System.currentTimeMillis()) + ".jpg";
-		mImageCaptureUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), url));
-		Log.d("test", mImageCaptureUri.toString());
-		intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, mImageCaptureUri);
-		intent.putExtra("return-data", true);
-		startActivityForResult(intent, PICK_FROM_CAMERA);
-	}
-
-	/**
-	 * 앨범에서 이미지 가져오기
-	 */
-	private void doTakeAlbumAction()
-	{
-
-		// 앨범 호출
-		Intent intent = new Intent(Intent.ACTION_PICK);
-		intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
-		startActivityForResult(intent, PICK_FROM_ALBUM);
 	}
 
 	@Override
@@ -171,11 +141,8 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 			{
 				// 이후의 처리가 카메라와 같으므로 일단 break없이 진행합니다.
 				// 실제 코드에서는 좀더 합리적인 방법을 선택하시기 바랍니다.
-
 				mImageCaptureUri = data.getData();
 			}
-			break;
-
 			case PICK_FROM_CAMERA:
 			{
 				// 이미지를 가져온 이후의 리사이즈할 이미지 크기를 결정합니다.
@@ -204,58 +171,6 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 		}
 	}
 
-	public void onClick(View v)
-	{
-
-		switch (v.getId())
-		{
-			case R.id.profile_image12:
-				new AlertDialog.Builder(getActivity()).setIcon(R.drawable.ic_launcher).setTitle("업로드할 이미지 선택").setPositiveButton("사진촬영", cameraListener).setNeutralButton("앨범선택", albumListener).setNegativeButton("취소", cancelListener).show();
-			break;
-
-			case R.id.Alarmsound_Button:
-
-				Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
-				intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE, "알림음 설정");
-				Uri uri = ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, 1l);
-				intent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, false);
-				intent.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, uri);
-				startActivityForResult(intent, 123);
-
-			break;
-
-			case R.id.popup_Button1:
-
-				Builder d = new AlertDialog.Builder(getActivity());
-				d.setTitle("팝업설정");
-				d.setSingleChoiceItems(R.array.select_popup, 0, new DialogInterface.OnClickListener()
-				{
-					public void onClick(DialogInterface dialog, int whichButton)
-					{
-
-					}
-
-				});
-				d.setPositiveButton("확인", new DialogInterface.OnClickListener()
-				{
-					public void onClick(DialogInterface dialog, int whichButton)
-					{
-						// 이구간은 확인버튼을 선택했을때 설정되어야하는 구간이니까 멘토님한테 물어본다.
-					}
-				});
-				d.setNegativeButton("취소", new DialogInterface.OnClickListener()
-				{
-					public void onClick(DialogInterface dialog, int which)
-					{
-						dialog.cancel();
-					}
-				});
-				d.show();
-
-		}
-
-	}
-
 	/**
 	 * 메모장
 	 */
@@ -264,36 +179,55 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 		super.onResume();
 
 		dbAdapter = new NotesDbAdapter(getActivity());
-
 		dbAdapter.open();
 
 		fillData();
 	}
-
-	private void fillData()
+	
+	public void onClick(View v)
 	{
 
-		// 모든 데이터의 커서를 얻어옴
-		Cursor c = dbAdapter.fetchAllNotes();
-
-		// 리스트뷰에 데이터베이스의 저장된 데이터를 연결
-		String[] from = new String[]
+		switch (v.getId())
 		{
-				BaseColumns._ID, NotesDbAdapter.TITLE
-		};
-		// 한 행을 보여줄 XML 파일의 텍스트 뷰 id
-		int to[] =
-		{
-				android.R.id.text1, android.R.id.text2
-		};
+			case R.id.frag_settings_profile :
+			{
+				new AlertDialog.Builder(getActivity())
+					.setIcon(R.drawable.ic_logo)
+					.setTitle(R.string.settings_photo_dialog_select)
+					.setPositiveButton(R.string.settings_photo_dialog_positive, onPhotoDialogClickListener)
+					.setNeutralButton(R.string.settings_photo_dialog_neutral, onPhotoDialogClickListener)
+					.setNegativeButton(android.R.string.ok, onPhotoDialogClickListener)
+				.show();
+			}
+			break;
 
-		adapter = new SimpleCursorAdapter(getActivity(), android.R.layout.simple_list_item_2, c, from, to);
+			case R.id.frag_settings_btn_alarm :
+			{
+				Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
+				intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE, getString(R.string.settings_alarm_dialog_select));
+				Uri uri = ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, 1l);
+				intent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, false);
+				intent.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, uri);
+				startActivityForResult(intent, 123);
+			}
+			break;
 
-		setListAdapter(adapter);
-		// Activity의 라이프사이클에 따라 알아서 커서를 관리해 줌, 커서를 쓰는
-		// 액티비티가 종료(destroy)할 때 cursor를 따로 close를 해주지 않아도
-		// 알아서 close해준다.
-		getActivity().startManagingCursor(c);
+			case R.id.frag_settings_btn_popup:
+			{
+				new AlertDialog.Builder(getActivity())
+					.setTitle(R.string.settings_popup_dialog_select)
+					.setSingleChoiceItems(R.array.select_popup, 0, new DialogInterface.OnClickListener()
+					{
+						public void onClick(DialogInterface dialog, int whichButton)
+						{
+	
+						}
+					})
+					.setPositiveButton(android.R.string.ok, onPopupDialogClickListener)
+					.setNegativeButton(android.R.string.cancel, onPopupDialogClickListener)
+				.show();
+			}
+		}
 	}
 
 	@Override
@@ -344,6 +278,7 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 
 	// NoteEdit로 아이디 값만 넘겨줌 아이디 있으면 수정
 
+	@Override
 	public void onListItemClick(ListView l, View v, int position, long id)
 	{
 		long rowId = -1;
@@ -359,4 +294,57 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 		}
 	}
 
+	/**
+	 * 카메라에서 이미지 가져오기
+	 */
+	private void doTakePhotoAction()
+	{
+
+		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+		// 임시로 사용할 파일의 경로를 생성
+		String url = "tmp_" + String.valueOf(System.currentTimeMillis()) + ".jpg";
+		mImageCaptureUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), url));
+		Log.d("test", mImageCaptureUri.toString());
+		intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, mImageCaptureUri);
+		intent.putExtra("return-data", true);
+		startActivityForResult(intent, PICK_FROM_CAMERA);
+	}
+
+	/**
+	 * 앨범에서 이미지 가져오기
+	 */
+	private void doTakeAlbumAction()
+	{
+		// 앨범 호출
+		Intent intent = new Intent(Intent.ACTION_PICK);
+		intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
+		startActivityForResult(intent, PICK_FROM_ALBUM);
+	}
+	
+	private void fillData()
+	{
+
+		// 모든 데이터의 커서를 얻어옴
+		Cursor c = dbAdapter.fetchAllNotes();
+
+		// 리스트뷰에 데이터베이스의 저장된 데이터를 연결
+		String[] from = new String[]
+		{
+				BaseColumns._ID, NotesDbAdapter.TITLE
+		};
+		// 한 행을 보여줄 XML 파일의 텍스트 뷰 id
+		int to[] =
+		{
+				android.R.id.text1, android.R.id.text2
+		};
+
+		adapter = new SimpleCursorAdapter(getActivity(), android.R.layout.simple_list_item_2, c, from, to);
+
+		setListAdapter(adapter);
+		// Activity의 라이프사이클에 따라 알아서 커서를 관리해 줌, 커서를 쓰는
+		// 액티비티가 종료(destroy)할 때 cursor를 따로 close를 해주지 않아도
+		// 알아서 close해준다.
+		getActivity().startManagingCursor(c);
+	}
 }

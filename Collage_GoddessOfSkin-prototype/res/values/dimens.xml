@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="splash_progress_margin">20dp</dimen>
+    <dimen name="splash_progress_padding">150dp</dimen>
     <dimen name="type_buttonbar_marginTop">0dp</dimen>
     <dimen name="type_buttonbar_margin">20dp</dimen>
     <dimen name="type_button_padding">10dp</dimen>

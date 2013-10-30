@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
+import android.view.animation.DecelerateInterpolator;
 
 import com.collage.goddessofskin.prototype.defined.Const.SkinType;
 import com.collage.goddessofskin.prototype.manager.SharedPreferenceManager;
@@ -15,19 +15,25 @@ public class ActSplash extends Activity
 	private static final int REQ_CODE_TEST = 1;
 
 	private static final int DURATION_PROGRESS = 2000;
+	private static final int DURATION_ANIMATION = 500;
+	
+	private boolean isProgressFinish;
 
 	private Runnable mRunnable = new Runnable()
 	{
 		@Override
 		public void run()
 		{
+			isProgressFinish = true;
+			
 			SkinType type = SharedPreferenceManager.getInstance(getApplicationContext()).getType();
 			if (type == SkinType.Normal)
 			{
-				findViewById(R.id.act_splash_question).setVisibility(View.VISIBLE);
-//				findViewById(R.id.act_splash_image).setVisibility(View.GONE);
-				//findViewById(R.id.act_splash_title).setVisibility(View.GONE);
-				//findViewById(R.id.act_splash_progress).setVisibility(View.GONE);
+				findViewById(R.id.act_splash_image).animate()
+					.alpha(0)
+					.setDuration(DURATION_ANIMATION)
+					.setInterpolator(new DecelerateInterpolator(1.3f))
+				.start();
 			}
 			else
 			{
@@ -42,12 +48,14 @@ public class ActSplash extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.act_splash);
 
+		isProgressFinish = false;
 		getWindow().getDecorView().postDelayed(mRunnable, DURATION_PROGRESS);
 	}
 	
 	@Override
 	public void onBackPressed()
 	{
+		isProgressFinish = false;
 		getWindow().getDecorView().removeCallbacks(mRunnable);
 		super.onBackPressed();
 	}
@@ -68,20 +76,18 @@ public class ActSplash extends Activity
 
 	public void gotoTypeChoice(View v)
 	{
+		if(!isProgressFinish) return;
 		startActivityForResult(new Intent(this, ActTypeChoice.class), REQ_CODE_CHOICE);
 	}
 
 	public void gotoTypeTest(View v)
 	{
+		if(!isProgressFinish) return;
 		startActivityForResult(new Intent(this, ActTypeTest.class), REQ_CODE_TEST);
 	}
 
 	private void gotoMain()
 	{
-		// debug
-		SkinType type = SharedPreferenceManager.getInstance(getApplicationContext()).getType();
-		Toast.makeText(getApplicationContext(), String.format("Your skin type is %s", type.name()), Toast.LENGTH_SHORT).show();
-		
 		startActivity(new Intent(this, ActMain.class));
 		finish();
 	}

@@ -1,6 +1,7 @@
 package com.collage.skincare.fragment.settings;
 
 import android.app.Activity;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +21,12 @@ public class NoteEdit extends Activity
 
 	Yh_AsyncWeather weather;
 
+	
+	
+	
+	
+	
+	
 	//Bundle savedInstanceState
 	//파일에 내부적으로 정보(일반적으로 번들 형태)에 저장하도록 하는 인자 
 	@Override
@@ -33,6 +40,8 @@ public class NoteEdit extends Activity
 		 * 새로 추가와 편집 구분 setTitle("편집");
 		 */
 
+		
+		
 		mDbHelper = new NotesDbAdapter(this);
 		mDbHelper.open();
 

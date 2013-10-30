@@ -26,11 +26,16 @@ public class CustomAdapter extends CursorAdapter
 	@Override
 	public void bindView(View view, Context context, Cursor cursor)
 	{
+		
+	String[]Weather	=context.getResources().getStringArray(R.array.weather);
+		
+		
 		// profile_list_image, textView_01, textView_02, textView_03
 		ImageView iv = (ImageView) view.findViewById(R.id.profile_list_image);
 		TextView tv1 = (TextView) view.findViewById(R.id.textView_01);
 		TextView tv2 = (TextView) view.findViewById(R.id.textView_02);
 		TextView tv3 = (TextView) view.findViewById(R.id.textView_03);
+		
 		int index = cursor.getColumnIndex(BaseColumns._ID);
 		tv1.setText(String.valueOf(cursor.getLong(index)));
 
@@ -38,7 +43,7 @@ public class CustomAdapter extends CursorAdapter
 		tv2.setText(cursor.getString(index));
 
 		index = cursor.getColumnIndex(NotesDbAdapter.CURWHEATERCODE);
-		tv3.setText(cursor.getString(index));
+		tv3.setText(Weather[Integer.parseInt(cursor.getString(index))]);
 		iv.setImageResource(FragSettingsProfile.Image_Weather[Integer.parseInt(cursor.getString(index))]);
 	}
 

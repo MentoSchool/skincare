@@ -9,6 +9,7 @@
         android:layout_height="30dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
+        android:id="@+id/frag_schedule_alram_image"
         android:gravity="center"
         android:src="@drawable/ic_launcher" />
 
@@ -42,5 +43,6 @@
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:gravity="center" />
+    
 
 </LinearLayout>

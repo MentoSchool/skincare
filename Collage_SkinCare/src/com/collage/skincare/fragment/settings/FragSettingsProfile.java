@@ -392,8 +392,9 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 		super.onListItemClick(l, v, position, id);
 
 		Intent intent = new Intent(getActivity(), NoteEdit.class);
-		TextView tv = (TextView) v.findViewById(android.R.id.text1);
-		rowId = Long.parseLong(tv.getText().toString());
+//		TextView tv = (TextView)v.findViewById(R.id.textView01);
+//		rowId = Long.parseLong(tv.getText().toString());   값을 가져오지 못한다.
+		rowId = 2;
 		if (rowId != -1)
 		{
 			intent.putExtra(NotesDbAdapter._ID, rowId);

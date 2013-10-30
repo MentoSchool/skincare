@@ -30,9 +30,10 @@ import com.collage.skincare.db.FragScheduleBoard_Alram_Db;
 public class FragScheduleBoard extends Fragment
 {
 
+	Alram_CustomAdapter adapter;
+	
 	FragScheduleBoard_Alram_Db dbAdapter;
 
-	SimpleCursorAdapter adapter;
 
 	@Override
 	public void onResume()
@@ -155,21 +156,23 @@ public class FragScheduleBoard extends Fragment
 		Cursor c = dbAdapter.fetchAllNote();
 		// c.moveToFirst();
 		// 리스트뷰에 데이터베이스의 저장된 데이터를 연결
-		String[] from = new String[]
-		{
-				BaseColumns._ID, FragScheduleBoard_Alram_Db.Cur_Time, FragScheduleBoard_Alram_Db.Selection_Time, FragScheduleBoard_Alram_Db.Alram_Type
-		};
+//		String[] from = new String[]
+//		{
+//				BaseColumns._ID, FragScheduleBoard_Alram_Db.Cur_Time, FragScheduleBoard_Alram_Db.Selection_Time, FragScheduleBoard_Alram_Db.Alram_Type
+//		};
 		// String[] from = new String[] { "_ID", "TITLE" };
 		// 한행을 보여줄 XML 파일의 텍스트 뷰 id
-		int[] to = new int[]
-		{
-				R.id.textView01, R.id.textView02, R.id.textView03, R.id.textView04
-		};
+//		int[] to = new int[]
+//		{
+//				R.id.textView01, R.id.textView02, R.id.textView03, R.id.textView04
+//		};
 
 		// cursorAdapter = new CursorAdapter(this, c);
 
-		adapter = new SimpleCursorAdapter(listView.getContext(), R.layout.frag_schedule_board_list_item, c, from, to);
+//		adapter = new SimpleCursorAdapter(listView.getContext(), R.layout.frag_schedule_board_list_item, c, from, to);
 
+		adapter = new Alram_CustomAdapter(listView.getContext(), c);
+		
 		listView.setAdapter(adapter);
 		listView.setOnItemClickListener(clickListener);
 		// Activity의 라이프 사이클에 따라 알아서 커서를 관리해 줌 , 커서를 쓰는

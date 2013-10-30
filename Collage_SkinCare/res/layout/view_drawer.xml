@@ -11,8 +11,8 @@
         android:id="@+id/drawer_profile_skin"
         android:layout_width="@dimen/profile_skin_width"
         android:layout_height="@dimen/profile_skin_height"
-        android:scaleType="centerCrop"
-        android:background="@android:color/darker_gray" />
+        android:background="@android:color/darker_gray"
+        android:scaleType="centerCrop" />
 
     <!-- menu list -->
 
@@ -48,11 +48,16 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/drawer_profile_skin"
         android:layout_marginBottom="@dimen/profile_name_margin"
-        android:layout_marginRight="@dimen/profile_name_margin"
         android:layout_toLeftOf="@+id/drawer_profile_avatar"
+        android:background="@color/profile_text_bg"
         android:gravity="right|center_vertical"
-        android:text="Jungho Song"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:paddingBottom="@dimen/profile_text_paddingTopBottom"
+        android:paddingLeft="@dimen/profile_text_paddingLeftRight"
+        android:paddingRight="@dimen/profile_text_paddingLeftRight"
+        android:paddingTop="@dimen/profile_text_paddingTopBottom"
+        android:text="@string/settings_name"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/actionbar_bg" />
 
     <!-- profile :: skin type -->
 
@@ -62,8 +67,15 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/drawer_profile_name"
         android:layout_alignRight="@+id/drawer_profile_name"
+        android:layout_marginBottom="@dimen/profile_type_marginBottom"
+        android:background="@color/profile_text_bg"
         android:gravity="right|center_vertical"
-        android:text="Combination"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:paddingBottom="@dimen/profile_text_paddingTopBottom"
+        android:paddingLeft="@dimen/profile_text_paddingLeftRight"
+        android:paddingRight="@dimen/profile_text_paddingLeftRight"
+        android:paddingTop="@dimen/profile_text_paddingTopBottom"
+        android:text="@string/settings_skin_type"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/actionbar_bg" />
 
 </RelativeLayout>

@@ -29,11 +29,16 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/frag_settings_skin"
         android:layout_marginBottom="@dimen/profile_name_margin"
-        android:layout_marginRight="@dimen/profile_name_margin"
         android:layout_toLeftOf="@+id/frag_settings_profile"
-        android:hint="@string/settings_name"
+        android:background="@color/profile_text_bg"
+        android:gravity="right|center_vertical"
+        android:paddingBottom="@dimen/profile_text_paddingTopBottom"
+        android:paddingLeft="@dimen/profile_text_paddingLeftRight"
+        android:paddingRight="@dimen/profile_text_paddingLeftRight"
+        android:paddingTop="@dimen/profile_text_paddingTopBottom"
         android:text="@string/settings_name"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/actionbar_bg" />
 
     <TextView
         android:id="@+id/frag_settings_type"
@@ -41,10 +46,16 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/frag_settings_name"
         android:layout_alignRight="@+id/frag_settings_name"
-        android:layout_toLeftOf="@id/frag_settings_profile"
-        android:hint="@string/settings_skin_type"
+        android:layout_marginBottom="@dimen/profile_type_marginBottom"
+        android:background="@color/profile_text_bg"
+        android:gravity="right|center_vertical"
+        android:paddingBottom="@dimen/profile_text_paddingTopBottom"
+        android:paddingLeft="@dimen/profile_text_paddingLeftRight"
+        android:paddingRight="@dimen/profile_text_paddingLeftRight"
+        android:paddingTop="@dimen/profile_text_paddingTopBottom"
         android:text="@string/settings_skin_type"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/actionbar_bg" />
 
     <!-- button -->
 

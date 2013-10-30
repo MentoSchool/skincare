@@ -1,6 +1,7 @@
 package com.collage.skincare.fragment.settings;
 
 import java.io.File;
+import java.util.Locale;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -202,7 +203,8 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 	    
 	    // type
 	    SkinType type = SharedPreferenceManager.getInstance(getActivity()).getType();
-	    ((TextView) rootView.findViewById(R.id.frag_settings_type)).setText(type.name());
+	    int resId = getResources().getIdentifier("type_choice_" + type.name().toLowerCase(Locale.getDefault()), "string", getActivity().getPackageName());
+	    ((TextView) rootView.findViewById(R.id.frag_settings_type)).setText(resId);
 	    
 		return rootView;
 	}
@@ -251,6 +253,7 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 					Bitmap photo = extras.getParcelable("data");
 					mSelectImageView.setImageBitmap(photo);
 
+					FileUtil.setQuality(100);
 					FileUtil.save(photo, getActivity().getExternalCacheDir().getAbsolutePath(), (mSelectImageView == mSkinImageView) ? Const.PHOTO_SKIN : Const.PHOTO_PROFILE);
 					
 					// update menu drawer

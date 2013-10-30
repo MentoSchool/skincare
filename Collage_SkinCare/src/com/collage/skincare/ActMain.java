@@ -233,7 +233,8 @@ public class ActMain extends FragmentActivity implements FragSettingsProfile.Cal
 	public void updateType()
 	{
 	    SkinType type = SharedPreferenceManager.getInstance(getApplicationContext()).getType();
-	    mSkinType.setText(type.name());
+	    int resId = getResources().getIdentifier("type_choice_" + type.name().toLowerCase(Locale.getDefault()), "string", getPackageName());
+	    mSkinType.setText(resId);
 	}
 
 	/**

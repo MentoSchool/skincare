@@ -3,5 +3,6 @@
 
     <color name="splash_skin_type_bg">#FFd0ecf7</color>
     <color name="actionbar_bg">#FF0592fc</color>
+    <color name="profile_text_bg">#FFFFFFFF</color>
 
 </resources>

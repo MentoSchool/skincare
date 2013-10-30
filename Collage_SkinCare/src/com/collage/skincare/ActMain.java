@@ -17,16 +17,18 @@ import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.collage.skincare.api.ApiMain;
+import com.collage.skincare.defined.Const;
 import com.collage.skincare.defined.Const.DrawerMenu;
 import com.collage.skincare.defined.Const.SkinType;
 import com.collage.skincare.fragment.FragMain_Pack;
@@ -36,11 +38,12 @@ import com.collage.skincare.fragment.settings.FragSettingsProfile;
 import com.collage.skincare.fragment.weather.FragWeatherFun;
 import com.collage.skincare.fragment.weather.FragWeatherToday;
 import com.collage.skincare.manager.SharedPreferenceManager;
+import com.collage.skincare.utils.graphics.BitmapUtil.BitmapWorkerTask;
 
 /**
  * Main activity
  */
-public class ActMain extends FragmentActivity
+public class ActMain extends FragmentActivity implements FragSettingsProfile.Callbacks
 {
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
@@ -64,6 +67,10 @@ public class ActMain extends FragmentActivity
 			doMenuSelected(position);
 		}
 	};
+	private TextView mSkinType;
+	private TextView mName;
+	private ImageView mSkinPhoto;
+	private ImageView mProfilePhoto;
 
 	// 시험
 
@@ -72,15 +79,11 @@ public class ActMain extends FragmentActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.act_main);
-		// StrictMode.enableDefaults();
+		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setHomeButtonEnabled(true);
 
 		ApiMain.getInstance().UltraApi();// 자외선 Api
-
-		SkinType type = SharedPreferenceManager.getInstance(getApplicationContext()).getType();
-		Toast.makeText(getApplicationContext(), String.format("Your skin type is %s", type.name()), Toast.LENGTH_SHORT).show();
-
-		TextView drawer_profile_type = (TextView) findViewById(R.id.drawer_profile_type);
-		drawer_profile_type.setText(type.name());
 
 		mTitle = mDrawerTitle = getTitle();
 		mDrawerMenus = getResources().getStringArray(R.array.drawer_menus);
@@ -95,10 +98,6 @@ public class ActMain extends FragmentActivity
 		// set up the drawer's list view with items and click listener
 		mDrawerList.setAdapter(new DrawerMenuAdapter(this, R.layout.view_drawer_list_item, mDrawerMenus));
 		mDrawerList.setOnItemClickListener(mDrawerListItemClickListener);
-
-		// enable ActionBar app icon to behave as action to toggle nav drawer
-		getActionBar().setDisplayHomeAsUpEnabled(true);
-		getActionBar().setHomeButtonEnabled(true);
 
 		// ActionBarDrawerToggle ties together the the proper interactions
 		// between the sliding drawer and the action bar app icon
@@ -120,6 +119,18 @@ public class ActMain extends FragmentActivity
 		{
 			doMenuSelected(0);
 		}
+		
+		
+		// 초기화
+		mSkinType = (TextView) findViewById(R.id.drawer_profile_type);
+		mName = (TextView) findViewById(R.id.drawer_profile_name);
+		mSkinPhoto = (ImageView) findViewById(R.id.drawer_profile_skin);
+		mProfilePhoto = (ImageView) findViewById(R.id.drawer_profile_avatar);
+		
+		updateSkinPhoto();
+		updateProfilePhoto();
+		updateName();
+		updateType();
 	}
 
 	@Override
@@ -156,7 +167,69 @@ public class ActMain extends FragmentActivity
 	{
 		mTitle = title;
 		getActionBar().setTitle(mTitle);
+	}
+	
+	@Override
+	public void onBackPressed()
+	{
 
+		Builder d = new AlertDialog.Builder(this);
+		d.setMessage("정말 종료하시겠습니까?");
+		d.setPositiveButton("예", new DialogInterface.OnClickListener()
+		{
+
+			public void onClick(DialogInterface dialog, int which)
+			{
+				// process전체 종료
+				finish();
+			}
+		});
+		d.setNegativeButton("아니요", new DialogInterface.OnClickListener()
+		{
+			public void onClick(DialogInterface dialog, int which)
+			{
+				dialog.cancel();
+			}
+		});
+		d.show();
+	}
+	
+	@Override
+	public void updateSkinPhoto()
+	{
+		int w, h;
+		
+		w = getResources().getDimensionPixelSize(R.dimen.profile_skin_width);
+		h = getResources().getDimensionPixelSize(R.dimen.profile_skin_width);
+		
+		BitmapWorkerTask skinTask = new BitmapWorkerTask(mSkinPhoto, w, h);
+		skinTask.execute(getExternalCacheDir().getAbsolutePath().concat("/" + Const.PHOTO_SKIN));
+	}
+
+	@Override
+	public void updateProfilePhoto()
+	{
+		int w, h;
+	    
+		w = getResources().getDimensionPixelSize(R.dimen.profile_avatar_width);
+		h = getResources().getDimensionPixelSize(R.dimen.profile_avatar_height);
+		
+	    BitmapWorkerTask profileTask = new BitmapWorkerTask(mProfilePhoto,w, h);
+	    profileTask.execute(getExternalCacheDir().getAbsolutePath().concat("/" + Const.PHOTO_PROFILE));
+	}
+
+	@Override
+	public void updateName()
+	{
+	    String name = SharedPreferenceManager.getInstance(getApplicationContext()).getName();
+	    if(!TextUtils.isEmpty(name)) mName.setText(name);
+	}
+
+	@Override
+	public void updateType()
+	{
+	    SkinType type = SharedPreferenceManager.getInstance(getApplicationContext()).getType();
+	    mSkinType.setText(type.name());
 	}
 
 	/**
@@ -236,30 +309,6 @@ public class ActMain extends FragmentActivity
 		mDrawerList.setItemChecked(position, true);
 		setTitle(mDrawerMenus[position]);
 		mDrawerLayout.closeDrawer(mDrawer);
-	}
-
-	public void onBackPressed()
-	{
-
-		Builder d = new AlertDialog.Builder(this);
-		d.setMessage("정말 종료하시겠습니까?");
-		d.setPositiveButton("예", new DialogInterface.OnClickListener()
-		{
-
-			public void onClick(DialogInterface dialog, int which)
-			{
-				// process전체 종료
-				finish();
-			}
-		});
-		d.setNegativeButton("아니요", new DialogInterface.OnClickListener()
-		{
-			public void onClick(DialogInterface dialog, int which)
-			{
-				dialog.cancel();
-			}
-		});
-		d.show();
 	}
 
 	private class DrawerMenuAdapter extends ArrayAdapter<String>

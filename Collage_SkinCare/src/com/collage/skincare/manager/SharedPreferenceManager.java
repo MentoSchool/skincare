@@ -47,5 +47,21 @@ public class SharedPreferenceManager
 		else
 			return SkinType.Normal;
 	}
-
+	
+	public void setName(String name)
+	{
+		if (mSharedPreferences != null)
+		{
+			mSharedPreferences.edit().putString(NAME, name).apply();
+		}
+	}
+	
+	public String getName()
+	{
+		if (mSharedPreferences != null)
+		{
+			return mSharedPreferences.getString(NAME, null);
+		}
+		else return null;
+	}
 }

@@ -11,6 +11,7 @@
         android:id="@+id/drawer_profile_skin"
         android:layout_width="@dimen/profile_skin_width"
         android:layout_height="@dimen/profile_skin_height"
+        android:scaleType="centerCrop"
         android:background="@android:color/darker_gray" />
 
     <!-- menu list -->

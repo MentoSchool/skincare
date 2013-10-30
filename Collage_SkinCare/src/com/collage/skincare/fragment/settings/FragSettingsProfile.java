@@ -11,11 +11,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -34,11 +36,64 @@ import android.widget.TextView;
 
 import com.collage.skincare.R;
 import com.collage.skincare.defined.Const;
+import com.collage.skincare.defined.Const.SkinType;
+import com.collage.skincare.manager.SharedPreferenceManager;
+import com.collage.skincare.utils.graphics.BitmapUtil.BitmapWorkerTask;
 import com.collage.skincare.utils.io.FileUtil;
 
 public class FragSettingsProfile extends ListFragment implements OnClickListener
 {
+	public static interface Callbacks
+	{
+		void updateSkinPhoto();
+		void updateProfilePhoto();
+		void updateName();
+		void updateType();
+	}
+	
+	private Callbacks sActivityDummyCallbacks = new Callbacks()
+	{
+		@Override
+		public void updateSkinPhoto()
+		{
+		}
 
+		@Override
+		public void updateProfilePhoto()
+		{
+		}
+
+		@Override
+		public void updateName()
+		{
+		}
+
+		@Override
+		public void updateType()
+		{
+		}
+		
+	};
+	
+	protected Callbacks mActivityCallbacks = sActivityDummyCallbacks;
+	
+	@Override
+	public void onAttach(Activity activity)
+	{
+		super.onAttach(activity);
+		
+		if (!(activity instanceof Callbacks)) throw new IllegalStateException("Activity must implement fragment's callbacks.");
+		mActivityCallbacks = (Callbacks) activity;
+	}
+	
+	@Override
+	public void onDetach()
+	{
+		super.onDetach();
+		
+		mActivityCallbacks = sActivityDummyCallbacks;
+	}
+	
 	final static int[] Image_Weather =
 	{
 			R.drawable.w_12, R.drawable.w_12, R.drawable.w_15, R.drawable.w_08, R.drawable.w_01, R.drawable.w_06, R.drawable.w_11, R.drawable.w_11, R.drawable.w_06, R.drawable.w_06, R.drawable.w_00, R.drawable.w_06, R.drawable.w_06, R.drawable.w_03, R.drawable.w_03, R.drawable.w_03, R.drawable.w_03, R.drawable.w_00, R.drawable.w_00, R.drawable.w_16, R.drawable.w_16, R.drawable.w_16, R.drawable.w_16, R.drawable.w_12, R.drawable.w_12, R.drawable.w_02, R.drawable.w_09, R.drawable.w_05, R.drawable.w_04, R.drawable.w_05, R.drawable.w_04, R.drawable.w_07, R.drawable.w_13, R.drawable.w_14, R.drawable.w_13, R.drawable.w_01, R.drawable.w_13, R.drawable.w_08, R.drawable.w_08, R.drawable.w_08, R.drawable.w_06, R.drawable.w_03, R.drawable.w_02, R.drawable.w_03, R.drawable.w_04, R.drawable.w_08, R.drawable.w_02, R.drawable.w_08
@@ -121,6 +176,34 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 
 		View view = rootView.findViewById(android.R.id.list);
 		this.registerForContextMenu(view);
+		
+		// 초기화 
+		int w, h;
+		
+		// skin photo
+		Point outSize = new Point();
+		getActivity().getWindowManager().getDefaultDisplay().getSize(outSize);
+		w = outSize.x;
+		h = getResources().getDimensionPixelSize(R.dimen.profile_setting_skin_height);
+		
+		BitmapWorkerTask skinTask = new BitmapWorkerTask(mSkinImageView, w, h);
+		skinTask.execute(getActivity().getExternalCacheDir().getAbsolutePath().concat("/" + Const.PHOTO_SKIN));
+	    
+		// profile photo
+		w = getResources().getDimensionPixelSize(R.dimen.profile_setting_avatar_width);
+		h = getResources().getDimensionPixelSize(R.dimen.profile_setting_avatar_height);
+		
+	    BitmapWorkerTask profileTask = new BitmapWorkerTask(mPhotoImageView,w, h);
+	    profileTask.execute(getActivity().getExternalCacheDir().getAbsolutePath().concat("/" + Const.PHOTO_PROFILE));
+	    
+	    // name
+	    String name = SharedPreferenceManager.getInstance(getActivity()).getName();
+	    if(!TextUtils.isEmpty(name)) ((TextView) rootView.findViewById(R.id.frag_settings_name)).setText(name);
+	    
+	    // type
+	    SkinType type = SharedPreferenceManager.getInstance(getActivity()).getType();
+	    ((TextView) rootView.findViewById(R.id.frag_settings_type)).setText(type.name());
+	    
 		return rootView;
 	}
 
@@ -169,6 +252,10 @@ public class FragSettingsProfile extends ListFragment implements OnClickListener
 					mSelectImageView.setImageBitmap(photo);
 
 					FileUtil.save(photo, getActivity().getExternalCacheDir().getAbsolutePath(), (mSelectImageView == mSkinImageView) ? Const.PHOTO_SKIN : Const.PHOTO_PROFILE);
+					
+					// update menu drawer
+					if(mSelectImageView == mSkinImageView) mActivityCallbacks.updateSkinPhoto();
+					else mActivityCallbacks.updateProfilePhoto();
 				}
 
 				// 임시 파일 삭제

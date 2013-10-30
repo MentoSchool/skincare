@@ -1,9 +1,15 @@
 package com.collage.skincare.utils.graphics;
 
+import java.lang.ref.WeakReference;
+
+import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.Rect;
+import android.os.AsyncTask;
 import android.view.View;
+import android.widget.ImageView;
 
 /**
  * 비트맵 관련
@@ -132,5 +138,79 @@ public class BitmapUtil
 	{
 		return Bitmap.createBitmap(src, rect.left, rect.top, rect.right, rect.bottom, (m == null) ? new Matrix() : m, true);
 	}
+	
+	public static Bitmap decodeBitmapFromFile(Context context, String pathName, int reqWidth, int reqHeight)
+	{
+		// First decode with inJustDecodeBounds=true to check dimensions
+	    final BitmapFactory.Options options = new BitmapFactory.Options();
+	    options.inJustDecodeBounds = true;
+	    BitmapFactory.decodeFile(pathName, options);
 
+	    // Calculate inSampleSize
+	    options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+	    // Decode bitmap with inSampleSize set
+	    options.inJustDecodeBounds = false;
+	    return BitmapFactory.decodeFile(pathName, options);
+	}
+	
+	public static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight)
+	{
+		// Raw height and width of image
+		final int height = options.outHeight;
+		final int width = options.outWidth;
+		int inSampleSize = 1;
+
+		if (height > reqHeight || width > reqWidth)
+		{
+
+			// Calculate ratios of height and width to requested height and width
+			final int heightRatio = Math.round((float) height / (float) reqHeight);
+			final int widthRatio = Math.round((float) width / (float) reqWidth);
+
+			// Choose the smallest ratio as inSampleSize value, this will guarantee
+			// a final image with both dimensions larger than or equal to the
+			// requested height and width.
+			inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+		}
+
+		return inSampleSize;
+	}
+	
+	public static class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap>
+	{
+		private final WeakReference<ImageView> imageViewReference;
+		private String data = "";
+		private int mReqWidth;
+		private int mReqHeight;
+
+		public BitmapWorkerTask(ImageView imageView, int reqWidth, int reqHeight)
+		{
+			// Use a WeakReference to ensure the ImageView can be garbage collected
+			imageViewReference = new WeakReference<ImageView>(imageView);
+			mReqWidth = reqWidth;
+			mReqHeight = reqHeight;
+		}
+
+		// Decode image in background.
+		@Override
+	    protected Bitmap doInBackground(String... params) {
+	        data = params[0];
+	        return decodeBitmapFromFile(imageViewReference.get().getContext(), data, mReqWidth, mReqHeight);
+	    }
+
+		// Once complete, see if ImageView is still around and set bitmap.
+		@Override
+		protected void onPostExecute(Bitmap bitmap)
+		{
+			if (imageViewReference != null && bitmap != null)
+			{
+				final ImageView imageView = imageViewReference.get();
+				if (imageView != null)
+				{
+					imageView.setImageBitmap(bitmap);
+				}
+			}
+		}
+	}
 }

@@ -22,46 +22,64 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="17" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/CustomActionBarTheme" >
+        android:logo="@drawable/ic_logo"
+        android:theme="@style/Theme.Soild.ActionBar" >
         <activity
             android:name="com.collage.goddessofskin.prototype.ActSplash"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.collage.goddessofskin.prototype.ActMain" android:screenOrientation="portrait"/>
-        <activity android:name="com.collage.goddessofskin.prototype.ActTypeChoice"/>
+        <activity
+            android:name="com.collage.goddessofskin.prototype.ActMain"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.collage.goddessofskin.prototype.ActTypeChoice" />
         <activity android:name="com.collage.goddessofskin.prototype.ActTypeTest" />
-        <activity android:name=".fragment.settings.FragSettingsHelp"></activity>
-        <activity android:name="ActTypeTest2"></activity>
-        <activity android:name="ActTypeTest3"></activity>
-        <activity android:name="ActTypeTest4"></activity>
-        <activity android:name="ActTypeTest5"></activity>
-        <activity android:name="ActTypeTest6"></activity>
-        <activity android:name="ActTypeTest7"></activity>
-        <activity android:name="ActTypeTest8"></activity>
-        <activity android:name="ActTypeTest9"></activity>
-        <activity android:name="ActTypeTest10"></activity>
-        <activity android:name=".utils.io.SplashUtil"></activity>
-        
+        <activity android:name=".fragment.settings.FragSettingsHelp" >
+        </activity>
+        <activity android:name="ActTypeTest2" >
+        </activity>
+        <activity android:name="ActTypeTest3" >
+        </activity>
+        <activity android:name="ActTypeTest4" >
+        </activity>
+        <activity android:name="ActTypeTest5" >
+        </activity>
+        <activity android:name="ActTypeTest6" >
+        </activity>
+        <activity android:name="ActTypeTest7" >
+        </activity>
+        <activity android:name="ActTypeTest8" >
+        </activity>
+        <activity android:name="ActTypeTest9" >
+        </activity>
+        <activity android:name="ActTypeTest10" >
+        </activity>
+        <activity android:name=".utils.io.SplashUtil" >
+        </activity>
+
         <service
             android:name="com.example.android.location.ReceiveUpdatesIntentService"
-            android:label="@string/app_name"
-            android:exported="false"></service>
-        <activity android:name=".fragment.settings.NoteEdit"></activity>
-        <activity android:name=".fragment.settings.DatabaseNote"></activity>
-      
+            android:exported="false"
+            android:label="@string/app_name" >
+        </service>
+
+        <activity android:name=".fragment.settings.NoteEdit" >
+        </activity>
+        <activity android:name=".fragment.settings.DatabaseNote" >
+        </activity>
     </application>
 
 </manifest>

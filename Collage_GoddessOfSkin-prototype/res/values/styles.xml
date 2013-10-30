@@ -2,7 +2,7 @@
 <resources>
 
     <!-- general styles for the action bar -->
-    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
+    <style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/actionbar_bg</item>
         <item name="android:backgroundStacked">@color/actionbar_bg</item>
         <item name="android:backgroundSplit">@color/actionbar_bg</item>

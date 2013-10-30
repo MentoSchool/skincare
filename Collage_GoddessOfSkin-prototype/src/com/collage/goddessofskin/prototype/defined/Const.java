@@ -25,7 +25,8 @@ public class Const
 //		SettingsAlarm,
 //		SettingsPopup,
 //		SettingsSkinType,
+//		SettingsHelp
 		Settings,
-		SettingsHelp
+		Help
 	}
 }

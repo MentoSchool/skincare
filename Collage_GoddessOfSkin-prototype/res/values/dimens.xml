@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<dimen name="splash_progress_margin">20dp</dimen>
-<dimen name="type_buttonbar_marginTop">0dp</dimen>
+
+    <dimen name="splash_progress_margin">20dp</dimen>
+    <dimen name="type_buttonbar_marginTop">0dp</dimen>
     <dimen name="type_buttonbar_margin">20dp</dimen>
     <dimen name="type_button_padding">10dp</dimen>
     <dimen name="drawer_width_1">360dp</dimen>
@@ -20,5 +21,7 @@
     <dimen name="profile_avatar_margin_Top">20dp</dimen>
     <dimen name="profile_avatar_margin">-20dp</dimen>
     <dimen name="profile_name_margin">5dp</dimen>
+    
+    <dimen name="menu_item_drawable_padding">10dp</dimen>
 
 </resources>

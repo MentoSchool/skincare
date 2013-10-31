@@ -75,6 +75,9 @@ public class Water_Activity extends Activity implements OnTimeChangedListener, O
 	CursorAdapter cursorAdapter;
 
 	private NotificationManager mNotification;
+	
+	
+	Sleep_Activity activity = new Sleep_Activity();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -292,6 +295,11 @@ public class Water_Activity extends Activity implements OnTimeChangedListener, O
 	{
 		// TODO Auto-generated method stub
 
+		activity.vo3.setColor(3);
+		activity.vo3.setScore(15);
+		
+		
+		
 		if (System.currentTimeMillis() >= mCalendar.getTimeInMillis())
 		{
 			Log.v("dd", "현재시간" + mCalendar.getTimeInMillis());

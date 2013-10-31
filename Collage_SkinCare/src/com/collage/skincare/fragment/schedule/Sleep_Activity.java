@@ -131,6 +131,11 @@ public class Sleep_Activity extends Activity implements OnTimeChangedListener, O
 			{
 				// TODO Auto-generated method stub
 				resetAlarm();
+				
+				Intent intent = new Intent(Sleep_Activity.this,TestPageWrite.class);
+				
+				startActivity(intent);
+				
 			}
 
 		});
@@ -307,14 +312,10 @@ public class Sleep_Activity extends Activity implements OnTimeChangedListener, O
 		// TODO Auto-generated method stub
 
 		int a = 4;
-		
+		int b = 50;
         vo3.setColor(a);
+        vo3.setScore(53);        
         
-        MyView myView = new MyView(this);
-        
-        myView.onDraw(canvas);
-        
-		
 		if (System.currentTimeMillis() >= mCalendar.getTimeInMillis())
 		{
 			Log.v("dd", "현재시간" + mCalendar.getTimeInMillis());

@@ -39,6 +39,9 @@ import com.collage.skincare.db.FragScheduleBoard_Alram_Db;
 public class Ult_Activity extends Activity implements OnTimeChangedListener, OnDateChangedListener
 {
 
+	Sleep_Activity activity=  new Sleep_Activity();
+	
+	
 	private static final int INSERT_ID = Menu.FIRST;
 
 	private static final int DELETE_ID = Menu.FIRST + 1;
@@ -291,6 +294,11 @@ public class Ult_Activity extends Activity implements OnTimeChangedListener, OnD
 	protected void setAlarm()
 	{
 		// TODO Auto-generated method stub
+		
+		activity.vo3.setColor(5);
+		activity.vo3.setScore(30);
+		
+		
 
 		if (System.currentTimeMillis() >= mCalendar.getTimeInMillis())
 		{

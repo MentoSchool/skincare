@@ -43,9 +43,6 @@ public class FragScheduleBoard extends Fragment {
 
 	FragScheduleBoard_Alram_Db dbAdapter;
 	
-
-      
-	
 	
 	@Override
 	public void onResume() {
@@ -116,14 +113,8 @@ public class FragScheduleBoard extends Fragment {
 			public void onClick(View v) {
 
 				String id = "0";
-
-					
                 
-                
-				Alram_Type_Data(id);
-				
-				
-
+				Alram_Type_Data(id);				
 			}
 
 			
@@ -181,7 +172,6 @@ public class FragScheduleBoard extends Fragment {
 			Intent intent = new Intent(getActivity(), Sleep_Activity.class);
 
 			startActivity(intent);
-
 		}
 			return true;
 
@@ -204,6 +194,14 @@ public class FragScheduleBoard extends Fragment {
 		}
 	}
 
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+	
+	
 	private void Alram_Type_Data(String id) {
 		// TODO Auto-generated method stub
 		ListView listView = (ListView) getActivity().findViewById(

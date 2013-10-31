@@ -2,25 +2,108 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/com_rounded_background"
     android:orientation="vertical" >
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0px"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"
-        android:text="일어나세요~!!!" />
+        android:background="@drawable/com_rounded_action_gallery"
+        android:orientation="horizontal" >
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="1"
-        android:text="할일!!" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="일어나세요~!!!" />
 
-    <Button
-        android:id="@+id/alram_stop"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="피부타입:지성" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="1"
-        android:text="stop" />
+        android:layout_margin="10dp"
+        android:layout_weight="5"
+        android:background="@drawable/com_rounded_action_gallery"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/type_detail_01"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="피부타입:" />
+
+        <TextView
+            android:id="@+id/type_detail_02"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="피부타입:" />
+
+        <TextView
+            android:id="@+id/type_detail_03"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="피부타입:" />
+
+        <TextView
+            android:id="@+id/type_detail_04"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="피부타입:" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_margin="10dp"
+        android:layout_weight="3"
+        android:background="@drawable/com_rounded_action_gallery"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/alram_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn_splash_choice"
+            android:gravity="center"
+            android:text="stop" />
+
+        <Button
+            android:id="@+id/alram_rset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn_splash_choice"
+            android:gravity="center"
+            android:text="재설정" />
+    </LinearLayout>
 
 </LinearLayout>
